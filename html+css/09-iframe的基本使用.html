@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <!-- 在当前页面嵌套其他网页 ,不是所有的网页都可以嵌套,因为有些网站设置了禁止在iframe中显示 -->
+  <iframe src="https://www.taobao.com" width="800" height="600"></iframe>
+  <iframe src="" frameborder="0"></iframe>
+  <!-- frameborder如果设置为0，则表示没有边框
+   如果设置为1，则表示有边框 -->
+
+
+  <!-- a与iframe联合使用 -->
+  <!-- 当_parent和_top不与iframe配合使用时，与_self相同 -->
+
+  <iframe src="./other/a元素所在网页.html" frameborder="1"></iframe>
+</body>
+
+</html>

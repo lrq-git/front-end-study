@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- head元素里面放配置信息，例如样式 -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<!-- 2.内部样式表（internal styles）：内联样式表中如果样式过多，代码可读性 不好 -->
+<style>
+  /* 使用选择器 */
+  /* 这里用的是元素选择器（类型选择器),会选择所有的div */
+  div {
+    color: blue;
+    /* 前景色 */
+    font-size: 20px;
+  }
+
+  /* 使用类选择器 ,因为如果用元素选择器会把所有都是div的元素样式全部为同一个，无法对单独的一个进行设置，所以使用全局属性，class,然后进行类选择器*/
+  .div-first {
+    color: green;
+    font-size: 20px;
+  }
+</style>
+<!-- 3.外部样式表（external styles）：想让各种网页使用共同的样式，如果是内部样式表只能作用在这一个网页 -->
+<!-- 使用link元素，来引入资源，单标签 -->
+<!-- href:Hypertext Reference -->
+<!-- 可以引入多个外部样式 -->
+<!-- 1.<link rel="stylesheet" href="./css/style.css">
+<link rel="stylesheet" href="./css/test.css"> -->
+<!-- 2.使用index.css作为入口 -->
+<link rel="stylesheet" href="./css/index.css">
+
+<body>
+  <!-- CSS编写规则: CSS的全称是Cascading Style Sheets,中文名称是层叠样式表,用于描述HTML文档的表现形式,包括布局、颜色、字体等
+  CSS的三种编写方式:
+    内联样式:直接在元素的style属性中编写CSS代码
+    内部样式表:在HTML文档的head部分使用style标签编写CSS代码
+    外部样式表:将CSS代码单独存放在一个.css文件中,通过link标签引入到HTML文档中 -->
+  /* 选择器的优先级: 内联样式 > 内部样式表 > 外部样式表 */
+  <!-- 1.内联样式（inline styles） -->
+  <p style="color: red;">这是一个内联样式的段落</p>
+  <p style="color: red">这是一个内联样式的段落</p>
+  <p style="color: red; font-size: 16px;">这是一个内联样式的段落</p>
+  <!-- 分号后面加空格是为了提高代码可读性；‘；’这个字符在CSS中用于分隔多个声明，只有一个样式时可加可不加 -->
+
+
+  <div>我是一个段落</div>
+  <div class="div-first">我是一个段落</div>
+
+
+
+  <!-- 写.title就可以写出一个class为title的div -->
+  <div class="title"></div>
+  <h1>我是一个标题</h1>
+</body>
+
+</html>

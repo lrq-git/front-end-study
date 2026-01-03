@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>星球介绍</title>
+  <style>
+    .item {
+      /* 不让div独占一行，设置inline不可以，因为行内元素不可以设置宽度 */
+      /* 方式一：改变元素特性和垂直方向的布局 */
+      display: inline-block;
+      vertical-align: top;
+      /* 这里很复杂后面单独学习 */
+      /* 方式二通过浮动
+      float: left; */
+      width: 500px;
+      background-color: skyblue;
+      /* 高度不用设置，内容会撑起来 */
+    }
+
+    /* 给盒子设置宽度了，但是图片有的太大有的太小 */
+    .album {
+      /* album是封面的意思 */
+      width: 500px;
+      /* 也可以通过百分比设置 */
+    }
+
+    span {
+      font-size: 30px;
+      color: white;
+      background-color: orange;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>星球介绍</h1>
+  <div class="item">
+    <h2>地球</h2>
+    <a href="https://zh.wikipedia.org/wiki/%E5%9C%B0%E7%90%83" target="_blank">
+      <img class="album" src="https://pic.52112.com/180610/JPG-180610_720/zmcaBDjRlF_small.jpg" alt="地球">
+    </a>
+    <p><span>地球</span>是我们人类的家园，位于太阳系的第三颗行星，拥有丰富的水资源和多样的生态系统。</p>
+    <!-- span元素通常用于突出文本 -->
+  </div>
+  <div class="item">
+    <h2>木星</h2>
+    <a href="https://zh.wikipedia.org/wiki/%E6%9C%A8%E6%98%9F" target="_blank">
+      <img class="album"
+        src="https://k.sinaimg.cn/n/sinakd20122/263/w660h403/20221218/449c-a7f98589d13a3d4c33a7c8f7b066423f.jpg/w700d1q75cms.jpg"
+        alt="木星">
+    </a>
+    <p><span>木星</span>是太阳系中最大的行星，拥有强大的磁场和众多卫星。</p>
+    <!-- span元素通常用于突出文本 -->
+  </div>
+
+  <!-- 在日常开发时，只会写一个结构，然后会用JS遍历 -->
+</body>
+
+</html>

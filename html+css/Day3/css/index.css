@@ -1,0 +1,6 @@
+/* 避免多个外部样式表，因为会导致维护不方便
+在开发时通常会建立index.css作为入口 */
+@import "./style.css";
+@import "./test.css";
+/* @import url(./style.css); url是css的一个函数*/
+/* 通过@import引入其他资源 */

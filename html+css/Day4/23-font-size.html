@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .home {
+      font-size: 24px;
+    }
+
+    .box {
+      /* 设置字体大小方式*/
+      /* 方式一.单位是px，默认的单位是16px 
+      font-size: 32px; */
+      /* 方式二.相对单位em*/
+      font-size: 2em;
+      /* 1.如果这个元素没有父级元素，2em表示当前元素的字体大小是浏览器默认字体大小（16px)的两倍 
+      2.如果这个元素有父级元素，2em表示当前元素的字体大小是父级元素字体大小的两倍，实际上是，因为有父元素，父元素的字体大小会继承给子元素
+      注：同意理解为em就是相对于自己的大小 */
+
+      /* 方式三.相对单位百分比 */
+       /* font-size: 80%;
+       一定不要记百分比是相对谁，因为每个基本不一样，如果需要了解在查文档即可  */
+    }
+  </style>
+</head>
+
+<body>
+  <div class="home">
+    <div class="box">hhhh</div>
+  </div>
+  <div class="box">hhhh</div>
+  <div class="box1">hhhh</div>
+</body>
+
+</html>

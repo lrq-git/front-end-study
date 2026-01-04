@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    /* 后代选择器(后代选择器选择的是某个元素的所有后代元素无论儿子还是孙子) */
+    .home span {
+      color: red;
+    }
+
+    /* 子代选择器 (只选亲儿子）*/
+    .home>span {
+      color: blue;
+    }
+
+    /* 兄弟选择器(相邻选择器1个) */
+    .box2+.content {
+      background-color: yellow;
+    }
+
+    /* 兄弟选择器(普通兄弟选择器多个) */
+    .box1~span {
+      font-size: 30px;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- 关系选择器包括后代选择器和兄弟选择器 -->
+  <div class="home">
+    <span>lalalalal</span>
+    <div class="box">
+      <span>hhhhh</span>
+    </div>
+    <div class="content">
+      <div class="desc">
+        <p>
+          <span>
+            hhhhhhhhhhh
+          </span>
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class="box1">
+    <div class="box2">22222</div>
+    <div class="content">33333</div>
+    <span>55555</span>
+  </div>
+</body>
+
+</html>

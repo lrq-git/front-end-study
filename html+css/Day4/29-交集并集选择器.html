@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    /* 1.交集选择器，需要同时满足两个条件，为了精准选择一个元素 */
+    div.box {
+      /* 注意一定不能加空格 */
+      color: red;
+    }
+
+    /* 2.并集选择器，多个选择器之间用逗号分隔 */
+    div.box,
+    p.box {
+      font-size: 20px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="box">我是div元素</div>
+  <p class="box">我是p元素</p>
+
+</body>
+
+</html>

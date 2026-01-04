@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    /* a {
+      text-decoration: none;
+    } */
+
+    /* 当不想让超链接有下划线，用CSS的层叠属性自己设置样式把浏览器设置的下划线覆盖掉 */
+
+    .baidu {
+      text-decoration: underline;
+      /* none：没有下划线 */
+      /* underline：下划线 */
+      /* overline：上划线 */
+      /* line-through：删除线 */
+      /* blink：闪烁（大部分浏览器不支持） */
+      cursor: pointer;
+      /* 用于设置鼠标悬停时的光标样式为小手，与超链接a的效果一致 */
+    }
+
+    .info {
+      text-transform: capitalize;
+      /* capitalize：每个单词的首字母大写 */
+      /* uppercase：所有字母大写 */
+      /* lowercase：所有字母小写 */
+      /* none：没有任何影响 */
+    }
+  </style>
+  <link rel="stylesheet" href="./CSS/reset.css">
+</head>
+
+<body>
+  <!-- a元素浏览器会默认添加下划线 -->
+  <a href="https://www.baidu.com">百度一下</a>
+  <span class="baidu">百度一下</span>
+  <div class="info">
+    my name is lrq
+  </div>
+</body>
+
+</html>

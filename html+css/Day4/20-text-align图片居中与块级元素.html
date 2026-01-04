@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .box {
+      background-color: #f00;
+      height: 300px;
+      text-align: center;
+      /* 让图片居中显示 */
+    }
+
+    .content {
+      height: 200px;
+      width: 200px;
+      background-color: #0f0;
+      display: inline-block;
+      /* 不能设置为inline,因为inline元素无法设置宽高，除此之外也可以设置margin：0 auto； */
+    }
+
+    img {
+      width: 200px;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- 可以让图片居中也可以让input元素居中 -->
+  <div class="box">
+    <!--  
+    <img src="../Day1 和Day2/images/Steve.jpg" alt="">
+    <input type="text"> -->
+    <div class="content"></div>
+    <!-- 因为 div是块级不是行内级，text-align只针对行内级元素进行设置 -->
+  </div>
+</body>
+
+</html>

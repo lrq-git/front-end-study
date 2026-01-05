@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .box {
+      width: 200px;
+      color: white;
+      background-color: #f00;
+    }
+
+    /* 伪元素 */
+    .box::first-line {
+      font-size: 20px;
+      color: yellow;
+    }
+
+    /* 如果内容是中文，则选择的是第一个字 */
+    .box::first-letter {
+      font-size: 30px;
+      font-weight: bold;
+    }
+
+    /* 
+    .box1::before {
+      content: "★★★";
+      color: orange;
+    }
+
+    .box1::after {
+      content: "456";
+      color: orange;
+    } */
+    .item::before {
+      content: "★★★";
+      color: orange;
+    }
+
+    .item::after {
+      content: "456";
+      color: orange;
+    }
+
+    .box6::after {
+      content: url("../Day1\ 和Day2/images/Steve.jpg");
+      /* 这里css要求的路径语法与HTML的不一样 */
+    }
+
+    .box7::after {
+      content: "";
+      /* 注意：使用伪元素的过程中 ，不要将content省略*/
+      display: inline-block;
+      /* 伪元素默认是行内级非替换元素 */
+      width: 20px;
+      height: 20px;
+      background-color: red;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- 在之前如果想要突出一些关键内容，会用span标签将内容包裹起来，设置样式 
+   但是无法达到让第一行进行突出显示，因为不知道第一行包裹截止到哪里-->
+  <div class="box">
+    <!-- 注意：标签里的内容 如果有空格也会在网页中出现，但是多个空格会合并成一个空格（不是文本开头前） -->
+    The coated chip with the pore was mounted in an electrophoresis flow cell. Two reservoirs on each side with a volume
+    of 100 μL (trans and cis) were filled with a filtered and degassed (30 min while being sonicated) buffer of 0.02,
+    0.14, or 1 M KCl, 10 nM tris-HCl, and 1 nM ethylenediaminetetraacetic acid (pH
+    6). A pair of Ag/AgCl pellet electrodes (made from 0.9 mm diameter
+    99.9% Ag wires. Formed by soaking silver in bleach) were immersed
+    in the two reservoirs and connected to an Axopatch 200B amplifier
+    (Molecular Devices, Inc.) to record ionic current flow through the
+    nanopore (Figure S1). The whole setup was placed in a double
+    Faraday cage to lower the external electrostatic interference. Signals
+    were collected at a 10 kHz sampling rate using a Digidata 1440A
+    (Molecular Devices, Inc.) and filtered at 1 kHz using the built-in low
+    pass Bessel filter of Axopatch.
+  </div>
+  <!-- <div class="box1">
+    <span>123</span>
+    我是div元素
+    <span>456</span>
+  </div>
+  如果通常要在一个盒子一行内前后都插一段文字，是这样操作
+  但是如果有大量的盒子都要插入相同的东西，就会很麻烦，例如经常插入图标 -->
+
+  <!-- 以后开发使用伪元素 -->
+  <div class="box1 item">我是box1</div>
+
+  <div class="box2"> 我是box2</div>
+  <!-- 如果说换行符或者多个空格都是只显示一个空格 -->
+  <div class="box2">
+    我是box2 我是box1
+  </div>
+  <!-- 这样的写法有利于代码的可读性，但是会产生空格！（如果添加了前面元素） -->
+  <!-- 如果空格加在文本开头前，但是前后并没有添加其他盒子或者伪元素，则这个空格不会显示 -->
+
+  <!-- 开发中如果要给多个盒子加上同一个伪元素会这样操作:item(把要加伪元素的元素，添加一个类item项目) -->
+  <div class="box5 item">我是5</div>
+  <div class="box5 item">我是6</div>
+  <div class="box6">1</div>
+  <div class="box7">2</div>
+
+
+
+</body>
+
+</html>

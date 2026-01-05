@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .box1 {
+      /* 1.关于内容width height */
+      width: 200px;
+      height: 150px;
+      background-color: red;
+    }
+
+    /* 2.默认值 */
+    .box2 {
+      /* div如果不设置宽度，会占据整行
+    ，width默认为auto ,表明交给浏览器决定*/
+      /* 块级元素：独占一行（父元素） */
+      width: auto;
+    }
+
+    /* 行内块元素，宽度不设置时也是auto，宽度由内容决定 */
+    .span {
+      display: inline-block;
+      width: auto;
+      background-color: yellow;
+    }
+
+    img {
+      /* 行内替换元素，
+      图片如果不设置宽高，默认宽高是图片的本来大小 width:auto;*/
+      width: 200px;
+      /* 高度自动按比例缩放 */
+    }
+
+    /* 3.max-width min-width */
+    .home {
+      height: 2000px;
+      background-color: red;
+      /* 最大宽度:随着放大缩小浏览器，这个元素最大宽度放大到750px */
+      max-width: 750px;
+      /* 最小宽度:如果浏览器缩小到小于300px，页面会出现滚动条 */
+      min-width: 300px;
+      /* 块级元素居中 */
+      margin: 0 auto;
+      /* 行内级元素居中,在父级元素里面设置text-align */
+    }
+  </style>
+</head>
+
+<body>
+  <div class="box1"></div>
+  <div class="box2">我是box2</div>
+  <span>我是span</span>
+  <img src="../Day1 和Day2/images/Steve.jpg" alt="">
+
+  <div class="home"></div>
+</body>
+
+</html>

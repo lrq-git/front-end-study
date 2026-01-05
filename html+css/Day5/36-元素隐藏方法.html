@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .box {
+      /* 1.display (元素依然在html结构里面但是不会渲染在界面，不占据空间） */
+      display: none;
+    }
+
+    .content {
+      /* 2.visibility 有两个值visible,hidden(元素依然在html结构里面，占据空间，但是不可见） */
+      visibility: hidden;
+    }
+
+    /* 前两种方法不能设置半透明 */
+    .box1 {
+      /* 3.通过颜色隐藏rgba(),最后一位是设置透明度，0是透明，1是不透明
+      这个没有隐藏元素 */
+      color: rgba(255, 0, 0, .5);
+      /* color: #ff000088,这个写法不推荐，因为比较新有些浏览器不支持 */
+    }
+
+    .box2 {
+      /* 4.设置背景色透明 ，此时内容可以看得见*/
+      background-color: rgba(0, 255, 0, 0);
+      /* 其实如果不设置背景色，bgc默认的值是transparent */
+    }
+
+    .box3 {
+      /* 5.设置整体透明度 opacity */
+      opacity: 0.5;
+    }
+
+    /* 注意：面试会经常问到：alpha只设置当前color或 background-color其中的颜色透明度为摸一个值，不会影响子元素；
+    而opacity设置包括其子元素，整个元素的透明度 */
+  </style>
+</head>
+
+<body>
+  <div class="box">我是div元素</div>
+  <div>hahahah</div>
+  <div class="content">我是content元素</div>
+  <div>heheheheh</div>
+
+  <div class="box1">
+    我是box1
+    <img src="../Day1 和Day2/images/Steve.jpg" alt="">
+  </div>
+  <div class="box2">我是box2</div>
+  <div class="box3">
+    我是box3
+    <img src="../Day1 和Day2/images/Steve.jpg" alt="">
+  </div>
+
+</body>
+
+</html>

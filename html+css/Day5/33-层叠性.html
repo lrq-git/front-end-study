@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    div.box {
+      color: black !important;
+      /* 1.权重最高10000 */
+    }
+
+    /* 3.id选择器权值100 */
+    #main {
+      color: orange;
+    }
+
+    /* 4.类选择器权值10 */
+    .one {
+      color: purple;
+    }
+
+    /* 5.元素选择器权值1 */
+    div {
+      color: blue;
+    }
+
+    /* 6.通配符选择器权值0 */
+    * {
+      color: green;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- 2.内联样式权值1000 -->
+  <div id="main" class="box one first content" style="color: red;">hhhhh</div>
+</body>
+
+</html>

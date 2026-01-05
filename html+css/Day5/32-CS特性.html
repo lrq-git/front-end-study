@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    /*1. 如果想让整个区域的字体颜色为红色,给最顶层的父元素设置 */
+    div.box {
+      color: red;
+      /* 会给所有的后代元素继承 */
+    }
+
+    /* 2.继承过来的是计算值不是设置值 */
+    .box1 {
+      /* 相对于自身字体（父元素的字体），浏览器默认16px */
+      font-size: 2em;
+    }
+
+    /* 3.强制继承 */
+    .box2 {
+      color: red;
+      border: 2px solid purple;
+    }
+
+    .box2 p {
+      border: inherit;
+      /* 会继承父元素的border */
+    }
+  </style>
+</head>
+
+<body>
+  <div class="box">
+    <h1>我是h1元素</h1>
+    <p>
+      我是P元素
+      <span>hhhh</span>
+      <!-- 不要在p元素后面放div -->
+      <strong>hehehe</strong>
+    </p>
+    <span>我是span元素</span>
+  </div>
+
+  <div class="box1">
+    box1内容
+    <p>我是P元素</p>
+    <!-- 此时P元素继承了box1的font-size: 32px,而不是font-size: 2em,如果是后者，则大小为64px -->
+  </div>
+  <div class="box2">
+    <p>hhhhh</p>
+    <span>heheheh</span>
+  </div>
+</body>
+
+</html>

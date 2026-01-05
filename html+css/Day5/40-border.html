@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .box {
+      display: inline-block;
+      width: 200px;
+      height: 200px;
+      /* width */
+      border-top-width: 10px;
+      border-right-width: 20px;
+      border-bottom-width: 30px;
+      border-left-width: 40px;
+      /* style */
+      border-top-style: solid;
+      border-right-style: dashed;
+      border-bottom-style: dotted;
+      border-left-style: double;
+      /* color */
+      border-top-color: blue;
+      border-right-color: green;
+      border-bottom-color: orange;
+      border-left-color: purple;
+      /* border:2px solid red(可以换顺序) */
+    }
+
+    .box2 {
+      display: inline-block;
+      width: 180px;
+      height: 200px;
+      /* 简写形式 */
+      border: 10 dashed teal;
+      border-radius: 2px;
+      /* 也可以设置百分比，但这个相对于谁来说需要查文档 */
+    }
+
+    .home {
+      width: 100px;
+      height: 100px;
+      background-color: red;
+      border: 10px solid black;
+      border-radius: 50%;
+      /* 如果正方形，设置百分比50%，就可以变成圆形 */
+    }
+  </style>
+</head>
+
+<body>
+  <div class="box">我是box</div>
+  <div class="box2">我是box</div>
+  <div class="home"></div>
+</body>
+
+</html>

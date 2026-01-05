@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    div {
+      background-color: red;
+      /* 浏览器通过元素选择器进行设置的，他是先设置的 */
+      display: inline;
+    }
+
+    span {
+      background-color: green;
+      /* 浏览器通过元素选择器进行设置的，他是先设置的 */
+      display: block;
+    }
+
+    img {
+      width: 300px;
+      height: 150px;
+    }
+
+    input {
+      width: 200px;
+      height: 30px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="box">我是div元素</div>
+  <span>我是span元素</span>
+  <a href="#">百度一下</a>
+
+  <!-- 行内非替换元素不能设置宽高 -->
+
+  <!-- img input  元素是行内级元素，但是可以设置宽高
+   inline 替换元素，行内替换元素：
+   1.和其他行内级元素在同一行显示
+   2.可以设置宽度和高度 -->
+  <img src="https://www.baidu.com/img/flexible/logo/pc/result.png" alt="百度logo" width="200" height="100">
+  <input type="text">
+</body>
+
+</html>

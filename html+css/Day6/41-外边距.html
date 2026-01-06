@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body {
+      /* 暂时解决方案*/
+      font-size: 0;
+      /*把父元素的字体大小设置为0，这样子元素之间的空格就没有了*/
+    }
+
+    .box {
+      display: inline-block;
+      width: 100px;
+      height: 100px;
+      background-color: red;
+      /*margin-bottom: 50px;
+       margin上下会有折叠效果，意思是如果两个上下挨着的元素，上面设置margin-bottom，下面设置margin-top，那么它们之间的距离会取两者中较大的那个值,不会加起来（左右没有折叠效果） */
+      /* margin-right: 30px; */
+    }
+
+    .content {
+      display: inline-block;
+      width: 100px;
+      height: 100px;
+      background-color: green;
+      /* margin-left: 30px; */
+      /* 左右不折叠 */
+      /* margin: 10px 20px; 这样设置有问题，跟对齐方式有关*/
+      margin: 0 20px;
+    }
+  </style>
+</head>
+
+<body>
+  <!--<div class="box"></div><div class="content"></div>  如果这样写两个盒子之前就不会有间距，
+  下面写法有间距是因为有换行符造成了空格显示，但是要保证代码可读性，要用下面这种写法-->
+  <div class="box"></div>
+  <div class="content"></div>
+</body>
+
+</html>

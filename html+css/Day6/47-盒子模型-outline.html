@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .box1 {
+      width: 100px;
+      height: 100px;
+      background-color: red;
+      /* 注意这个background设置的是整个盒子content+padding+border */
+      border: 50px solid orange;
+      /* outline:外廓线，是在border的外面，不占据空间 */
+      outline: 30px solid green;
+    }
+
+    /* 当设置a元素的属性，他所有的状态都是这样，例如color */
+    a {
+      margin-top: 100px;
+      /* 注意行内级元素设置margin-top无效 */
+      display: inline-block;
+      outline: none;
+    }
+
+    input {
+      outline: none;
+    }
+
+    /* 
+    a:focus {
+      outline: none;
+    } */
+  </style>
+</head>
+
+<body>
+  <!-- 注意a元素和input元素默认会有outline，因此需要设置去除 -->
+  <div class="box1"></div>
+  <a href="https://www.baidu.com/">百度一下</a>
+  <input type="text">
+  <!-- 按Tab键，a元素会出现一个轮廓，focus状态 -->
+</body>
+
+</html>

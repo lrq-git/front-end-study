@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .body {
+      margin: 0;
+      padding: 0;
+      /* 浏览器会默认给body设置一个margin，以便于更好的阅读体验 */
+      /* text-align: center; */
+      /* 不起作用，因为他只对是行内级元素起作用
+      行内级：行内级非替换元素span a 行内替换元素img input */
+    }
+
+    .container {
+      width: 400px;
+      height: 400px;
+      background-color: green;
+    }
+
+    .box {
+      width: 100px;
+      /* 如果不设置宽度，默认独占一行，就没有所谓的水平居中的问题 */
+      height: 100px;
+      background-color: red;
+      /* block box width= width +padding +boder*/
+      margin: 0 auto;
+      /* 实现在父元素上的水平居中 */
+      /* 对于父子关系的元素需要有左上间距时不要设置margin */
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="box">hhhh</div>
+  </div>
+
+</body>
+
+</html>

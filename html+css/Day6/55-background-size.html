@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .box {
+      width: 600px;
+      height: 600px;
+      /* 如果没有高度，背景图片会不显示 */
+      background-color: #f00;
+
+      /* 设置背景图片,会盖在背景颜色上 */
+      background-image: url(./images/01.png);
+      background-repeat: no-repeat;
+      background-size: contain;
+      /* 会把图片的某一边拉伸，并且保持原来的宽高比 */
+      /*2. background-size: cover; */
+      /* 会按照图片相对短的一边进行拉伸，保持原来宽高比，会超出盒子然后隐藏 */
+      /* 3.background-size: 100% 100%; */
+      /* 宽高都以100%拉伸，图片会变得很奇怪 */
+      /* 4.background-size: auto; */
+      /* m默认值，图片的原始大小 */
+      /*5. background-size: 100px 100px; */
+      /* 直接设置具体大小 */
+
+
+    }
+  </style>
+</head>
+
+<body>
+  <div class="box"></div>
+</body>
+
+</html>

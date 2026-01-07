@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <!-- 注意这个link元素放在style的上面 -->
+  <link rel="stylesheet" href="./CSS/reset.css">
+  <style>
+    /* 1.首先删除a元素的默认样式：比如颜色或者下划线 */
+    /*  a {
+      text-decoration: none;
+      color: #333;
+      font-size: 12px;
+    } */
+    .btn {
+      /* 目前样式学的少，先整体后局部*/
+      display: inline-block;
+      /* 要设置宽高，先改这个属性 */
+
+      width: 70px;
+      height: 25px;
+
+      /* 水平和垂直居中 */
+      line-height: 25px;
+      text-align: center;
+
+      border-radius: 13px;
+      /* 设置为胶囊型，圆角设置为高度的一半，注意圆角与边框border无关，不要把他两联系在一起 */
+    }
+
+    .btn:hover {
+      background-color: #c81623;
+    }
+
+    .new {
+      background-color: #e1251b;
+      color: #fff;
+      /* 注意，开发里面颜色尽量不要写关键字,要写十六进制 */
+    }
+
+    .vip {
+      background-color: #363634;
+      color: #e5d790;
+    }
+  </style>
+
+</head>
+
+<body>
+  <!-- 1.新人福利 ：可以考虑a,span,div,但是由于要跳转现在还没学到JS无法使用window.open，所以使用a元素-->
+  <a class="btn new" href="https://xinren.jd.com/#/home" target="_blank">新人福利</a>
+  <!-- 2.欢迎登录 -->
+  <a class="btn vip" href="https://passport.jd.com/new/login.aspx" target="_blank">PLUS会员</a>
+  <!-- 如果两个元素有大量的样式一致，可以把他们抽取出来放在一个类里面 -->
+</body>
+
+</html>

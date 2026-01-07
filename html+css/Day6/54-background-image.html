@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .box {
+      width: 600px;
+      height: 600px;
+      /* 如果没有高度，背景图片会不显示 */
+      background-color: #f00;
+
+      /* 设置背景图片,会盖在背景颜色上 */
+      background-image: url(./images/01.png), url(./images/02.png);
+      background-repeat: no-repeat;
+      /* 背景图片如果比较小会默认平铺,可以设置多个图片，第一张在最上面 
+      常见属性值：repeat,no-repeat,repeat-x,repeat-y*/
+    }
+  </style>
+</head>
+
+<body>
+  <div class="box"></div>
+</body>
+
+</html>

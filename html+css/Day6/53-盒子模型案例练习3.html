@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="./CSS/reset.css">
+  <style>
+    a {
+      /* 因为包裹了块级元素 */
+      display: inline-block;
+      /* width:auto ,行内级元素会包裹整个内容*
+      块级元素的也是width:auto,它的宽度会继承父元素/
+      /* color: #888; */
+      /* 如果不设置的话，颜色会是reset里面的a设置的颜色 */
+      /* 注意外部样式表和内部样式表，没有谁有限起作用，其优先级还是看选择器权重决定，如果选择器权重一致，谁后谁起作用 */
+    }
+
+    .item {
+      width: 308px;
+      margin: 0 auto;
+    }
+
+    .item .album img {
+      width: 100%;
+      /* 看网站发现图片和外面的盒子宽度一样，所以设置为100%，只需设置宽度，高度会自动调整 */
+      border-radius: 8px;
+    }
+
+    .item .info a {
+      /* 前面给a元素设置为inline-block,所以导致宽度没有定下来 */
+      width: 100%;
+      /* 没有隐藏的解决方案，后面会总结 */
+    }
+
+    .item .info p {
+      font-size: 15px;
+      margin-top: 8px;
+      /* 下面代码的实现前提得宽度要定下来  */
+      /* 显示一行*/
+      /* white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis; */
+      /* 没有隐藏 */
+      /* 两行显示 */
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      line-clamp: 2;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+    }
+
+    .item .info .anchor {
+      font-size: 13px;
+      color: #888;
+      margin-top: 5px;
+    }
+
+    .item .info .anchor::before {
+      /*  伪元素是行内非替换元素 
+      content: url(./images/bilibili.svg);
+      display: inline-block;
+       无法改正大小 
+      width: 16px;
+      height: 16px;
+      如果要微调，用相对定位 
+      position: relative;
+      top: 2px */
+      content: '';
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      background: url(./images/bilibili.svg) no-repeat center;
+      background-size: contain;
+      position: relative;
+      top: 5px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="item">
+    <!-- 因为他不是一整块都是超链接，所以用div包裹起来就可以 -->
+    <div class="album">
+      <a href="https://www.bilibili.com/video/BV1fUBTBjEu4/?spm_id_from=333.1007.tianma.2-3-6.click&vd_source=dc46df49436154e5e6afa272e0f9dbe9"
+        target="_blank">
+        <img
+          src="https://i2.hdslb.com/bfs/archive/ad57f4512dda5f134cebc97513a26a4fc2d6935e.jpg@672w_378h_1c_!web-home-common-cover.avif"
+          referrerpolicy="no-referrer" alt="">
+        <!-- 现在很多地址的图片不让拿了 -->
+      </a>
+    </div>
+    <div class="info">
+      <a href="https://www.bilibili.com/video/BV1fUBTBjEu4/?spm_id_from=333.1007.tianma.2-3-6.click&vd_source=dc46df49436154e5e6afa272e0f9dbe9"
+        target="_blank">
+        <p>
+          小白兔遇到顶级魅魔！林屿森你要不要勾引的这么明显啊哈哈哈！小白兔遇到顶级魅魔！林屿森你要不要勾引的这么明显啊哈哈哈！小白兔遇到顶级魅魔！林屿森你要不要勾引的这么明显啊哈哈哈！小白兔遇到顶级魅魔！林屿森你要不要勾引的这么明显啊哈哈哈！
+        </p>
+      </a>
+      <a class="anchor" href="#">
+        <span class="nickanme">春日与竹里</span>
+        <span class="time">2025-12-23</span>
+      </a>
+    </div>
+  </div>
+  <!-- 两种方式：一边写内容一边写布局
+   先写内容，在写布局 -->
+
+  <!-- 注意：刚开始写的时候可以不用管是否有超链接，后续如果有超链接，只需要在外面包裹一个a元素 -->
+  <!-- 加图标的问题 
+   1.img
+   2.元素，background-img
+   3.伪元素-->
+</body>
+
+</html>

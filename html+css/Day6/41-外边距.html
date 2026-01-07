@@ -10,6 +10,7 @@
       /* 暂时解决方案*/
       font-size: 0;
       /*把父元素的字体大小设置为0，这样子元素之间的空格就没有了*/
+      /* 但这种解决方案有问题，如果把字体大小设为零，子元素会继承，不利于开发 */
     }
 
     .box {
@@ -29,8 +30,14 @@
       background-color: green;
       /* margin-left: 30px; */
       /* 左右不折叠 */
-      /* margin: 10px 20px; 这样设置有问题，跟对齐方式有关*/
+      /* margin: 10px 20px; */
+      /*这样设置有问题，跟对齐方式有关*/
       margin: 0 20px;
+    }
+
+    div,
+    span {
+      font-size: 20px;
     }
   </style>
 </head>
@@ -40,6 +47,8 @@
   下面写法有间距是因为有换行符造成了空格显示，但是要保证代码可读性，要用下面这种写法-->
   <div class="box"></div>
   <div class="content"></div>
+  <span>hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh</span>
+  <div>哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈</div>
 </body>
 
 </html>

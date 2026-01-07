@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="./CSS/reset.css">
+  <style>
+    .item {
+      /* 如果用flex布局就不用设置dib */
+      display: inline-block;
+      width: 233px;
+      height: 300px;
+      padding: 20px 10px;
+      /* 在浏览器上绿色的就是内边距 */
+
+      text-align: center;
+      /* img行内级元素居中，注意text-align具有继承性，所以在item里面设置就可以，不用在div里设置 */
+      background-color: #fff;
+      box-sizing: border-box;
+    }
+
+    .item:hover {
+      box-shadow: 0 5px 120px 5px rgba(0, 0, 0, .2);
+    }
+
+    .item img {
+      width: 160px;
+      height: 160px;
+    }
+
+    .item .title {
+      margin-top: 12px;
+    }
+
+    .item .desc {
+      color: #999;
+      margin-top: 8px;
+
+      /* 单行显示省略号 */
+      /* 1.不换行 */
+      white-space: nowrap;
+      /* 2.超出部分省略 */
+      overflow: hidden;
+      /* 3.出现省略号 */
+      text-overflow: ellipsis;
+    }
+
+    .item .price {
+      margin-top: 20px;
+      font-size: 14px;
+    }
+
+    .item .new-price {
+      color: #ff6700;
+    }
+
+    .item .old-price {
+      color: #999;
+      text-decoration: line-through;
+    }
+  </style>
+</head>
+
+<body>
+  <a class="item" href="https://www.mi.com/shop/buy/detail?product_id=14596">
+    <!-- 因为鼠标放在里面会变成小手，而且可以点击跳转，所以不用div,用a -->
+    <!--  <div class="album">
+      <img src="./images/xiaomi01.png" alt="">
+    </div> -->
+    <!-- 注意，开发中发一个图片一般会拿div给他包裹起来 -->
+    <img src="./images/xiaomi01.png" alt="小米小爱音箱Play 增强版">
+    <h3 class="title">小米小爱音箱Play 增强版</h3>
+    <p class="desc">桌面家庭中控｜小巧百搭设计｜小米澎湃系统｜小爱同学大模型｜自定义锁屏壁纸｜安防搭档｜支持蓝牙Mesh | 海量音频内容</p>
+    <!-- 注意p h3元素默认上下有margin,橘色是margin -->
+    <div class="price">
+      <span class="new-price">129元</span>
+      <span class="old-price">149元</span>
+      <!-- 注意这两个之间会默认有一个间距，以后会知道如何消除 -->
+    </div>
+  </a>
+  <!-- 块级和行内块级元素是可以放置任何元素 
+   react会报错，如果a里面放div,p h3-->
+  <!-- 以后 不用a元素时候，可以li/div:
+    1.cusor:pointer;
+    2.路由跳转或者打开新的链接window.open -->
+</body>
+
+</html>

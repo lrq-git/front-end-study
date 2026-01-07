@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .box {
+      background-color: #f00;
+      text-align: center;
+    }
+
+    /* text-align:让父元素的inline level-box的盒子居中 */
+    .box span {
+      background-color: #0f0;
+    }
+
+    .container {
+      background-color: #00f;
+      width: 100px;
+      height: 100px;
+      margin: 0 auto;
+      /* 包含块盒子的大小等于width+margin */
+    }
+  </style>
+
+</head>
+
+<body>
+  <div class="box">
+    <span>我是span元素</span>
+    <div class="container"></div>
+  </div>
+  <!-- 一般在练习的时候如果想让box盒子显示就设置宽高和背景颜色，如果想让span元素显示，就加内容 -->
+</body>
+
+</html>

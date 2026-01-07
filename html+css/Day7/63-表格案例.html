@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    table {
+      border-collapse: collapse;
+      text-align: center;
+      /* 这个是一个继承属性 */
+    }
+
+    td,
+    th {
+      border: 1px solid #333;
+      /* 注意这个边框是给td设置的 */
+      padding: 8px 16px;
+    }
+
+    table tr:nth-child(1) {
+      font-weight: bold;
+      color: red;
+      /* thead,tbody,tfoot里面都有tr,所以如果只要第一行要精准设置属性 */
+    }
+  </style>
+</head>
+
+<body>
+  <table>
+    <tr>
+      <td>排名</td>
+      <td>股票名称</td>
+      <td>股票代码</td>
+      <td>股票价格</td>
+      <td>股票涨跌</td>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>贵州茅台</td>
+      <td>600519</td>
+      <td>1800</td>
+      <td>5%</td>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>贵州茅台</td>
+      <td>600519</td>
+      <td>1800</td>
+      <td>5%</td>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>贵州茅台</td>
+      <td>600519</td>
+      <td>1800</td>
+      <td>5%</td>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>贵州茅台</td>
+      <td>600519</td>
+      <td>1800</td>
+      <td>5%</td>
+    </tr>
+
+    <!-- 这样的结构语义化不够 -->
+  </table>
+  <table>
+    <caption>股票排行</caption>
+    <!-- 不经常用 -->
+    <thead>
+      <tr>
+        <th>排名</th>
+        <th>股票名称</th>
+        <th>股票代码</th>
+        <th>股票价格</th>
+        <th>股票涨跌</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>1</td>
+        <td>贵州茅台</td>
+        <td>600519</td>
+        <td>1800</td>
+        <td>5%</td>
+      </tr>
+      <tr>
+        <td>1</td>
+        <td>贵州茅台</td>
+        <td>600519</td>
+        <td>1800</td>
+        <td>5%</td>
+      </tr>
+      <tr>
+        <td>1</td>
+        <td>贵州茅台</td>
+        <td>600519</td>
+        <td>1800</td>
+        <td>5%</td>
+      </tr>
+      <tr>
+        <td>1</td>
+        <td>贵州茅台</td>
+        <td>600519</td>
+        <td>1800</td>
+        <td>5%</td>
+      </tr>
+    </tbody>
+    <tfoot>
+      <tr>
+        <td>其他</td>
+        <td>其他</td>
+        <td>其他</td>
+        <td>其他</td>
+        <td>其他</td>
+      </tr>
+    </tfoot>
+
+    <!-- 这样的结构语义化不够 -->
+  </table>
+</body>
+
+</html>

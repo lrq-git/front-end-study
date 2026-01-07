@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    /* 注意这里要用并集选择器 */
+    ol,
+    li {
+      padding: 0;
+      margin: 0;
+      /* 会重置样式 ，并且会把序号去掉*/
+      list-style: none;
+      /* 去除点 */
+    }
+
+    /* 总是忘记写逗号 */
+    ul,
+    li {
+      /* list-style-type: disc; */
+      /* ul和ol就是这个属性不一样，ul是decimal */
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- 规则:ol里面只放li -->
+  <h1>自己喜欢的电影排名</h1>
+  <ol>
+    <li>星际穿越</li>
+    <li>大话西游</li>
+    <li>盗梦空间</li>
+    <li>喜洋洋</li>
+    <li>熊出没</li>
+    <!-- 与div有区别，会默认加一些样式，比如ol有padding
+     有序列表会自动加序号 -->
+  </ol>
+  <h1>常见的编程语言</h1>
+  <ul>
+    <li>JavaScript</li>
+    <li>Java</li>
+    <li>C++</li>
+    <li>Objective</li>
+    <li>Swift</li>
+    <li>python</li>
+    <!-- 与div有区别，会默认加一些样式，比如ol有padding
+     无序列表默认会有黑点 -->
+  </ul>
+  <!-- 真实开发序号都是用JS写的 -->
+</body>
+
+</html>

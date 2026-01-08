@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    textarea {
+      resize: none;
+      /* 不可以拉伸 */
+      /* 属性：horizontial水平拉伸，vertical垂直拉伸，both都拉伸 */
+    }
+  </style>
+</head>
+
+<body>
+  <form action="">
+    <label for="info">
+      个人描述：
+      <textarea name="info" id="info" cols="20" rows="10"></textarea>
+      <!-- 如果行列都设置为0，则默认为两行的 -->
+      <!-- id是用来和label结合 -->
+    </label>
+    <!-- 选项列表 -->
+    <!-- multiple可以让用用户通过ctrl键来多选 ;size是显示多少项-->
+    <select name="fruits" id="" multiple size="2">
+      <option value="apple" selected>苹果</option>
+      <option value="banana">香蕉</option>
+      <option value="orange">橘子</option>
+    </select>
+  </form>
+
+</body>
+
+</html>

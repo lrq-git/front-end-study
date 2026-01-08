@@ -8,7 +8,32 @@
 </head>
 
 <body>
-  <button>我是按钮 </button>
+  <!-- 注意：表单元素要放在form元素的后代 -->
+  <form action="">
+    <input type="text">
+    <input type="data">
+    <!-- <button>我是按钮 </button> -->
+    <!-- 用input实现按钮的效果 -->
+    <div>
+      <input type="button" value="普通按钮">
+      <button>普通按钮</button>
+    </div>
+    <!-- 一般不会用input实现普通按钮 -->
+    <!-- reset的行为：可以对form的其他表单元素进行重置 -->
+    <div>
+      <input type="reset" value="重置按钮">
+      <button type="reset">重置按钮</button>
+      <!-- button也可以设置为重置按钮 -->
+    </div>
+    <!--submit的行为：可以对form的其他表单元素进行提交（将数据提交给服务器-->
+    <div>
+      <input type="submit" value="提交按钮">
+      <button type="submit">提交按钮</button>
+    </div>
+
+
+  </form>
+
 </body>
 
 </html>

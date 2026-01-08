@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <form action="/abc">
+    <!-- 在类型为radio的input中，如果name一样，纳米两个radio就会互斥 -->
+    <label for="male">
+      <input id="male" type="radio" name="sex" value="male">男
+    </label>
+    <label for="female">
+      <input id="female" type="radio" name="sex" value="female">女
+    </label>
+    <!-- value是传过去的值，name是key -->
+    <!-- 要实现单选框，互斥，要加name -->
+    <button type="submit">提交按钮</button>
+
+    <!-- 多选框 -->
+    <div>
+      您的爱好：
+      <label for="football">
+        <input id="football" type="checkbox" name="hobby" value="football" selected>足球
+      </label>
+      <label for="basketball">
+        <input id="basketball" type="checkbox" name="hobby" value="basketball">蓝球
+      </label>
+    </div>
+
+  </form>
+</body>
+
+</html>

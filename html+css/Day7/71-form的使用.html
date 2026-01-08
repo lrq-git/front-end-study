@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <!-- url:http://hongyuancoder.com/abc?key='aaa' -->
+  <form action="" method="post" target="_blank">
+    <!-- 现在直接通过form的action提交是比较少的 -->
+    <!-- 如果不想让信息出现在url里面，用post请求可以不显示 -->
+    <!-- action填写对应服务器的地址 -->
+    <div>
+      <label for="username">
+        用户：<input id="username" type="text" name="username">
+        <!-- 这里不用写value，用户输入的信息就会是value -->
+      </label>
+    </div>
+    <div>
+      <label for="password">
+        密码：<input id="password" type="password" name="password">
+      </label>
+    </div>
+    <!-- 单选框：性别 -->
+    <div>
+      性别：
+      <label for="male">
+        <input id="male" type="radio" name="sex" value="male" selected>男
+      </label>
+      <label for="female">
+        <input id="female" type="radio" name="sex" value="female">女
+      </label>
+    </div>
+    <!-- 多选框：爱好 -->
+    <div>
+      <label for="basketball">
+        <input id="basketball" type="checkbox" name="hobby" value="basketball">篮球
+      </label>
+      <label for="football">
+        <input id="football" type="checkbox" name="hobby" value="football">足球
+      </label>
+    </div>
+    <button type="reset">重置按钮</button>
+    <button type="submit">提交按钮</button>
+    <!-- 提交表单 -->
+  </form>
+</body>
+
+</html>

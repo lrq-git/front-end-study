@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    :root {
+      /* 根元素 */
+      font-size: 20px;
+    }
+
+    /* 元素内容为空 */
+    :empty {
+      width: 50px;
+      height: 50px;
+      background-color: #f00;
+    }
+
+    /* 需求：选择box中的div元素，并且是第三个子元素 */
+    .box>div:nth-child(3) {
+      /* 找div元素，且是第三个子元素*/
+      color: red;
+    }
+
+    /* 选择box中的第三个div元素（排除所有干扰项 */
+    /* 如果忽略干扰项，只找里面的第三个div元素 */
+    .box>div:nth-of-type(3) {
+      /* 找div元素，且是第三个子元素*/
+      color: green;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="box">
+    <div>我是列表1</div>
+    <p>我是p元素</p>
+    <!-- p元素会默认有外边距 -->
+    <!-- 一般情况下没有干扰项 -->
+    <div>我是列表2</div>
+    <div>我是列表3</div>
+    <div>我是列表4</div>
+    <div>我是列表5</div>
+    <div>我是列表6</div>
+    <div>我是列表7</div>
+    <div>我是列表8</div>
+    <div>我是列表9</div>
+    <div>我是列表10</div>
+  </div>
+  <div></div>
+</body>
+
+</html>

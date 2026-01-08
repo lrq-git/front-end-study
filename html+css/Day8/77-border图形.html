@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .box {
+      width: 100px;
+      height: 100px;
+      background-color: #f00;
+      box-sizing: border-box;
+      border: 30px solid orange;
+      border-left-color: blueviolet;
+      border-right-color: blue;
+      border-bottom-color: aqua;
+
+    }
+
+    .box1 {
+      width: 100px;
+      height: 100px;
+      /* background-color: #f00; 背景色不设置时候默认是透明色*/
+
+      box-sizing: border-box;
+      border: 50px solid orange;
+      border-left-color: transparent;
+      border-right-color: transparent;
+      border-bottom-color: transparent;
+      /* 这样可以画一个三角形 */
+      /* 旋转 */
+      transform-origin: center 25%;
+      /* 设置旋转的轴心 */
+      transform: rotate(180deg);
+      /* 默认旋转的轴心是中间的点 */
+    }
+  </style>
+</head>
+
+<body>
+  <div class="box"></div>
+  <div class="box1"></div>
+
+</body>
+
+</html>

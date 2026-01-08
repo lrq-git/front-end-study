@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    @font-face {
+      font-family: "iconfont";
+      src: url("./fonts02/iconfont.ttf");
+    }
+
+    /* 一般会专门写一个类 */
+    .iconfont {
+      font-family: "iconfont";
+      /* 这一行是使用 */
+      font-style: normal;
+      /* font-size: 100px;这个一般要单独放一个类 */
+    }
+
+    .music::before {
+      content: "\e76e";
+    }
+  </style>
+</head>
+
+<body>
+  <i class="iconfont">&#xe7a6;</i>
+  <i class="iconfont">&#xe794;</i>
+  <!-- 不适用字符实体进行展示 -->
+  <i class="music iconfont"></i>
+</body>
+
+</html>

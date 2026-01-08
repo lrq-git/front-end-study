@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    ul li:nth-child(3) {
+      color: red;
+    }
+
+    /* 这个n不可以改变，n是从零开始，表明偶数项 */
+    ul li:nth-child(2n) {
+      font-size: 30px;
+    }
+
+    /* 选择偶数项even;奇数项是odd */
+    ul li:nth-child(2n+1) {
+      font-size: 10px;
+    }
+
+    div>div:nth-child(4n+1) {
+      color: orange;
+    }
+
+    div>div:nth-child(4n+2) {
+      color: purple;
+    }
+
+    div>div:nth-child(4n+3) {
+      color: red;
+    }
+
+    div>div:nth-child(4n) {
+      color: blue;
+    }
+
+    /* 选择前几个 */
+    div>div:nth-child(-n+5) {
+      font-size: 20px;
+    }
+
+    /* 选择后几个 */
+    div>div:nth-last-child(-n+2) {
+      background-color: red;
+    }
+  </style>
+</head>
+
+<body>
+  <ul>
+    <li>列表元素1</li>
+    <li>列表元素2</li>
+    <span>123</span>
+    <li>列表元素3</li>
+    <li>列表元素4</li>
+    <li>列表元素5</li>
+  </ul>
+  <ul>
+    <li>列表元素1</li>
+    <li>列表元素2</li>
+    <li>列表元素3</li>
+    <li>列表元素4</li>
+    <li>列表元素5</li>
+  </ul>
+
+  <div>
+    <div>盒子元素1</div>
+    <div>盒子元素2</div>
+    <div>盒子元素3</div>
+    <div>盒子元素4</div>
+    <div>盒子元素5</div>
+    <div>盒子元素6</div>
+    <div>盒子元素7</div>
+    <div>盒子元素8</div>
+    <div>盒子元素9</div>
+    <div>盒子元素10</div>
+  </div>
+</body>
+
+</html>

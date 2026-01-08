@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .text {
+      position: relative;
+      /* 相对定位，还是在标准流中，会占据空间 ，但可以激活了四个属性来，调整位置（不会影响别的元素）*/
+      /* 当设置了这四个属性，就会把这个元素当成脱离标的元素 */
+      left: 30px;
+      top: 30px;
+      /* top:往下走 */
+      /* 相对于原来位置的左上角 */
+      /* 相对定位的应用场景：在不影响其他元素位置的前提，对当前元素位置进行微调 */
+    }
+  </style>
+</head>
+
+<body>
+  <!-- 定位可以从正常的文档流布局中取出元素，并使他们
+ 1.放在一个元素的上面
+ 2.始终保持在浏览器视窗内的同一个位置 
+ position:1.static(默认值)在标准流（nornal flow)里面,left top bottom right不起任何作用
+ 以下的值，可以让元素成为定位元素
+          2.relative（相对定位）
+          3.absolute（绝对定位）
+          4.fixed（固定定位）
+          5.sticKy（粘性定位）-->
+  <span>我是元素</span>
+  <strong class="text">我是strong元素</strong>
+  <img src="./images/topbar_sprite.png" alt="">
+  <div>我是div元素</div>
+</body>
+
+</html>

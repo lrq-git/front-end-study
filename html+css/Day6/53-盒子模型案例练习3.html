@@ -17,6 +17,8 @@
       /* 注意外部样式表和内部样式表，没有谁有限起作用，其优先级还是看选择器权重决定，如果选择器权重一致，谁后谁起作用 */
     }
 
+    /* inline：默认宽度为内容决定，受父元素宽度的限制
+    inline-block默认宽度也为内容决定，但不受父元素宽度限制 */
     .item {
       width: 308px;
       margin: 0 auto;
@@ -29,10 +31,11 @@
     }
 
     .item .info a {
-      /* 前面给a元素设置为inline-block,所以导致宽度没有定下来 */
       width: 100%;
-      /* 没有隐藏的解决方案，后面会总结 */
+      /* 行内块元素，宽度width:auto，仅包裹内容（不受父元素限制）
+       inline：width:auto 的宽度为包裹内容  受父元素宽度限制*/
     }
+
 
     .item .info p {
       font-size: 15px;
@@ -62,17 +65,18 @@
       /*  伪元素是行内非替换元素 
       content: url(./images/bilibili.svg);
       display: inline-block;
-       无法改正大小 
-      width: 16px;
+      无法改正大小:因为content:url()引入的图片是行内替换元素，默认尺寸由其本身的固定宽高决定的，设置的宽高会被忽略掉
+      也就是固有尺寸的优先级高，直接设置的width height无效
+       width: 16px;
       height: 16px;
-      如果要微调，用相对定位 
-      position: relative;
+      如果要微调，用相对定位 position: relative;
       top: 2px */
       content: '';
       display: inline-block;
       width: 20px;
       height: 20px;
       background: url(./images/bilibili.svg) no-repeat center;
+      /* 这个是推荐图标的放置方法 */
       background-size: contain;
       position: relative;
       top: 5px;

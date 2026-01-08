@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .text {
+      position: fixed;
+      /* 不占空间（脱标） */
+      /* left: 0;
+      right: 0; */
+      right: 30px;
+      top: 30px;
+      /* 随着浏览器滚动，这个元素也不动 */
+      /* 这个东西非常常用 ，保持元素在浏览器视口的固定位置*/
+    }
+
+    /* 画布和视口的区别
+    视口：文档的可视区域
+    画布：渲染文档的区域 ，文档内容超出视口范围，可以通过滚动查看*/
+  </style>
+</head>
+
+<body>
+  <!-- fixed:脱离标准流
+ 可以通过四个属性设置，定位参照对象是视口（viewpoint) -->
+  <span>我是span元素</span>
+  <strong class="text">我是strong元素</strong>
+  <img src="./images/topbar_sprite.png" alt="">
+  <div>我是div元素</div>
+  <br><br><br><br><br><br><br><br>
+  <br><br><br><br><br><br><br><br>
+  <br><br><br><br><br><br><br><br>
+  <br><br><br><br><br><br><br><br>
+</body>
+
+</html>

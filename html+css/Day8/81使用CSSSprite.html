@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    div {
+      background-color: #333;
+    }
+
+    .topbar {
+      background-image: url(./images/topbar_sprite.png);
+      background-repeat: no-repeat;
+      /* 注意：如果元素不设置宽高则，背景显示不出来 */
+      display: inline-block;
+    }
+
+    i.hot-icon {
+      background-position: -192px 0;
+      width: 26px;
+      height: 13px;
+      /* http://www.spritecow.com/可以确定精灵图里面图标的位置 */
+    }
+
+    i.logo-icon {
+      background-position: 0 -19px;
+      width: 157px;
+      height: 33px;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- 1.img
+ 2.bgi
+ 3.border
+ 4.字体图标
+ 5. 精灵图
+ 6.svg-->
+  <div>
+    <i class="topbar hot-icon"></i>
+    <i class="topbar logo-icon"></i>
+  </div>
+
+</body>
+
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .container {
+      width: 1000px;
+      height: 800px;
+      background-color: #f00;
+      /* position: fixed;如果这样设置就脱标了 
+      如果此时不设置top,这个不占空间的不会浮上去*/
+      position: relative;
+      top: 0;
+    }
+
+    .box {
+      width: 600px;
+      height: 400px;
+      background-color: green;
+      position: relative;
+      top: 0;
+    }
+
+    /* 相对定位：在标准流中相对原来位置进行微调，不影响其他元素，占据空间
+       固定定位:脱离标准流，相对于视口的位置是固定的，不随着浏览器滚动而滚动
+        绝对定位：脱离标准流
+        （如果脱离标准流，后面的元素会往前）*/
+
+    strong {
+      position: absolute;
+      /* 定位参照对象是最邻近定位祖先元素，如果找不到，就是视口
+      left,right等是距离参考对象的左边或者右边距离多少值 */
+      right: 0;
+      top: 0;
+      /* 距离右边0，距离上面0 */
+    }
+
+    img {
+      width: 100px;
+      height: 100px;
+    }
+  </style>
+</head>
+
+<body>
+  <div>哈哈哈哈哈</div>
+  <div class="container">
+    <div class="box">
+      <span>我是span元素</span>
+      <strong>我是strong元素</strong>
+      <img src="./images/02.png" alt="">
+      <!-- 行内替换元素的大小不会受父元素的限制，图片的原有尺寸优先 -->
+      <div>我是div元素</div>
+      <!-- 注意这个div独占一行，不会和前面的行内元素共同占一行 -->
+    </div>
+  </div>
+  <div>呵呵呵呵</div>
+
+
+
+</body>
+
+</html>

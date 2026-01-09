@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    /* 知识点：1.如果希望绝对定位元素的宽高和定位参照对象一样，可以给绝对定位元素设置
+    left: 0; right: 0; bottom: 0; top: 0; margin:0;(也可以直接设置100%)
+    2.如果希望绝对定位元素在定位参照对象中居中显示一样，可以给绝对定位元素设置
+    left: 0; right: 0; bottom: 0; top: 0; margin:auto,还要必须设置宽高
+    注意：有人尝试800=200+ml0+mr0+auto+auto,此时 无法使元素居中，因为auto不是就一定居中，他是表明交给浏览器决定
+    3.width:auto:
+    1)行内非替换元素——width:是包裹内容
+    2）块级元素——width:包含块的宽度（父级元素宽度）
+    3）绝对定位元素——width:是包裹内容
+    如果设置width:auto或者不设置宽度的时候，行内级元素的宽度会受父级元素的限制，而行内块级元素宽度不受父级限制*/
+    .box {
+      width: 800px;
+      height: 300px;
+      background-color: #f00;
+      position: relative;
+    }
+
+    /* 让某个元素在父级元素盒子里面 垂直水平居中（兼容性很好）flex布局兼容性不好，vertical-align不是真正垂直居中*/
+    .container {
+      height: 100px;
+      background-color: #0f0;
+      /* 如果不设置宽度，块级元素的也是width:auto,它的宽度会继承父元素*/
+      width: 200px;
+      /* width: 100%; */
+      /* 800=200+0+0+？+?(这个要看浏览器了) */
+      /* 如果不设置宽度，800=auto+0+0+0+0 */
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      top: 0;
+      /* 变成定位元素以后：red box width=green box width +left +right+margin-left +margin-right */
+      margin: auto;
+      /* 垂直方向：800=100+0+0+auto+auto */
+      /* 这个也可以让定位元素在包含块里面水平居中 水平方向：800=200+0+0+auto+auto*/
+      /* 父级元素宽度=块级宽度+margin-left+margin-right */
+    }
+
+    .box2 {
+      margin-top: 200px;
+      height: 100px;
+      background-color: #333;
+      /* 一再强调块级盒子如果不设置高度，他的背景就不显示 
+      此时没有设置宽度，他是块级元素，他的宽度是默认的width:auto，他独占一行的效果，就是因为浏览器给auto表明是继承父元素的宽度*/
+    }
+  </style>
+</head>
+
+<body>
+  <div class="box">
+    <div class="container"></div>
+  </div>
+  <div class="box2"></div>
+</body>
+
+</html>

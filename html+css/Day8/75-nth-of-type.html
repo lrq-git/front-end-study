@@ -6,17 +6,26 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
   <style>
+    /* 注意：:empty 判断的是“DOM 是否存在子节点”，而不是“视觉上有没有内容”。
+换行、空格、注释都会影响它的匹配结果，因此全局使用 :empty 很容易出现“多出红色盒子”的情况。 */
     :root {
       /* 根元素 */
       font-size: 20px;
     }
 
     /* 元素内容为空 */
-    :empty {
+    /* :empty {
+      width: 50px;
+      height: 50px;
+      background-color: #f00;
+    } */
+    .box+div:empty {
       width: 50px;
       height: 50px;
       background-color: #f00;
     }
+
+    /* 一般不要设置全局的:empty,由于浏览器解析的规则，会出现其他的空元素 */
 
     /* 需求：选择box中的div元素，并且是第三个子元素 */
     .box>div:nth-child(3) {
@@ -50,6 +59,23 @@
     <div>我是列表10</div>
   </div>
   <div></div>
+  <!-- 为什么在chrome浏览器中运行的时候会出现不止一个空元素：
+    空元素：元素 内部不能有任何子节点，包括：文本节点（哪怕是一个换行、空格）、注释节点元素节点（空格和换行也算内容）
+    :empty 选择的是 DOM 层面完全没有子节点的元素
+而不是你“肉眼看到的空”
+因此：
+你最后的 <div></div> 
+可能还有被浏览器解析为“无子节点”的元素 
+所有这些都会变成 红色 50×50 的盒子
+浏览器解析 HTML 时，会把这些换行/空格当作“文本节点”
+
+但注意：
+有些元素在不同浏览器或不同 DOM 修正过程中，会被解析成“空元素”
+尤其是以下情况更容易触发：
+HTML 自动补全
+DOM 树重排
+开发者工具显示与真实 DOM 不完全一致
+Chrome 在解析时，会把某些“结构性元素”视为 真正的空元素，于是它们就被 :empty 选中了。-->
 </body>
 
 </html>

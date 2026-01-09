@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    /* 知识点：绝对定位的定位参照对象是最邻近定位祖先元素（不要记子绝父相 ，子绝父绝也可以）
+    子绝父相：如果希望子元素相对于父元素进行定位，父元素不脱标成为定位元素*/
+    /* 需求绿色盒子在红色盒子的右下角，strong元素在绿色盒子的左下角 
+    注意：先整体后局部*/
+    .container {
+      width: 800px;
+      height: 800px;
+      background-color: #f00;
+      position: relative;
+    }
+
+    .box {
+      width: 500px;
+      height: 500px;
+      background-color: green;
+      position: absolute;
+      bottom: 0;
+      right: 0;
+    }
+
+    strong {
+      position: absolute;
+      left: 0;
+      bottom: 0;
+    }
+
+    img {
+      width: 100px;
+      height: 100px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+    <div class="box">
+      <span>我是span元素</span>
+      <strong>我是strong元素</strong>
+      <img src="./images/02.png" alt="">
+      <div>我是div元素</div>
+    </div>
+  </div>
+
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    /* 如果不是兄弟元素，从元素自己和祖先元素中，找出最邻近的2个定位元素进行比较 */
+    .item {
+      position: fixed;
+      width: 100px;
+      height: 100px;
+      left: 0;
+      top: 0;
+      background-color: red;
+    }
+
+    .box2 {
+      left: 20px;
+      top: 20px;
+      background-color: green;
+      z-index: -1;
+    }
+
+    .box3 {
+      left: 40px;
+      top: 40px;
+      background-color: blue;
+    }
+
+    .info {
+      position: absolute;
+      z-index: 999;
+      /* 不会出来，因为这个和其他的box不是一个层级的 */
+    }
+  </style>
+</head>
+
+<body>
+  <div class="item box1">1</div>
+  <div class="container">
+    <div class="item box2">
+      <div class="info">hahaha</div>
+      <div>heheh</div>
+    </div>
+  </div>
+  <div class="item box3">3</div>
+</body>
+
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .box {
+      background-color: red;
+      /* 如果不设置宽高，box盒子有宽度默认为独占一行 ，高度由内容决定*/
+      /* position: absolute;如果只给这个盒子设置绝对定位，则他的宽高有内容决定 ，不区分是行内级还是块级元素*/
+    }
+
+    .box strong {
+      position: absolute;
+      /* 不给父元素汇报宽高，如果父元素没有设置宽高，则可能不见，因为块级和行内级元素的高度都由内容决定 */
+      /* 现在是相对于视口 */
+    }
+  </style>
+</head>
+
+<body>
+  <div class="box">
+    <strong>
+      <span>我是strong元素</span>
+      <i>我是i元素</i>
+    </strong>
+  </div>
+</body>
+
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+    }
+
+    /* 解决原来很多dib盒子的水平排布（左右）浮动：float:none;left;right
+    浮动可以指定一个元素在容器中放置在左侧或者右侧 ，允许文本和内联元素环绕
+    脱离标准流*/
+    .item1,
+    .item2 {
+      background-color: red;
+    }
+
+    .item1 {
+      /* 浮动脱标：脱离标准流，能和行内级元素在同一行显示 */
+      float: left;
+      /* 定位脱离标准流，会把2给盖住 */
+      /* position: fixed;
+      left: 0;
+      top: 10px; */
+      background-color: greenyellow;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="item1">1</div>
+  <div class="item2">2</div>
+</body>
+
+</html>

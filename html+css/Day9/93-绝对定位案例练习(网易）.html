@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    /* 重置代码 */
+    /* 只要设置的a元素，然后里面有内容就要重置 */
+    a {
+      text-decoration: none;
+      color: #333;
+    }
+
+    /* 公共的CSS */
+    /* 注意公共的用下划线连接 */
+    .sprite_01 {
+      background-image: url(./images/music_sprite_01.png);
+      display: inline-block;
+    }
+
+    .sprite_02 {
+      background-image: url(./images/music_sprite_02.png);
+      display: inline-block;
+    }
+
+    .sprite_02_icon_music {
+      width: 14px;
+      height: 11px;
+      background-position: 0 -24px;
+    }
+
+    .sprite_02_icon_play {
+      width: 16px;
+      height: 17px;
+      background-position: 0 0;
+    }
+
+    /* 这样抽取 后面很方便*/
+    /* 布局代码 */
+    .item {
+      /* 不给高度给宽度，高度由内容撑起来 */
+      width: 140px;
+      margin: 0 auto;
+    }
+
+    .item .top {
+      /* background-color: red; */
+      /* 如果不设置宽高，宽度是父元素继承，高度由图片的 高度撑起来，但实际上会比图片的高度高一点，这是因为vertical-align导致的 */
+      position: relative;
+    }
+
+    .item .top img {
+      /* 将图片下面多出来的区域去除 */
+      /* vertical-align: top; */
+      /* 默认是baseline */
+      display: block;
+      /* 这样也可以 */
+    }
+
+    /* 现在要实现把一个图片盖到img上面 */
+    .item .top .cover {
+      /* 1.写一个和图片一样大小的盒子 */
+      /* width: 140px;
+      height: 140px; */
+      background-image: url(./images/music_sprite_01.png);
+      background-position: 0 0;
+      /* 2.使用绝对定位脱离文档流进行覆盖 */
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      top: 0;
+      margin: 0;
+      /* 如果只设置这个他会脱离文档流，不设置left,right,等四个属性，他不会覆盖*/
+    }
+
+    .item .top .info {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 27px;
+      padding-left: 10px;
+      /* 实现小图标往右移 */
+      font-size: 12px;
+      color: #ccc;
+      line-height: 27px;
+      /* 注意：行高只能让文本垂直居中，不能让其他元素垂直居中 */
+
+      background-image: url(./images/music_sprite_01.png);
+      background-position: 0 -537px;
+      /* 把精灵图向上移动（注意这个position是移动精灵图 */
+    }
+
+
+
+    /* 这里的图标是通过放一个元素，然后设置背景来实现的 */
+    .item .top .info .icon-music {
+      /* 暂时用绝对定位微调 */
+      position: relative;
+      top: 2px;
+      /* display: inline-block; */
+      /*  width: 14px;
+      height: 11px; */
+      /* background-image: url(./images/music_sprite_02.png); */
+      /* background-position: 0 -24px; */
+    }
+
+    .item .top .info .icon-play {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      right: 10px;
+      margin: auto 0;
+      /* 因为要用bgi，所以要设置宽高，所以设置dib */
+      /* display: inline-block; */
+      /*  width: 16px;
+      height: 17px; */
+      /* background-image: url(./images/music_sprite_02.png); */
+      /* background-position: 0 0; */
+    }
+
+    .item .bottom {
+      display: block;
+      /* 注意改完a元素就要改一下盒子类型 */
+      font-size: 14px;
+      margin-top: 8px;
+    }
+
+    .item .bottom:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- 这个案例里面涉及到的东西非常多，慢慢来多练几遍！代码写规范 -->
+  <div class="item">
+    <div class="top">
+      <img src="./images/music_album01.png" alt="音乐封面">
+      <a class="cover" href="https://music.163.com/#/playlist?id=2218171336"></a>
+      <!--  因为是超链接，这里可以把cover的div换成a-->
+      <div class="info">
+        <i class="icon-music sprite_02_icon_music sprite_02"></i>
+        <span class="count">62万</span>
+        <i class="icon-play sprite_02_icon_play sprite_02"></i>
+      </div>
+    </div>
+    <a class="bottom" href="#">
+      后来你哭了，想安慰却忘了早已换了身份
+    </a>
+  </div>
+</body>
+
+</html>

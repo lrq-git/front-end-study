@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    /* 知识点：绝对定位元素（absolutely positioned element:position:absoluted/fixed) 的特点：
+    1.无论元素类型，可以随意设置宽高
+    2.宽高默认由内容决定
+    3.不受标准流约束（不区分行内级还是块级元素了）
+    4.不给父元素汇报自己的高度
+    5.脱标元素内部默认还是标准流布局 */
+    .container {
+      width: 800px;
+      height: 800px;
+      background-color: #f00;
+      position: relative;
+    }
+
+    .box {
+      width: 500px;
+      height: 500px;
+      background-color: green;
+      position: absolute;
+      bottom: 0;
+      right: 0;
+    }
+
+    strong {
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 200px;
+      height: 40px;
+      text-align: center;
+      line-height: 40px;
+      /* 如果只是是让盒子内的文本进行居中，在这个元素上设置就可以 */
+      background-color: blue;
+    }
+
+    img {
+      width: 100px;
+      height: 100px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="box">
+      <span>我是span元素</span>
+      <strong>我是strong元素</strong>
+      <img src="./images/02.png" alt="">
+      <div>我是div元素</div>
+    </div>
+  </div>
+</body>
+
+</html>

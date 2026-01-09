@@ -6,6 +6,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
   <style>
+    /* 知识点：1.margin有两个问题：1）在父子元素中会有传递问题，左右没有传递问题，上下有（针对块级元素）
+    margin-top:如果父子的顶部重叠，则块级的margin-top会传递给父元素 
+    margin-bottom:如果父子的底部重叠，父元素的高度是auto,则块级的margin-bottom会传递给父元素 
+    解决方案：1.给父元素设置padding来代替
+    2.给父元素设置border
+    3.触发BFC:给父元素设置overflow:auto
+    2）折叠问题：左右不会折叠，上下会折叠，两个值进行比较，选择大的（父子与兄弟都会）
+    2.marigin一般设置兄弟之间，padding一般设置父子元素*/
     body {
       /* 暂时解决方案*/
       font-size: 0;

@@ -6,6 +6,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
   <style>
+    /* 知识点：1.对于相同元素的同一个属性，可以通过不同选择器进行设置，那么属性会被一层一层覆盖，最终只有一个生效
+    2.先看权重，权重大的生效；权重相同时，看顺序，后面的生效
+    3.优先级：！important、内联样式表（style)、id、类与伪类与属性、元素与伪元素、通配符、继承 */
     div.box {
       color: black !important;
       /* 1.权重最高10000 */

@@ -6,6 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
   <style>
+    /* 知识点：伪元素是行内级非替换元素
+    content不能省略，里面可以装文本、路径、为空 */
     .box {
       width: 200px;
       color: white;
@@ -18,7 +20,8 @@
       color: yellow;
     }
 
-    /* 如果内容是中文，则选择的是第一个字 */
+    /* 如果内容是中文，则选择的是第一个字
+    如果是内容是英文，则选择的是第一个字母 */
     .box::first-letter {
       font-size: 30px;
       font-weight: bold;
@@ -38,6 +41,8 @@
       content: "★★★";
       color: orange;
     }
+
+    /* 如果哪个元素添加了这个类，他就会出现这个★★★ */
 
     .item::after {
       content: "456";
@@ -96,7 +101,7 @@
     我是box2 我是box1
   </div>
   <!-- 这样的写法有利于代码的可读性，但是会产生空格！（如果添加了前面元素） -->
-  <!-- 如果空格加在文本开头前，但是前后并没有添加其他盒子或者伪元素，则这个空格不会显示 -->
+  <!-- 如果空格加在文本开头前，但是前后并没有添加其他盒子或者伪元素，则这个空格不会显示 （有一个暂时的解决方案是body加上一个font-size:0px-->
 
   <!-- 开发中如果要给多个盒子加上同一个伪元素会这样操作:item(把要加伪元素的元素，添加一个类item项目) -->
   <div class="box5 item">我是5</div>

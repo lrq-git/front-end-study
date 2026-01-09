@@ -6,6 +6,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
   <style>
+    /* 知识点：1.元素的垂直方向占据空间都是由内容决定的，水平方向占据空间和是否受父元素限制是由元素类型决定
+    2.display设置1）block:独占一行；可以设置宽高，宽度默认为auto,独占一行div、h、p
+                2）inline（行内级非替换元素）:不能设置宽高，宽度默认为文本占据宽度 ，宽度受父元素限制a\span\strong
+                3）inline（行内级替换元素）:能设置宽高，宽度默认为文本占据宽度，img,input，
+                3）inline-block(行内块级)： 能设置宽高，宽度默认为文本占据宽度（不独占一行），宽度不受父元素限制
+    3.块级元素里面可以包含任何其他元素 特殊：P元素里面不能放div元素;行内级元素里面只能包含行内级元素 */
     div {
       background-color: red;
       /* 浏览器通过元素选择器进行设置的，他是先设置的 */

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    /* 注意绝大部分网页内容都在中间 */
+    /* 公共的class */
+    .container {
+      width: 1190px;
+      /* width: 1200px;这样也可以蒙混过关 */
+      margin: 0 auto;
+      background-color: orange;
+      height: 800px;
+    }
+
+    /* 布局样式 */
+    /* 这个方法更常见 */
+    .box {
+      /* 子盒子宽度延伸，往右边延，左边与父元素对齐 */
+      margin-right: -10px;
+      /* box的宽度是auto，由于他是块级盒子他的宽度继承父亲1190
+      父盒子的宽度=子盒子+ml+mr
+      1190=auto+(-10),此时盒子的宽度被强行变成1200 */
+    }
+
+    /* 每一项的宽度高度都写死了 */
+    .item {
+      width: 230px;
+      height: 322px;
+      background-color: purple;
+      color: #fff;
+      /* 浮动 */
+      float: left;
+      margin-right: 10px;
+      /* (1190-230*5)/4 */
+    }
+
+    /* 
+    .item:last-child {
+      margin-right: 0;
+    } */
+    /* .item:nth-child(5n) {
+      margin-right: 0;
+    } */
+
+    /* 注意：浮动的兼容性比较好，但是nth:child这个结构伪类的兼容性较差他比较新 */
+    /*  .item.last-item {
+      margin-right: 0;
+    } */
+    /* 这样没有兼容性问题，麻烦一点 */
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <!-- .item.item${$}*5 -->
+    <div class="box">
+      <div class="item item1">1</div>
+      <div class="item item2">2</div>
+      <div class="item item3">3</div>
+      <div class="item item4">4</div>
+      <div class="item item5 last-item">5</div>
+    </div>
+
+    <div class="item item1">1</div>
+    <div class="item item2">2</div>
+    <div class="item item3">3</div>
+    <div class="item item4">4</div>
+    <div class="item item5 last-item">5</div>
+  </div>
+</body>
+
+</html>

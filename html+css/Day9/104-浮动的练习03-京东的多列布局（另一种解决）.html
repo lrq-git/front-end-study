@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    /* 注意绝大部分网页内容都在中间 */
+    /* 公共的class */
+    .container {
+      width: 1190px;
+      /* width: 1200px;这样也可以蒙混过关 */
+      margin: 0 auto;
+      background-color: orange;
+      height: 800px;
+    }
+
+    /* 布局样式 */
+    .box {
+      /* 让这个box盒子也在中间 */
+      margin: 0 -5px;
+
+
+    }
+
+    /* 每一项的宽度高度都写死了 */
+    .item {
+      width: 230px;
+      height: 322px;
+      background-color: purple;
+      color: #fff;
+      /* 浮动 */
+      float: left;
+      margin: 0 5px;
+
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <!-- .item.item${$}*5 -->
+    <div class="box">
+      <div class="item item1">1</div>
+      <div class="item item2">2</div>
+      <div class="item item3">3</div>
+      <div class="item item4">4</div>
+      <div class="item item5 last-item">5</div>
+    </div>
+
+  </div>
+</body>
+
+</html>

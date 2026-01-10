@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    /* 知识点 ：规则三：浮动元素不能层叠：如果一个元素浮动，另一个浮动元素会紧贴着前一个浮动元素（左浮找左浮）；如果水平方向剩余的空间不够，则后面的浮动元素会向下移动*/
+    /* 这样可以做网页水平排布的效果 */
+    .container {
+      width: 500px;
+      height: 500px;
+      background-color: orange;
+    }
+
+    .item {
+      background-color: #f00;
+      width: 100px;
+      height: 100px;
+    }
+
+    .box1 {
+      float: left;
+      /* position: relative;会占据位置还是在文档流里面 */
+      /* position: absolute;这个会完全脱标 */
+      background-color: green;
+      margin-left: 20px;
+    }
+
+    .box2 {
+      float: left;
+    }
+
+    .box3 {
+      float: left;
+    }
+
+    .box4 {
+      width: 200px;
+      height: 100px;
+      background-color: purple;
+      float: left;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="item box1">1</div>
+    <div class="item box2">2</div>
+    <div class="item box3">3</div>
+    <div class="item box4">4</div>
+
+  </div>
+
+</body>
+
+</html>

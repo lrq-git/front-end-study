@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    /* 1.样式的重置 */
+    ul,
+    li {
+      padding: 0;
+      margin: 0;
+      list-style: none;
+    }
+
+    a {
+      text-decoration: none;
+      color: #333;
+    }
+
+    /* 2.全局设置 */
+    body {
+      background-color: #f2f2f2;
+    }
+
+    /* 3.内容加样式 */
+    ul>li {
+      /*   background-color: #fff;
+      border-radius: 6px; */
+      /* 注意以后边框圆角与背景颜色设置在同一个元素上 */
+      float: left;
+      margin-left: 11px;
+    }
+
+    /* 注意设置宽高，最好给a设置 */
+    ul>li>a {
+      display: inline-block;
+      width: 36px;
+      height: 36px;
+      text-align: center;
+      line-height: 36px;
+      background-color: #fff;
+      border-radius: 6px;
+      /* 注意以后边框圆角与背景颜色设置在同一个元素上 */
+      /* border-radius: 6px; */
+      /* 注意，如果在这里设置的话，看不出效果 */
+      color: #3951b3;
+      font-size: 14px;
+    }
+
+    ul>li>a:hover,
+    ul>li.active>a {
+      color: #fff;
+      background-color: blue;
+    }
+
+    ul>li.next>a {
+      width: 80px;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- 结构 -->
+  <ul>
+    <li class="item"><a href="#">1</a></li>
+    <li class="item"><a href="#">2</a></li>
+    <li class="item"><a href="#">3</a></li>
+    <li class="item"><a href="#">4</a></li>
+    <li class="item"><a href="#">5</a></li>
+    <li class="item"><a href="#">6</a></li>
+    <li class="item active"><a href="#">7</a></li>
+    <li class="item"><a href="#">8</a></li>
+    <li class="item"><a href="#">9</a></li>
+    <li class="item"><a href="#">10</a></li>
+    <li class="item next"><a href="#">下一页&gt;</a></li>
+
+  </ul>
+</body>
+
+</html>

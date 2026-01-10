@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    /* 注意flex-flow属性是flex-deriction和flex-wrap的简写 ，也可以都省略 */
+    .container {
+      width: 500px;
+      height: 500px;
+      background-color: orange;
+      display: flex;
+      /* 决定item在交叉轴上的对齐方式 */
+      align-items: normal;
+      /* flex-start,flex-end,center(这个可以做到元素在盒子里面垂直居中)，baseline(基线对齐) */
+    }
+
+    .item {
+      width: 120px;
+      height: 120px;
+      background-color: #f00;
+    }
+
+    .item1 {
+      height: 80px;
+    }
+
+    .item2 {
+      height: 150px;
+    }
+
+    .item3 {
+      height: 60px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="item item1">1</div>
+    <div class="item item2">2</div>
+    <div class="item item3">3</div>
+    <div class="item item4">4</div>
+
+
+  </div>
+</body>
+
+</html>

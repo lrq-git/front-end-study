@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    /* 注意flex-flow属性是flex-deriction和flex-wrap的简写 ，也可以都省略 */
+    .container {
+      width: 500px;
+      height: 500px;
+      background-color: orange;
+      display: flex;
+
+      justify-content: flex-end;
+      /* flex-start元素与main start对齐
+      flex-end让元素与main end对齐
+      center居中对齐 (三个元素之间没有距离）
+      spac-betweem:两端元素分别与main-stat,main-end对齐，其余元素空隙等分(两端各放一个元素，其他与多余的元素空间等分
+      space-evently:两端也有空隙，并且所有的空间进行等分
+      space-around:两端也有间距，这个间距是item之间间距的一半*/
+    }
+
+    .item {
+      width: 120px;
+      height: 120px;
+      background-color: #f00;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="item item1">1</div>
+    <div class="item item2">2</div>
+    <div class="item item3">3</div>
+
+  </div>
+</body>
+
+</html>

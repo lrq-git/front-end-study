@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    /* 高度塌陷问题：父元素计算高度的时候，不会计算浮动子元素的高度，导致了高度塌陷问题 
+    清浮动（让父元素计算总高度的时候，把浮动子元素的高度算进去）
+    清除浮动的方法：
+    1.给父元素设置固定的高度（扩展性不好），如果后面加item，还要重新计算
+    2.在父元素最后增加一个空的块级子元素，并且clear：both
+    这样会增加无意义的空标签，维护麻烦，（CSS产生的问题，通过HTML元素解决）违反了结构和样式分离的原则
+    3.最终解决方法：给父元素添加伪元素,注意要把伪元素的类型改为块级元素
+    
+    clear:给元素指定是否移动到在他之前的浮动元素下面
+    clear：left(要求元素顶部低于之前生成的所有左浮动元素的底部）；right；both；none
+    如果设置了, 他的的父盒子也可以不用设置高度，背景色也可以显示*/
+    .content {
+      width: 1190px;
+      margin: 0 auto;
+      /* 可以不设置高度 */
+      background-color: #f00;
+      /* height: 1000px; */
+      /* 后面的高度不会写死，动态计算 */
+      /* 注意，浮动元素也是脱离了标准流，不给父元素汇报高度,如果他后面的元素设置了清除浮动，则这个背景就可以显示出来 */
+    }
+
+    .wrapper {
+      margin-right: -10px;
+    }
+
+    .item {
+      width: 290px;
+      background-color: purple;
+      float: left;
+      margin-right: 10px;
+      margin-bottom: 10px;
+
+    }
+
+    .item.left {
+      height: 370px;
+    }
+
+    .item.right {
+      height: 180px;
+    }
+
+    .other {
+      height: 100px;
+      background-color: #0f0;
+    }
+
+    /*   .line {
+      height: 0px;
+       这样这个线就不会显示 
+    background-color: skyblue;
+    clear: both;
+    }
+    */
+    /* 最终解决方案：增加伪元素 */
+    .clear-fix::after {
+      /* 伪元素是行内级非替换元素 */
+      display: block;
+      content: "";
+      clear: both;
+      /* 有些有浏览器你只要加了伪元素一定会显示内容，所以增加兼容性 */
+      visibility: hidden;
+      /* 浏览器兼容 */
+      height: 0;
+      /* 浏览器兼容 */
+    }
+
+    /* .clear-fix {
+      *zoom: 1;
+       兼容IE6/7 但对于现代浏览器，它可能会引起意料之外的布局问题。所以不推荐继续使用
+    } */
+  </style>
+</head>
+
+<body>
+  <!-- 注意float>flex>grid,其中float的兼容性是最强的 -->
+  <!-- 现在移动端PC端，一般公司都用flex布局 -->
+  <div class="content">
+    <!-- 注意有六个元素 -->
+    <div class="wrapper clear-fix">
+      <div class="item left"></div>
+      <div class="item left"></div>
+      <div class="item right"></div>
+      <div class="item right"></div>
+      <div class="item right"></div>
+      <div class="item right"></div>
+      <!-- <div class="line"></div> -->
+      <!-- 脱标元素会覆盖在标准流的上方 -->
+    </div>
+  </div>
+  <div class="other"></div>
+  <!-- 如果对这个线添加clear,则他就会在浮动元素的下面，有他是在标准流里面的，后面的元素就会放在这个元素后面 -->
+</body>
+
+</html>

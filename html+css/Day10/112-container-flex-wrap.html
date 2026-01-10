@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    /* 注意flex-flow属性是flex-deriction和flex-wrap的简写 ，也可以都省略 */
+    .container {
+      width: 500px;
+      height: 500px;
+      background-color: orange;
+      display: flex;
+      /* flex-wrap: nowrap;单行会压缩，默认值
+      元素最终展示出来的宽度和width有关，但是没有必然性 */
+      flex-wrap: wrap;
+      /* flex-wrap: wrap-reverse;很少用 */
+
+
+    }
+
+    .item {
+      width: 120px;
+      height: 120px;
+      background-color: #f00;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="item item1">1</div>
+    <div class="item item2">2</div>
+    <div class="item item3">3</div>
+    <div class="item item1">1</div>
+    <div class="item item2">2</div>
+    <div class="item item3">3</div>
+  </div>
+</body>
+
+</html>

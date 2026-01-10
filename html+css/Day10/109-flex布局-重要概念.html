@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .box {
+      /* display: flex; */
+      display: inline-flex;
+      /* 把这个盒子变成flex container,
+      flex：块级盒子的flex-container
+       inline-flex：行内级盒子的flex-container */
+      background-color: red;
+    }
+  </style>
+</head>
+
+<body>
+  aaa
+  <div class="box">
+    <!-- 里面的项是flex item，不严格区分块级和行内级，默认情况下是包裹内容，可以设置宽高 -->
+    <div class="item">1</div>
+    <div class="item">2</div>
+    <div class="item">3</div>
+  </div>
+  bbb
+</body>
+
+</html>

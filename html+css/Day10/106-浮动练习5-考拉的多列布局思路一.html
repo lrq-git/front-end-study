@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    /* 这个思路不看 */
+    .content {
+      margin: 0 auto;
+      width: 1100px;
+      height: 800px;
+      background-color: orange;
+    }
+
+    .box {
+      border: 1px solid #000;
+      /* 因为包裹的是浮动元素不给父元素汇报宽度，所以边框有问题 */
+      height: 168px;
+      /* box的宽度没有设置，则是auto，auto+1+1=1100(包含块)
+      所以宽度是1098px */
+      margin-right: -2px;
+      border-right: none;
+      /* 注意这个值是none */
+    }
+
+    .item {
+      width: 220px;
+      height: 168px;
+      float: left;
+      box-sizing: border-box;
+      border-right: 1px solid #000;
+    }
+
+
+
+    /* 他这个多列布局之间间隙不是margin，而是边框 */
+    /* 关于边框思路：
+    1.整体的border1px;.item{border-right:1px},但最后把box的border-right去掉
+    2.所有的item border 1px border-right:none,最后一个加上border-right 
+    3.所有item都由border*/
+  </style>
+</head>
+
+<body>
+  <div class="content">
+    <div class="box">
+      <div class="item">1</div>
+      <div class="item">2</div>
+      <div class="item">3</div>
+      <div class="item">4</div>
+      <div class="item">5</div>
+    </div>
+  </div>
+</body>
+
+</html>

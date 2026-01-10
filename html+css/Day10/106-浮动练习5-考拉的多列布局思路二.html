@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <!-- 总结：1.边框给谁加，2.加上边框之后，宽度如何计算 
+   边框左右不折叠，所以要设置margin负值来进行折叠
+   现在有边框的布局很少了-->
+  <style>
+    /* 这个方案是经常采用的 */
+    .content {
+      margin: 0 auto;
+      width: 1100px;
+      height: 800px;
+      background-color: #ccc;
+    }
+
+    .box {
+      margin-left: 1px;
+    }
+
+    .item {
+      /* width: 220px; */
+      width: 221px;
+      /* 因为有1像素的边框隐藏了 */
+      height: 168px;
+      float: left;
+      background: orange;
+      border: 1px solid #000;
+      margin-left: -1px;
+      /* 虽然float不层叠，但是会折叠因为margin的负值 */
+      /* 或者可以margin-right:-1px ,这样box的就不用设置了*/
+      box-sizing: border-box;
+    }
+
+    .item.first {
+      width: 220px;
+    }
+
+
+
+    /* 他这个多列布局之间间隙不是margin，而是边框 */
+    /* 关于边框思路：
+    1.整体的border1px;.item{border-right:1px},但最后把box的border-right去掉
+    2.所有的item border 1px border-right:none,最后一个加上border-right 
+    3.所有item都由border*/
+  </style>
+</head>
+
+<body>
+  <div class="content">
+    <div class="box">
+      <div class="item first">1</div>
+      <div class="item">2</div>
+      <div class="item">3</div>
+      <div class="item">4</div>
+      <div class="item">5</div>
+    </div>
+  </div>
+</body>
+
+</html>

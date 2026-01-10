@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .content {
+      width: 1190px;
+      margin: 0 auto;
+      /* 可以不设置高度 */
+      background-color: #f00;
+      height: 1000px;
+      /* 后面的高度不会写死，动态计算 */
+      /* 注意，浮动元素也是脱离了标准流，不给父元素汇报高度 */
+    }
+
+    .wrapper {
+      margin-right: -10px;
+    }
+
+    .item {
+      width: 290px;
+      background-color: purple;
+      float: left;
+      margin-right: 10px;
+      margin-bottom: 10px;
+
+    }
+
+    .item.left {
+      height: 370px;
+    }
+
+    .item.right {
+      height: 180px;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- 注意float>flex>grid,其中float的兼容性是最强的 -->
+  <!-- 现在移动端PC端，一般公司都用flex布局 -->
+  <div class="content">
+    <!-- 注意有六个元素 -->
+    <div class="wrapper">
+      <div class="item left"></div>
+      <div class="item left"></div>
+      <div class="item right"></div>
+      <div class="item right"></div>
+      <div class="item right"></div>
+      <div class="item right"></div>
+      <div class="item right"></div>
+      <div class="item right"></div>
+      <div class="item right"></div>
+      <div class="item right"></div>
+      <div class="item right"></div>
+      <div class="item right"></div>
+    </div>
+
+
+  </div>
+</body>
+
+</html>

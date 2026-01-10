@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    /* 注意flex-flow属性是flex-deriction和flex-wrap的简写 ，也可以都省略 */
+    .container {
+      width: 500px;
+      height: 500px;
+      background-color: orange;
+      display: flex;
+
+      /* flex-flow: row-reverse wrap-reverse; */
+      /* 首先判断direction的值：1，判断横着排布还是竖着排布，横row,纵column2,判断方向，是从左到右，还是右到左（加reverse)
+      判断wrap:如果主轴是横轴，从父元素最上面一行开始就是warap,从最下面就是wrap-reverse;如果主轴的纵轴，从父元素左边开始就是warp,从右边开始就是wrap-reverse */
+
+    }
+
+    .item {
+      width: 120px;
+      height: 120px;
+      background-color: #f00;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="item item1">1</div>
+    <div class="item item2">2</div>
+    <div class="item item3">3</div>
+
+  </div>
+</body>
+
+</html>

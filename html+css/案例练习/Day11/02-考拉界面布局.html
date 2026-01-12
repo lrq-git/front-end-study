@@ -10,15 +10,84 @@
   <link rel="stylesheet" href="./CSS/common.css">
   <style>
     .sport {
-      height: 100px;
+      /* height: 100px; */
       margin-top: 20px;
-      background-color: orange;
+      /* background-color: orange; */
+    }
+
+    .sport .item {
+      height: 541px;
+      float: left;
+    }
+
+    .sport .item.left {
+      width: 330px;
+      background-color: purple;
+    }
+
+    .sport .item.center {
+      width: 550px;
+      background-color: skyblue;
+    }
+
+    /* 关于边框的思路：首先给每个盒子加三个边框，并且为border-box */
+    .sport .center .center-item {
+      float: left;
+      width: 275px;
+      height: 271px;
+      box-sizing: border-box;
+      border: 1px solid #000;
+      border-left: none;
+      /* 注意：去掉边框是none */
+
+      background-color: #f00;
+    }
+
+    /* 对于高度，下面的盒子网上挪一个像素，然后每个盒子的高度修改一下，各增加1像素 */
+    .sport .center .center-item:nth-last-child(-n+2) {
+      margin-top: -1px;
+    }
+
+    .sport .item.right {
+      width: 220px;
+      background-color: burlywood;
+    }
+
+    .sport .right .item {
+      float: left;
+      width: 220px;
+      height: 121px;
+
+      background-color: #f00;
+      border: 1px solid #000;
+      border-left: none;
+      box-sizing: border-box;
+      margin-top: -1px;
+    }
+
+    .sport .right .item.header {
+      height: 61px;
+      margin-top: 0;
     }
   </style>
 </head>
 
 <body>
   <div class="kl_wrapper sport">
+    <div class="item left"></div>
+    <div class="item center">
+      <div class="center-item">1</div>
+      <div class="center-item">2</div>
+      <div class="center-item">3</div>
+      <div class="center-item">4</div>
+    </div>
+    <div class="item right">
+      <div class="item header"></div>
+      <div class="item">1</div>
+      <div class="item">2</div>
+      <div class="item">3</div>
+      <div class="item">4</div>
+    </div>
 
   </div>
 </body>

@@ -6,37 +6,38 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
   <style>
-    /* 针对于一行中的高度不一致的元素 */
     /* 注意flex-flow属性是flex-deriction和flex-wrap的简写 ，也可以都省略 */
     .container {
       width: 500px;
       height: 500px;
+      /* 注意一般情况下不会设置死的高度，所以一般没有剩余空间 */
       background-color: orange;
       display: flex;
-      /* 决定item在交叉轴上的对齐方式 */
-      align-items: stretch;
-      /* flex-start,flex-end,center(这个可以做到元素在盒子里面垂直居中)，baseline(基线对齐，文本的基线，可以通过改line-height和字体大小就改变了基线),normal(在flex布局里面nromal的效果与stretch的效果一致），stretch:：当 flex items 在 cross axis 方向的 size 为 auto 时，会自动拉伸至填充 flex container*/
+      flex-wrap: wrap;
+
     }
 
     .item {
       width: 120px;
-      /* height: 120px; */
+      height: 120px;
       background-color: #f00;
     }
 
     .item1 {
-      height: 80px;
-      font-size: 20px;
+      order: 5;
+      height: 90px;
     }
 
     .item2 {
+      order: 3;
+      /* order，决定item的顺序，默认值是零，如果是零，则按照html里面的顺序排布，值越小越被优先排布 */
       height: 150px;
-      font-size: 10px;
 
     }
 
     .item3 {
-      height: 60px;
+      order: 9;
+      height: 120px;
     }
   </style>
 </head>
@@ -46,7 +47,6 @@
     <div class="item item1">1</div>
     <div class="item item2">2</div>
     <div class="item item3">3</div>
-    <div class="item item4">4</div>
 
 
   </div>

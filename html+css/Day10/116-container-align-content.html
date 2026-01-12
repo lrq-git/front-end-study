@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    /* 注意flex-flow属性是flex-deriction和flex-wrap的简写 ，也可以都省略 */
+    .container {
+      width: 500px;
+      height: 500px;
+      /* 注意一般情况下不会设置死的高度，所以一般没有剩余空间 */
+      background-color: orange;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-content: flex-start;
+      /* 这个属性是在多行而且有多余的空间才会用到，在真实的开发里面一般不会设置这个值 */
+      /* 注意这个属性是当多行的时候，把每一行视作为一个item，决定的是不同行之间在交叉轴之间是怎么排布的
+      flex-start,flex-end,center,space-between,space-around,space-evenly，stretch(默认值，只有没有高度的时候才会拉伸) */
+
+    }
+
+    .item {
+      width: 120px;
+      height: 120px;
+      background-color: #f00;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="item item1">1</div>
+    <div class="item item2">2</div>
+    <div class="item item3">3</div>
+    <div class="item item4">4</div>
+    <div class="item item3">5</div>
+    <div class="item item4">6</div>
+    <div class="item item3">7</div>
+    <div class="item item4">8</div>
+
+  </div>
+</body>
+
+</html>

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="./CSS/reset.css">
+  <link rel="stylesheet" href="./CSS/common.css">
+  <style>
+    .dress {
+      /* height: 200px;一般不给高度，是用内容撑起来的 */
+      /* background-color: #f00; */
+    }
+
+    .dress .header {
+      height: 58px;
+      line-height: 58px;
+      /* 注意，我现在想让浮动元素在一行内居中，不用绝对定位那样做，直接设置line-height */
+    }
+
+    /* 注意：默认两个浮动的元素是在一行内顶部对齐的 */
+    .dress .header .left-area {
+      float: left;
+    }
+
+    .dress .header .right-area {
+      float: right;
+      font-size: 14px;
+    }
+
+    .dress .header .right-area .item {
+      margin-left: 10px;
+    }
+
+    .dress .header .right-area .item:hover,
+    .dress .header .right-area .item.active {
+      padding: 3px 0;
+      /* 特殊：上下会被撑起来，但是不占据空间，左右正常会占据空间 */
+      border-bottom: 2px solid rgb(255, 103, 0);
+      color: rgb(255, 103, 0);
+      /* 注意这里不是用下划线来设置的 */
+    }
+
+    /* 列表内容 */
+    .dress .list {
+      margin-right: -14px;
+    }
+
+    .dress .list .item {
+      float: left;
+      position: relative;
+      top: 0;
+      /* box model*/
+      width: 234px;
+      height: 300px;
+      margin-right: 14px;
+      margin-bottom: 14px;
+
+      background-color: #f00;
+      /* 动画 */
+      transition: all 0.3s ease-in;
+      /* 注意，这个动画不要加在hover里面，要加在item里面 */
+    }
+
+    .dress .list .item.item1 {
+      height: 614px;
+    }
+
+    .dress .list .item.item9,
+    .dress .list .item.item10 {
+      height: 143px;
+    }
+
+    .dress .list .item:hover {
+      box-shadow: 0 10px 15px rgba(0, 0, 0, .5);
+      /* 位移动画方案一 */
+      /*  position: relative;
+      top: -2px; */
+      /* 位移动画方案二 */
+      transform: translateY(-5px);
+
+
+    }
+
+    /* 解决为什么放在item里面没有出现小手 */
+    .dress .list .item a {
+      display: inline-block;
+      width: 100%;
+      height: 100%;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="mi_wrapper dress">
+    <div class="header clear_fix">
+      <div class="left-area">
+        <h3 class="title">智能穿戴</h3>
+      </div>
+      <div class="right-area">
+        <a class="item active hot" href="#">耳机</a>
+        <a class="item info" href="#">穿戴</a>
+        <!-- 一旦写a就要清除默认样式 -->
+      </div>
+    </div>
+    <!-- 如果用ul,li是比较规范，div是比较自由的 -->
+    <div>
+      <ul class="list">
+        <li class="item item1"><a href="#">1</a></li>
+        <li class="item item2"><a href="#">2</a></li>
+        <li class="item item3"><a href="#">3</a></li>
+        <li class="item item4"><a href="#">4</a></li>
+        <li class="item item5"><a href="#">5</a></li>
+        <li class="item item6"><a href="#">6</a></li>
+        <li class="item item7"><a href="#">7</a></li>
+        <li class="item item8"><a href="#">8</a></li>
+        <li class="item item9"><a href="#">9</a></li>
+        <li class="item item10"><a href="#">10</a></li>
+      </ul>
+    </div>
+
+  </div>
+</body>
+
+</html>

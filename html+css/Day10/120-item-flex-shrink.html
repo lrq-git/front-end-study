@@ -10,31 +10,36 @@
     .container {
       width: 500px;
       height: 500px;
+      /* 注意一般情况下不会设置死的高度，所以一般没有剩余空间 */
       background-color: orange;
       display: flex;
 
-      justify-content: flex-end;
-      /* flex-start元素与main start对齐
-      flex-end让元素与main end对齐
-      center居中对齐 (三个元素之间没有距离）
-      spac-betweem:两端元素分别与main-stat,main-end对齐，其余元素空隙等分(两端各放一个元素，其他与多余的元素空间等分（用的最多）
-      space-evently:两端也有空隙，并且所有的空间进行等分
-      space-around:两端也有间距，这个间距是item之间间距的一半*/
     }
 
     .item {
       width: 120px;
       height: 120px;
       background-color: #f00;
+      flex-shrink: 0;
+      /* 会不压缩，如果超出的话，没有换行 */
+    }
+
+    .item1 {
+      flex-shrink: 1;
     }
   </style>
 </head>
 
 <body>
+  <!-- 注意flex-shrink的默认值是1，会压缩 -->
   <div class="container">
     <div class="item item1">1</div>
     <div class="item item2">2</div>
     <div class="item item3">3</div>
+    <div class="item item4">1</div>
+    <div class="item item5">1</div>
+
+
 
   </div>
 </body>

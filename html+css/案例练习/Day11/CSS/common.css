@@ -1,0 +1,22 @@
+.mi_wrapper {
+  width: 1226px;
+  margin: 0 auto;
+}
+
+.kl_wrapper {
+  width: 1100px;
+  margin: 0 auto;
+}
+
+.clear_fix::after {
+  content: "";
+  display: block;
+  clear: both;
+
+  height: 0;
+  visibility: hidden;
+}
+
+/* .clear_fix {
+  *zoom: 1;
+}现代浏览器已经不再需要 *zoom: 1 这种兼容性 hack 方法。可以使用更现代且跨浏览器兼容的方法来清除浮动。 */

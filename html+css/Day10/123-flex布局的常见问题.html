@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    /* 知识点：1.container这设置宽度不设置高度
+    2.常见问题的解决：1）把justify-content不要设置，给item的margin-right设置，然后每行最后一个不要设置 */
+    .container {
+      width: 500px;
+      /* height: 500px; */
+      /* 注意一般情况下不会设置死的高度，所以一般没有剩余空间 */
+      background-color: orange;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+
+    .item {
+      width: 140px;
+      height: 140px;
+      background-color: #f00;
+
+    }
+
+    .container>span {
+      width: 140px;
+      /* span没有设置高度就不会显示
+      注意只要container设置了dispaly:flex,他的item不严格区分块级和行内级，可以设置宽高 */
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+    <div class="item item1">1</div>
+    <div class="item item2">2</div>
+    <div class="item item3">3</div>
+    <div class="item item1">1</div>
+    <div class="item item2">2</div>
+    <div class="item item3">3</div>
+    <div class="item item1">1</div>
+    <div class="item item2">2</div>
+    <span></span><span></span><span></span>
+    <!-- span的个数是列数-2 
+     也可以不用span,用i-->
+
+
+  </div>
+</body>
+
+</html>

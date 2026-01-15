@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>网易云的头部</title>
+  <link rel="stylesheet" href="./CSS/reset.css">
+  <link rel="stylesheet" href="./CSS/common.css">
+  <style>
+    .top {
+      height: 70px;
+      background-color: #242424;
+      box-sizing: border-box;
+      border-bottom: 1px solid #000;
+    }
+
+    .topbar {
+      display: flex;
+      justify-content: space-between;
+      /* box-model */
+      height: 69px;
+      /* 因为整个盒子内容占69，还有1像素的border */
+      line-height: 69px;
+      /* 注意align-items:center不可以，这样子盒子的高度就不会是69px */
+      /* font-text */
+      /* 其他 */
+      /* background-color: #f00; */
+    }
+
+    .topbar .bar-left {
+      display: flex;
+    }
+
+    .topbar .bar-left .logo {
+      background-image: url(./images/topbar_sprite.png);
+    }
+
+    .topbar .bar-left .logo a {
+      display: block;
+      /* 所以这个一定要变 */
+      width: 157px;
+      padding-right: 20px;
+      text-indent: -9999px;
+      /* 通常给p元素设置，注意text-indent对行内非替换元素不生效，此时可以设置块级盒子或者行内块盒子，也可以设置浮动 */
+      /* 让a元素中的文字看不见 */
+      /* 因为改了block,由于line-height会继承给所有的子元素，所以此时会生效*/
+    }
+
+    .topbar .bar-left .list {
+      display: flex;
+    }
+
+    .topbar .bar-left .list .item {
+      position: relative;
+      display: block;
+      /* 会独占父元素的宽度 */
+      color: #ccc;
+      font-size: 14px;
+      /* 注意：这个li里面的间距是通过padding撑起来的 */
+      padding: 0 20px;
+    }
+
+    .topbar .bar-left .list .item:hover,
+    .topbar .bar-left .list .item.active {
+      color: #fff;
+      background-color: #000;
+    }
+
+    .topbar .bar-left .list .item.active::after {
+      content: "";
+      position: absolute;
+      /*宽高要设置  */
+      width: 12px;
+      height: 7px;
+      bottom: -2px;
+      left: 0;
+      right: 0;
+      margin: 0 auto;
+      /* 元素在底部，而且水平居中 */
+      background: url(./images/topbar_sprite.png) -226px 0;
+    }
+
+    .topbar .bar-left .list .item .icon-hot {
+      position: absolute;
+      /*  width: 28px;
+      height: 19px; */
+      top: 14px;
+      right: -18px;
+      /* background: url(./images/topbar_sprite.png) -190px 0; */
+    }
+
+    /* 布局右侧 */
+
+
+    .topbar .bar-right {
+      display: flex;
+      align-items: center;
+      padding-right: 20px;
+    }
+
+    .topbar .bar-right .login a {
+      color: #787878;
+      /* 注意这个必须给a设置上，因为a前面有设置 */
+    }
+
+    .topbar .bar-right .login:hover a {
+      color: #ccc;
+    }
+
+    .topbar .bar-right .login a:hover {
+      color: #787878;
+      text-decoration: underline;
+    }
+
+    .topbar .bar-right .anthor a {
+      display: inline-block;
+      width: 90px;
+      height: 32px;
+      margin: 0 20px;
+      line-height: 32px;
+      color: #ccc;
+      text-align: center;
+      box-sizing: border-box;
+      border: 1px solid #4F4F4F;
+      border-radius: 20px;
+    }
+
+    .topbar .bar-right .anthor a:hover {
+      color: #fff;
+      border-color: #fff;
+    }
+
+    .topbar .bar-right .search {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      width: 158px;
+      height: 32px;
+      box-sizing: border-box;
+      padding-right: 10px;
+      border-radius: 16px;
+      background: #fff url(./images/topbar_sprite.png) 0 -99px;
+      /* 注意bgc和bgi是不会冲突的， */
+    }
+
+    .topbar .bar-right .search input {
+      font-size: 12px;
+      width: 118px;
+    }
+
+    /* 如果要用placeholder则想要修改需要通过伪元素 */
+    .topbar .bar-right .search input::-webkit-input-placeholder {
+      color: #ccc;
+    }
+
+    /* topnav */
+    .nav {
+      height: 35px;
+      line-height: 35px;
+      background-color: #c20c0c;
+      box-sizing: border-box;
+      border-bottom: 1px solid #a40011;
+    }
+
+    /* 注意，如果没有内容，虽然line-height继承，但是不起作用 */
+    .navbar {
+      /* background-color: #0f0; */
+      box-sizing: border-box;
+      padding-left: 180px;
+    }
+
+    .navbar .list {
+      display: flex;
+    }
+
+    .navbar .list .item {
+      display: inline-block;
+    }
+
+    .navbar .list .item span {
+      display: inline-block;
+      padding: 0 13px;
+      margin: 7px 17px;
+      height: 20px;
+      line-height: 20px;
+      border-radius: 21px;
+      color: #fff;
+      background-color: #980909;
+    }
+
+    .navbar .list .item:hover span,
+    .navbar .list .item.active span {
+      background-color: #980909;
+    }
+  </style>
+
+</head>
+
+<body>
+  <!-- 每个网站最好有一个h1,一般放在logo里面 -->
+  <div class="top">
+    <div class="topbar wrapper_01">
+      <!-- 下面两个盒子占据整个高度，原因：flex布局，align-items的值是默认为normal（与strench效果一样）,如果此时主轴方向的大小没有设置（继承不算设置），则是auto,则高度会占据父元素的高度 -->
+      <div class="bar-left">
+        <!-- 1.logo
+        如何放置logo 
+       1.img放图片
+       2.放一个a元素然后给设置一个背景
+       （a元素里面也可以放一个img，也可以设置背景图片，但如果是精灵图，则是背景图片，因为要调整位置）
+       注意：在网页开发时候logo经常会h1-a-bgi,有利于seo优化-->
+        <h1 class="logo">
+          <a href="">网易云音乐</a>
+        </h1>
+        <!-- 2.列表 -->
+        <ul class="list">
+          <li><a href="#" class="item active">发现音乐</a></li>
+          <li><a href="#" class="item">我的音乐</a></li>
+          <li><a href="#" class="item">关注</a></li>
+          <li><a href="#" class="item">商场</a></li>
+          <li><a href="#" class="item">音乐人</a></li>
+          <li>
+            <a href="#" class="item ">
+              下载客户端
+              <i class="topbar_sprite topbar_icon_hot icon-hot"></i>
+              <!-- 全局都用下划线，局部用- -->
+            </a>
+          </li>
+          <!-- a元素行内非替换元素，不会继承行高 -->
+        </ul>
+        <!-- h1和ul,li都是块级元素，他们不能在同一行，如果要在同一行就要设置浮动或者flex -->
+      </div>
+
+      <div class="bar-right">
+        <div class="search">
+          <!-- 这里面有一个图标，有两个方法：1.使用伪元素，2.直接设置背景 -->
+          <input type="text" placeholder="音乐/视频/电台/用户">
+
+        </div>
+        <div class="anthor">
+          <a href="#">创作者中心</a>
+        </div>
+        <div class="login">
+          <a href="#">登录</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <div class="nav">
+    <div class="navbar wrapper_01">
+      <Ul class="list">
+        <li><a href="#" class="item"><span>推荐</span></a></li>
+        <li><a href="#" class="item"><span>排行榜</span></a></li>
+        <li><a href="#" class="item"><span>歌单</span></a></li>
+        <li><a href="#" class="item"><span>主播电台</span></a></li>
+        <li><a href="#" class="item"><span>歌手</span></a></li>
+        <li><a href="#" class="item"><span>新碟上架</span></a></li>
+      </Ul>
+    </div>
+  </div>
+</body>
+
+</html>

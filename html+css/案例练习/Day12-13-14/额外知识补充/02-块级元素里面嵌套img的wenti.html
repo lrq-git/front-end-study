@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    /* 块级元素里面的行内级元素默认是基线对齐的，文本也视为行内级元素，因此块级元素里面的图片下面有一点距离，这个与vertical-align有关 */
+    .box {
+      background-color: orange;
+    }
+
+    img {
+      /* 1.解决方案一设置块级元素 */
+      /* display: block;
+      如果设置为块级元素，由于img本身有大小，所以他不会撑满一行 */
+      /* 2.设置vertical-align ,middle top bottom都可以*/
+      vertical-align: middle;
+
+    }
+
+    .box1 {
+      width: 500px;
+      height: 500px;
+      background-color: red;
+    }
+
+    .box2 {
+      display: inline-block;
+      width: 200px;
+      height: 500px;
+      background-color: green;
+    }
+
+    .box3 {
+      display: inline-block;
+      width: 250px;
+      height: 500px;
+      background-color: black;
+    }
+
+    /* 注意，两个盒子如果总宽度超过父盒子的宽度，有一个盒子会下来 */
+  </style>
+</head>
+
+<body>
+  <div class="box">
+    gggbbbb<img src="../images/banner_01.png" alt="">
+  </div>
+  <div class="box1">
+    <div class="box2"></div>
+    <div class="box3"></div>
+  </div>
+</body>
+
+</html>

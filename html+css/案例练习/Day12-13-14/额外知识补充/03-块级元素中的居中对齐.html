@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .box {
+      height: 200px;
+      background-color: blue;
+      line-height: 200px;
+      /* line-height会让div里的文本居中，也可以让inline-block居中
+      因为vertical-align为baseline ,一定会让所有文本基线对齐,因此不一定能够居中*/
+    }
+
+    span {
+      background-color: green;
+      display: inline-block;
+      height: 60px;
+      line-height: 60px;
+      /* 如果我把line-height注释掉，背景与文字分离了，因为line-height会继承，而且，文本一定会基线对齐 */
+      font-size: 50px
+    }
+
+    /* 所以一定不要把盒子改成inline-block，然后水平排布，非常难  对齐 */
+  </style>
+</head>
+
+<body>
+  <div class="box">
+    fafaafa
+    <span>aaaaa</span>
+  </div>
+</body>
+
+</html>

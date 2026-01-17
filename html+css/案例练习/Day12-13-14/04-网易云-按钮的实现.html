@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="./CSS/reset.css">
+  <link rel="stylesheet" href="./CSS/common.css">
+  <style>
+    body {
+      text-align: center;
+      /* 会继承 */
+      padding-top: 50px;
+
+    }
+
+    .apply {
+      display: inline-block;
+      width: 210px;
+      height: 31px;
+      /* 水平垂直居中 */
+      line-height: 31px;
+      text-align: center;
+      font-size: 12px;
+      font-weight: 700;
+      color: #000;
+      /* background-color: #ccc; */
+      box-sizing: border-box;
+      /* border: 1px solid #aaa; */
+      border-radius: 4px;
+      overflow: hidden;
+      /* background: url(./images/button_sprite.png) right -100px no-repeat; */
+      /* background:颜色 图片 位置 / 大小 重复 attachment */
+      /* padding-right: 4px; */
+
+      /* 让文本与圆角之间割一点距离 */
+    }
+
+    .apply>i {
+      /* 要设置距离宽高，以防后面出问题 */
+      display: block;
+      height: 31px;
+      /* background: url(./images/button_sprite.png) 0 -59px; */
+      /* padding-left: 3px; */
+
+    }
+  </style>
+</head>
+
+<body>
+  <!-- 按钮的实现可以使用button或者a -->
+  <a href="#" class="apply btn_sprite btn_type_01_sup">
+    <i class="btn_sprite btn_type_01_sub">申请成为网易音乐人</i>
+  </a>
+  <!-- 其他按钮 -->
+  <a href="#" class="btn_sprite favor btn_type_favor_sup">
+    <i class="btn_sprite btn_type_favor_sub">(3912772)</i>
+  </a>
+
+
+
+
+</body>
+
+</html>

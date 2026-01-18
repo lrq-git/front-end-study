@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .container {
+      width: 300px;
+      height: 300px;
+      background-color: red;
+    }
+
+    .box {
+      /* 块级元素，没有设置宽度，会独占父元素的一行 */
+      height: 200px;
+      background-color: orange;
+      border-right: 30px solid #0f0;
+      /* 这个效果没有超出父元素的盒子，为什么？按理来说他没有设置border-box
+      因为此时没有设置宽度，如果设置了宽度与设置100%时候，则会超出 */
+      padding-right: 10px;
+      /* 也没有把盒子撑出去，因为此时宽度没有设置，则是auto,表明水平上所有东西加起来最终是占父元素的一行 */
+    }
+
+    .container2 {
+      position: relative;
+      width: 300px;
+      height: 300px;
+      background-color: red;
+    }
+
+    .container2 .box2 {
+      position: absolute;
+
+      width: 100px;
+      height: 100px;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      margin: auto;
+      background-color: blue;
+      border: 10px solid #000;
+      /* 如果不设置这个边框可以把盒子撑起来，因为有明确的宽高 */
+    }
+
+    .container2 .box3 {
+      position: absolute;
+
+
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+
+      background-color: blue;
+      border: 10px solid #000;
+      /* 红色盒子是否会撑大，不会，因为此时没有设置宽度和高度，所以设不设置都没有用 */
+    }
+
+    .container3 {
+      position: relative;
+      display: flex;
+      width: 300px;
+      height: 300px;
+      background-color: red;
+    }
+
+    .container3 .box4 {
+      width: 100px;
+      background-color: green;
+      /* 此时没有设置高度，但是会有高度，因为默认align-items是normal，没有设置高度的情况下,会拉伸与父元素高度一致 
+      拉伸的高度不算设置了高度*/
+      border-top: 10px solid #000;
+      /* 此时不会撑起来盒子，因为高度没有设置，还是auto */
+      /* box-sizing: border-box; */
+    }
+
+    .container3 .box5 {
+      flex: 1;
+      /* flex-grow是1，因为设置这个会有宽度
+      因为 默认align-items是normal所以会有高度*/
+      background-color: purple;
+      border: 10px solid skyblue;
+      /* 不会把盒子撑大，会把里面的内容挤，因为宽高是auto */
+    }
+  </style>
+</head>
+
+<body>
+  <!-- 1.块级元素的嵌套 -->
+  <div class="container">
+    <div class="box">22222222222222222222222222222222</div>
+  </div>
+  <!-- 2.定位的案例 -->
+  <div class="container2">
+    <div class="box2"></div>
+  </div>
+  <div class="container2">
+    <div class="box3"></div>
+  </div>
+  <!-- 3.flex的案例 -->
+  <div class="container3">
+    <div class="box4"></div>
+    <div class="box5"></div>
+  </div>
+</body>
+
+</html>

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .container {
+      width: 300px;
+      height: 300px;
+      background-color: orange;
+      display: flex;
+    }
+
+    .box1 {
+      width: 200px;
+      height: 100px;
+      background-color: red;
+      /* flex-shrink: 0; */
+
+    }
+
+    .box2 {
+      width: 200px;
+      height: 100px;
+      background-color: blue;
+      /* flex-shrink: 0; */
+    }
+
+    /* 现象一：如果没有设置任何的属性，如果两个盒子超出了父元素，并不会超出，而是会伸缩，两个盒子都会伸缩 */
+    .box3 {
+      width: 200px;
+      height: 100px;
+      background-color: red;
+    }
+
+    .box4 {
+      flex: 1;
+      /* width: 200px; */
+      height: 100px;
+      background-color: blue;
+      width: 100%;
+
+    }
+
+    /*  这些现象是因为默认会收缩flex-shrink:1;  */
+    /* 对于第二个包含块 */
+    /* 现象二：如果没有设置宽度，这设置了flex1，则表明他占剩下的宽度
+    现象三：如果设置宽度，这设置了flex1，也是占据剩下的宽度
+    现象四：如果设置了宽度100%，设置了flex1,也是占据剩下的宽度 
+    现象五：如果只设置了宽度100%，他占据的宽度是180px*/
+    .box6 {
+      flex: 1;
+      /* width: 200px; */
+      height: 100px;
+      background-color: blue;
+      width: 100%;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    /* 对于第三个包含块
+    现象六：如果只设置了宽度100%，他占据的是300-62 
+    现象七：如果设置了宽度100%，设置了flex1，他占据剩余的宽度
+如果设置宽度，这设置了flex1，也是占据剩下的宽度
+    */
+    .box7 {
+
+      height: 100px;
+      background-color: hotpink;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .box8 {
+      flex: 1;
+      /* width: 200px; */
+      height: 100px;
+      background-color: blue;
+      width: 100%;
+
+    }
+
+    /* 现象一：设置flex: 1，超出了包含块，孙子盒子宽度完全显示
+    现象二：设置flex: 1和width100%,孙子盒子宽度为300 */
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="box1"></div>
+    <div class="box2"></div>
+  </div>
+  <div class="container">
+    <div class="box3"></div>
+    <div class="box4"></div>
+  </div>
+  <div class="container">
+    <div class="box5">
+      <img src="../images/singer01.png" alt="">
+    </div>
+    <div class="box6">哈哈哈啊哈哈哈哈哈哈哈哈哈哈啊哈哈哈哈哈哈哈哈哈哈啊哈哈哈哈哈哈哈哈哈哈啊哈哈哈哈哈哈哈</div>
+  </div>
+  <div class="container">
+    <div class="box5">
+      <img src="../images/singer01.png" alt="">
+    </div>
+    <div class="box8">
+      <div class="box7">哈哈哈啊哈哈哈哈哈哈哈哈哈哈啊哈哈哈哈哈哈哈哈哈哈啊哈哈哈哈哈哈哈哈哈哈啊哈哈哈哈哈哈哈</div>
+    </div>
+
+</body>
+
+</html>

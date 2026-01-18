@@ -23,6 +23,7 @@
       width: 729px;
       /* background-color: red; */
       /* 写一部分就放一个背景色，看问题检查前面是否有问题 */
+      padding: 20px 40px 20px;
     }
 
     .main .area-right {
@@ -86,7 +87,6 @@
 
     .main .settle-singer .item .info {
       flex: 1;
-      /* 剩余的宽度全部给你，如果里面内容非常多的话，也会撑出去 */
       /* 如果不设置的话，文本这里的盒子只会包裹内容，因此item还有剩余宽度，因此设置flex-grow:1 */
       display: flex;
       flex-direction: column;
@@ -95,13 +95,8 @@
       padding: 3px 12px;
       border: 1px solid #e9e9e9;
       border-left: none;
-      /* 解决方案1： */
-      overflow: hidden;
-      /* 不会让他无限的增长 */
-      /* width: 200px; */
-      /* width: 100%;百分号是 使用外层元素的容纳区块宽度（the containing block's width）的百分比定义宽度。*/
-      /* 如果设置了100%，则表明宽度有限制，则他的子元素就会受他的父元素宽度限制
-      如果不设置宽度，他会无限的增长 */
+
+
     }
 
     .main .settle-singer .item .info .singer {
@@ -114,15 +109,12 @@
       font-size: 12px;
       color: #666;
       /* margin-top: 8px; */
-      /* 文本超出显示...
-      因为是flex布局，没有设置明确宽度会超出如何解决： */
+
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
-      /* width: 100px; */
       /* 该元素必须有明确的宽度（width），否则不会触发溢出。
-该元素必须是块级或行内块级元素（如 display: block 或 display: inline-block 
-flexitem默认情况下宽高是包裹内容的，由内容决定宽高，但是可以设置宽度和高度，设了就有，没设就取默认值，内容多宽就多宽*/
+该元素必须是块级或行内块级元素（如 display: block 或 display: inline-block */
     }
   </style>
 
@@ -131,7 +123,49 @@ flexitem默认情况下宽高是包裹内容的，由内容决定宽高，但是
 <body>
   <div class="main">
     <div class="wrapper_02 area">
-      <div class="area-left"></div>
+      <div class="area-left">
+        <div class="recommend-section">
+          <div class="header_type_02">
+            <div class="area_left">
+              <h2 class="title">热门推荐</h2>
+              <ul class="keywords">
+                <li><a href="" class="item">华语</a></li>
+                <li class="line">|</li>
+                <li><a href="" class="item">流行</a></li>
+                <li class="line">|</li>
+                <li><a href="" class="item">摇滚</a></li>
+                <li class="line">|</li>
+                <li><a href="" class="item">民谣</a></li>
+                <li class="line">|</li>
+                <li><a href="" class="item">电子</a></li>
+              </ul>
+            </div>
+            <div class="area_right">
+              <a href="">更多</a>
+            </div>
+          </div>
+        </div>
+        <div class="disc-section">
+          <div class="header_type_02">
+            <div class="area_left">
+              <h2 class="title">新碟上架</h2>
+            </div>
+            <div class="area_right">
+              <a class="more">更多</a>
+            </div>
+          </div>
+        </div>
+        <div class="rank-section">
+          <div class="header_type_02">
+            <div class="area_left">
+              <h2 class="title">榜单</h2>
+            </div>
+            <div class="area_right">
+              <a class="more">更多</a>
+            </div>
+          </div>
+        </div>
+      </div>
       <div class="area-right">
         <div class="user-login">
           <p class="desc">
@@ -197,7 +231,7 @@ flexitem默认情况下宽高是包裹内容的，由内容决定宽高，但是
                 </div>
                 <div class="info">
                   <div class="singer">张惠妹aMEI</div>
-                  <div class="desc">台湾歌手张惠妹哈啊哈哈哈哈哈哈哈哈哈哈哈哈</div>
+                  <div class="desc">台湾歌手张惠妹哈啊哈哈哈哈哈哈</div>
                 </div>
               </a>
             </li>

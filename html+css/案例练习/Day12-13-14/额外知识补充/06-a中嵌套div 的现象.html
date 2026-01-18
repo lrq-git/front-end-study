@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    a {
+      background-color: red;
+      /* 因为a元素还是没有宽度和高度，所以背景看不出来，如何解决 */
+      /* 解决方案 */
+      display: inline-block;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- 规则：行内级元素不要里面放块级元素 -->
+  <!-- 为什么在开发中会出现a嵌套div，因为超链接很多是一个盒子 -->
+  <a href="">
+    <div>aaaaa</div>
+    <p>rrrrrrrrrrrrrrr</p>
+  </a>
+</body>
+
+</html>

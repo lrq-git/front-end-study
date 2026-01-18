@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>网易云主要区域</title>
+  <link rel="stylesheet" href="./CSS/reset.css">
+  <link rel="stylesheet" href="./CSS/common.css">
+  <link rel="stylesheet" href="./CSS/header.css">
+  <link rel="stylesheet" href="./CSS/main-area-right.css">
+  <style>
+    .main .area {
+      display: flex;
+      justify-content: space-between;
+      /* height: 500px; */
+
+      border: 1px solid #d3d3d3;
+      border-width: 0 1px;
+      background-image: url(./images/main_bg.png);
+    }
+
+    .main .area-left {
+      width: 729px;
+      /* background-color: red; */
+      /* 写一部分就放一个背景色，看问题检查前面是否有问题 */
+      padding: 20px 40px 20px;
+    }
+
+    .recommend-section .list {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      padding: 20px 2px;
+    }
+
+
+
+
+    /* 这样抽取 后面很方便*/
+    /* 布局代码 */
+    .recommend-section .list .item {
+      /* 不给高度给宽度，高度由内容撑起来 */
+      width: 140px;
+      /* margin: 0 auto; */
+      margin-bottom: 30px;
+    }
+
+    .recommend-section .list .item .top {
+      /* background-color: red; */
+      /* 如果不设置宽高，宽度是父元素继承，高度由图片的 高度撑起来，但实际上会比图片的高度高一点，这是因为vertical-align导致的 */
+      position: relative;
+    }
+
+
+
+    /* 现在要实现把一个图片盖到img上面 */
+    .recommend-section .list .item .top .cover {
+      /* 1.写一个和图片一样大小的盒子 */
+      /* width: 140px;
+      height: 140px; */
+      background-image: url(./images/cover-sprite.png);
+      background-position: 0 0;
+      /* 2.使用绝对定位脱离文档流进行覆盖 */
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      top: 0;
+      margin: 0;
+      /* 如果只设置这个他会脱离文档流，不设置left,right,等四个属性，他不会覆盖*/
+    }
+
+    .recommend-section .list .item .top .info {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 27px;
+      padding-left: 10px;
+      /* 实现小图标往右移 */
+      font-size: 12px;
+      color: #ccc;
+      line-height: 27px;
+      /* 注意：行高只能让文本垂直居中，不能让其他元素垂直居中 */
+
+      background-image: url(./images/cover-sprite.png);
+      background-position: 0 -537px;
+      /* 把精灵图向上移动（注意这个position是移动精灵图 */
+    }
+
+
+
+    /* 这里的图标是通过放一个元素，然后设置背景来实现的 */
+    .recommend-section .list .item .top .info .icon-music {
+      /* 暂时用绝对定位微调 */
+      position: relative;
+      top: 2px;
+      /* display: inline-block; */
+      /*  width: 14px;
+      height: 11px; */
+      /* background-image: url(./images/music_sprite_02.png); */
+      /* background-position: 0 -24px; */
+    }
+
+    .recommend-section .list .item .top .info .icon-play {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      right: 10px;
+      margin: auto 0;
+      /* 因为要用bgi，所以要设置宽高，所以设置dib */
+      /* display: inline-block; */
+      /*  width: 16px;
+      height: 17px; */
+      /* background-image: url(./images/music_sprite_02.png); */
+      /* background-position: 0 0; */
+    }
+
+    .recommend-section .list .item .bottom {
+      display: block;
+      /* 注意改完a元素就要改一下盒子类型 */
+      font-size: 14px;
+      margin-top: 8px;
+    }
+
+    .recommend-section .list .item .bottom:hover {
+      text-decoration: underline;
+    }
+
+    .recommend-section .list .item .bottom .icon-radio {
+      position: relative;
+      top: 2px;
+    }
+
+    .disc-section .content {
+      height: 186px;
+      margin: 20px 0;
+      box-sizing: border-box;
+      border: 1px solid #d3d3d3;
+    }
+
+    .disc-section .content .inner {
+      position: relative;
+
+      height: 100%;
+      box-sizing: border-box;
+      padding: 0 25px;
+      border: 1px solid #fff;
+      background-color: #f5f5f5;
+    }
+
+    .disc-section .inner .roller {
+      display: flex;
+      /* 注意flex布局里面的子元素是可以超出父元素的 */
+      overflow: hidden;
+      height: 100%;
+      /* background-color: red; */
+    }
+
+    .disc-section .inner .roller .list {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 10px;
+      /* item不是在list的正中间要偏下一点则加一个padding-top */
+      width: 100%;
+      flex-shrink: 0;
+      /* 注意默认shrink是1，也就是会收缩 */
+      /* background-color: green; */
+      /* 没有设置高度，他会拉伸因为align-items默认为normmal，与strench效果一样 */
+    }
+
+    .disc-section .roller .list .item {
+      width: 118px;
+      height: 150px;
+      background: url(./images/main_sprite.png) no-repeat -260px 100px;
+    }
+
+    .disc-section .list .item .album {
+      position: relative;
+    }
+
+    .disc-section .list .item .album .cover {
+      position: absolute;
+      /* 1.无论元素类型，可以随意设置宽高
+    2.宽高默认由内容决定
+    3.不受标准流约束（不区分行内级还是块级元素了）
+    4.不给父元素汇报自己的高度 */
+      right: 0;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      background: url(./images/cover-sprite.png) no-repeat 0 -570px;
+
+    }
+
+    .disc-section .list .item .album .play {
+      display: none;
+      position: absolute;
+      right: 10px;
+      bottom: 5px;
+      width: 22px;
+      height: 22px;
+      /* 图标设宽高 */
+      background: url(./images/music_sprite_02.png) 0 -85px;
+    }
+
+    .disc-section .list .item .album:hover .play {
+      display: block;
+    }
+
+    .disc-section .list .item a {
+      display: block;
+      margin-top: 5px;
+      padding-right: 10px;
+      /* 可以让限制的宽度再窄一点，虽然这个元素没有设置宽度，但是父元素有设置宽度，padding也会影响 */
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      overflow: hidden;
+    }
+
+    .disc-section .list .item a:hover {
+      text-decoration: underline;
+    }
+
+    .disc-section .list .item a.title {
+      margin-top: 8px;
+
+      color: #000;
+    }
+
+    .disc-section .list .item a.anchor {
+      color: #666;
+    }
+
+    .disc-section .inner .control {
+      position: absolute;
+      width: 17px;
+      height: 17px;
+      top: 0;
+      bottom: 0;
+      margin: auto 0;
+
+      /* background-color: red; */
+
+      background-image: url(./images/main_sprite.png);
+    }
+
+    .disc-section .inner .control.left {
+      left: 5px;
+      background-position: -260px -75px;
+    }
+
+    .disc-section .inner .control.right {
+      right: 5px;
+      background-position: -320px -75px;
+
+    }
+  </style>
+
+</head>
+
+<body>
+  <div class="main">
+    <div class="wrapper_02 area">
+      <div class="area-left">
+        <div class="recommend-section">
+          <div class="header_type_02">
+            <div class="area_left">
+              <h2 class="title">热门推荐</h2>
+              <ul class="keywords">
+                <li><a href="" class="item">华语</a></li>
+                <li class="line">|</li>
+                <li><a href="" class="item">流行</a></li>
+                <li class="line">|</li>
+                <li><a href="" class="item">摇滚</a></li>
+                <li class="line">|</li>
+                <li><a href="" class="item">民谣</a></li>
+                <li class="line">|</li>
+                <li><a href="" class="item">电子</a></li>
+              </ul>
+            </div>
+            <div class="area_right">
+              <a href="">更多</a>
+            </div>
+          </div>
+
+          <div class="list">
+            <div class="item">
+              <div class="top">
+                <img src="./images/album01.png" alt="音乐封面">
+                <a class="cover" href="https://music.163.com/#/playlist?id=2218171336"></a>
+                <!--  因为是超链接，这里可以把cover的div换成a-->
+                <div class="info">
+                  <i class="icon-music sprite_02_icon_music sprite_02"></i>
+                  <span class="count">62万</span>
+                  <i class="icon-play sprite_02_icon_play sprite_02"></i>
+                </div>
+              </div>
+              <a class="bottom" href="#">
+                后来你哭了，想安慰却忘了早已换了身份
+              </a>
+            </div>
+            <div class="item">
+              <div class="top">
+                <img src="./images/album01.png" alt="音乐封面">
+                <a class="cover" href="https://music.163.com/#/playlist?id=2218171336"></a>
+                <!--  因为是超链接，这里可以把cover的div换成a-->
+                <div class="info">
+                  <i class="icon-music sprite_02_icon_music sprite_02"></i>
+                  <span class="count">62万</span>
+                  <i class="icon-play sprite_02_icon_play sprite_02"></i>
+                </div>
+              </div>
+              <a class="bottom" href="#">
+                后来你哭了，想安慰却忘了早已换了身份
+              </a>
+            </div>
+
+            <div class="item">
+              <div class="top">
+                <img src="./images/album01.png" alt="音乐封面">
+                <a class="cover" href="https://music.163.com/#/playlist?id=2218171336"></a>
+                <!--  因为是超链接，这里可以把cover的div换成a-->
+                <div class="info">
+                  <i class="icon-music sprite_02_icon_music sprite_02"></i>
+                  <span class="count">62万</span>
+                  <i class="icon-play sprite_02_icon_play sprite_02"></i>
+                </div>
+              </div>
+              <a class="bottom" href="#">
+                后来你哭了，想安慰却忘了早已换了身份
+              </a>
+            </div>
+            <div class="item">
+              <div class="top">
+                <img src="./images/album01.png" alt="音乐封面">
+                <a class="cover" href="https://music.163.com/#/playlist?id=2218171336"></a>
+                <!--  因为是超链接，这里可以把cover的div换成a-->
+                <div class="info">
+                  <i class="icon-music sprite_02_icon_music sprite_02"></i>
+                  <span class="count">62万</span>
+                  <i class="icon-play sprite_02_icon_play sprite_02"></i>
+                </div>
+              </div>
+              <a class="bottom" href="#">
+                后来你哭了，想安慰却忘了早已换了身份
+              </a>
+            </div>
+            <div class="item">
+              <div class="top">
+                <img src="./images/album01.png" alt="音乐封面">
+                <a class="cover" href="https://music.163.com/#/playlist?id=2218171336"></a>
+                <!--  因为是超链接，这里可以把cover的div换成a-->
+                <div class="info">
+                  <i class="icon-music sprite_02_icon_music sprite_02"></i>
+                  <span class="count">62万</span>
+                  <i class="icon-play sprite_02_icon_play sprite_02"></i>
+                </div>
+              </div>
+              <a class="bottom" href="#">
+                后来你哭了，想安慰却忘了早已换了身份
+              </a>
+            </div>
+            <div class="item">
+              <div class="top">
+                <img src="./images/album01.png" alt="音乐封面">
+                <a class="cover" href="https://music.163.com/#/playlist?id=2218171336"></a>
+                <!--  因为是超链接，这里可以把cover的div换成a-->
+                <div class="info">
+                  <i class="icon-music sprite_02_icon_music sprite_02"></i>
+                  <span class="count">62万</span>
+                  <i class="icon-play sprite_02_icon_play sprite_02"></i>
+                </div>
+              </div>
+              <a class="bottom" href="#">
+                后来你哭了，想安慰却忘了早已换了身份
+              </a>
+            </div>
+            <div class="item">
+              <div class="top">
+                <img src="./images/album01.png" alt="音乐封面">
+                <a class="cover" href="https://music.163.com/#/playlist?id=2218171336"></a>
+                <!--  因为是超链接，这里可以把cover的div换成a-->
+                <div class="info">
+                  <i class="icon-music sprite_02_icon_music sprite_02"></i>
+                  <span class="count">62万</span>
+                  <i class="icon-play sprite_02_icon_play sprite_02"></i>
+                </div>
+              </div>
+              <a class="bottom" href="#">
+                后来你哭了，想安慰却忘了早已换了身份
+              </a>
+            </div>
+            <div class="item">
+              <div class="top">
+                <img src="./images/album01.png" alt="音乐封面">
+                <a class="cover" href="https://music.163.com/#/playlist?id=2218171336"></a>
+                <!--  因为是超链接，这里可以把cover的div换成a-->
+                <div class="info">
+                  <i class="icon-music sprite_02_icon_music sprite_02"></i>
+                  <span class="count">62万</span>
+                  <i class="icon-play sprite_02_icon_play sprite_02"></i>
+                </div>
+              </div>
+
+              <a class="bottom" href="#">
+                <i class=" iconall_sprite iconall_sprite_radio icon-radio"></i>
+                后来你哭了，想安慰却忘了早已换了身份
+              </a>
+            </div>
+          </div>
+
+        </div>
+        <div class="disc-section">
+          <div class="header_type_02">
+            <div class="area_left">
+              <h2 class="title">新碟上架</h2>
+            </div>
+            <div class="area_right">
+              <a class="more">更多</a>
+            </div>
+          </div>
+
+          <div class="content">
+            <div class="inner">
+              <!-- 两个盒子实现双边框 -->
+              <div class="roller">
+                <ul class="list">
+                  <li class="item">
+                    <div class="album">
+                      <img src="./images/newdisc_album01.png" alt="">
+                      <a class="cover"></a>
+                      <a href="" class="play"></a>
+                    </div>
+                    <a href="" class="title">槍火天使 Gun-fire Angel</a>
+                    <a href="#" class="anchor">capper</a>
+                  </li>
+                  <li class="item">
+                    <div class="album">
+                      <img src="./images/newdisc_album01.png" alt="">
+                      <a class="cover"></a>
+                      <a href="" class="play"></a>
+                    </div>
+                    <a href="" class="title">槍火天使 Gun-fire Angel</a>
+                    <a href="#" class="anchor">capper</a>
+                  </li>
+                  <li class="item">
+                    <div class="album">
+                      <img src="./images/newdisc_album01.png" alt="">
+                      <a class="cover"></a>
+                      <a href="" class="play"></a>
+                    </div>
+                    <a href="" class="title">槍火天使 Gun-fire Angel</a>
+                    <a href="#" class="anchor">capper</a>
+                  </li>
+                  <li class="item">
+                    <div class="album">
+                      <img src="./images/newdisc_album01.png" alt="">
+                      <a class="cover"></a>
+                      <a href="" class="play"></a>
+                    </div>
+                    <a href="" class="title">槍火天使 Gun-fire Angel</a>
+                    <a href="#" class="anchor">capper</a>
+                  </li>
+                  <li class="item">
+                    <div class="album">
+                      <img src="./images/newdisc_album01.png" alt="">
+                      <a class="cover"></a>
+                      <a href="" class="play"></a>
+                    </div>
+                    <a href="" class="title">槍火天使 Gun-fire Angel</a>
+                    <a href="#" class="anchor">capper</a>
+                  </li>
+                </ul>
+                <ul class="list">
+
+                </ul>
+
+              </div>
+              <a href="" class="control left"></a>
+              <a href="" class="control right"></a>
+
+            </div>
+          </div>
+
+        </div>
+        <div class="rank-section">
+          <div class="header_type_02">
+            <div class="area_left">
+              <h2 class="title">榜单</h2>
+            </div>
+            <div class="area_right">
+              <a class="more">更多</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="area-right">
+        <div class="user-login">
+          <p class="desc">
+            登录网易云音乐，可以享受无限收藏的乐趣，并且无限同步到手机
+          </p>
+          <!-- 用a元素实现按钮 -->
+          <a class="btn" href="">用户登录</a>
+        </div>
+        <div class="settle-singer">
+          <div class="header_type_01">
+            <h3 class="title">入住歌手</h3>
+            <a href="" class="more">查看全部&gt;</a>
+          </div>
+          <ul class="list">
+            <li>
+              <a href="#" class="item">
+                <div class="album">
+                  <img src="./images/singer01.png" alt="">
+                </div>
+                <div class="info">
+                  <div class="singer">张惠妹aMEI</div>
+                  <div class="desc">台湾歌手张惠妹</div>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a href="#" class="item">
+                <div class="album">
+                  <img src="./images/singer01.png" alt="">
+                </div>
+                <div class="info">
+                  <div class="singer">张惠妹aMEI</div>
+                  <div class="desc">台湾歌手张惠妹</div>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a href="#" class="item">
+                <div class="album">
+                  <img src="./images/singer01.png" alt="">
+                </div>
+                <div class="info">
+                  <div class="singer">张惠妹aMEI</div>
+                  <div class="desc">台湾歌手张惠妹</div>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a href="#" class="item">
+                <div class="album">
+                  <img src="./images/singer01.png" alt="">
+                </div>
+                <div class="info">
+                  <div class="singer">张惠妹aMEI</div>
+                  <div class="desc">台湾歌手张惠妹</div>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a href="#" class="item">
+                <div class="album">
+                  <img src="./images/singer01.png" alt="">
+                </div>
+                <div class="info">
+                  <div class="singer">张惠妹aMEI</div>
+                  <div class="desc">台湾歌手张惠妹哈啊哈哈哈哈哈哈</div>
+                </div>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="hot-anchor">
+          <div class="header_type_01">
+            <h3 class="title">热门主播</h3>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</body>
+
+</html>

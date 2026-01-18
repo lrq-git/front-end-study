@@ -3,8 +3,12 @@ h1,
 h2,
 h3,
 ul,
+ol,
 li,
-p {
+p,
+dl,
+dt,
+dd {
   margin: 0;
   padding: 0;
 }
@@ -17,7 +21,7 @@ a {
 }
 
 ul,
-li {
+ol li {
   list-style: none;
 }
 

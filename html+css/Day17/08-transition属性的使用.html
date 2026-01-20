@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    /* transition动画的缺点
+    1.只能定义初始状态和结束状态两个状态 
+    2.不能重复执行动画，只有触发的时候执行一次
+    3.只有属性被修改的情况下才能执行*/
+    .box {
+      position: relative;
+      left: 0;
+
+      width: 200px;
+      height: 200px;
+      background-color: orange;
+      /* 告知浏览器box在CSS属性变化的时候有一个过渡效果 */
+      /* transition-property: left, width; */
+      transition-property: all;
+
+      /*  transition-property属性的值有none,all,还有可以具体设置哪个属性（设置多个属性的时候可以多个但是要用逗号分开*/
+      transition-duration: 1s;
+      transition-timing-function: ease-in;
+      /* 动画执行曲线 */
+      transition-delay: 0.2s;
+
+
+      /* transition的简写属性 */
+      /* transition: all 1s ease-in 0.2s; */
+
+    }
+
+    .box:hover {
+      /* 想让元素位移有两个方式，第一个是定位，第二个是transform */
+      left: 100px;
+      /* transform: translate(100px); */
+      width: 500px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="box">
+
+  </div>
+</body>
+
+</html>

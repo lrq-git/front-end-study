@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    /* 这里的值：
+    1.left, center, right, top, bottom 关键字
+    2.length ：从左上角开始计算 例如50px
+    3.百分比：参考元素本身大小 */
+    body {
+      text-align: center;
+      margin-top: 200px;
+    }
+
+    .container {
+      display: inline-block;
+      border: 10px solid red;
+    }
+
+    .box {
+      width: 200px;
+      height: 100px;
+      background-color: orange;
+      /* 修改当前元素形变的原点位置
+      可以设置为关键字 left, center, right, top, bottom 
+      也可以设置具体值（相对于左上角）*/
+      /* transform-origin: center center; */
+      transform-origin: left top;
+      /* transform-origin: 20px 20px; */
+
+    }
+
+    .box:hover {
+      transform: rotate(45deg) scale(0.8);
+      /* transform: scale(0.8); */
+      /* 这样子些，下面会把上面的层叠掉 */
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="box"></div>
+  </div>
+</body>
+
+</html>

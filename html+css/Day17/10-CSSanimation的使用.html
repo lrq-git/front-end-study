@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .box {
+      width: 200px;
+      height: 200px;
+      background: orange;
+
+      /* box要执行animation动画 */
+      animation-name: moveAnim;
+      animation-duration: 3s;
+      animation-timing-function: ease-in-out;
+      animation-delay: 2s;
+      /* 其他属性 */
+      /* 动画执行的次数 (infinite无限的）*/
+      animation-iteration-count: 2;
+      animation-direction: reverse;
+      /* reverse:从后往前执行 */
+
+      /* 元素停留在动画的那一个位置 */
+      animation-fill-mode: backwards;
+      /* forwards是表示动画的最后一帧
+      backwords是原始位置 */
+
+      /* JS动态修改 */
+      /* animation-play-state: paused; */
+    }
+
+    /* 第一件事：定义序列帧 */
+    @keyframes moveAnim {
+
+      /* from */
+      0% {
+        transform: translate(0, 0) scale(0.5, 0.5);
+      }
+
+      33% {
+        transform: translate(0, 200px) scale(1.2, 1.2);
+      }
+
+      66% {
+        transform: translate(400px, 200px) scale(1, 1);
+      }
+
+      /* to */
+      100% {
+        transform: translate(400px, 0) scale(0.5, 0.5);
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="box"></div>
+</body>
+
+</html>

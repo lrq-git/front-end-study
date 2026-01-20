@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .box {
+      font-style: italic;
+      /* 这个单纯是让文本倾斜 */
+      width: 200px;
+      height: 200px;
+      background-color: orange;
+    }
+
+    .box:hover {
+      transform: skew(10deg, 10deg);
+      /* Equal to skewX(10deg) 
+      注意：这种倾斜也会让元素里面的文本倾斜
+      正值是往左往上倾斜*/
+    }
+  </style>
+</head>
+
+<body>
+  <div class="box">我是div</div>
+</body>
+
+</html>

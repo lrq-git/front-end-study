@@ -6,36 +6,32 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
   <style>
-    .box1 {
-      width: 80px;
-      height: 80px;
-      background-color: red;
+    /* rotate:还有别的单位 */
+    body {
+      text-align: center;
+      margin-top: 200px;
     }
 
     .container {
       display: inline-block;
-      border: 5px solid red;
+      border: 10px solid red;
     }
 
     .box {
       width: 200px;
-      height: 200px;
+      height: 100px;
       background-color: orange;
-      /* 形变 */
-      transform: scale(60%, 60%);
-      /* 这里的60%相对于自身,一般不用百分比 */
+    }
+
+    .box:hover {
+      transform: rotate(90deg);
+      /* 只有一个值，正是顺时针，负是逆时针 */
+      /* 单位是deg，而且旋转围绕的点是元素的中心点，因为默认的形变原点是transform-origin:center center */
     }
   </style>
 </head>
 
 <body>
-  <div class="box1">
-    <img src="../images/rank_up.png" alt="">
-  </div>
-  <br>
-  <br>
-  <br>
-  <br>
   <div class="container">
     <div class="box"></div>
   </div>

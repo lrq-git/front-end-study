@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    /* <transform-function>+这个加号
+      表示一个或者多个，并且多个之间是以空格分隔的 
+      <box-shadoe>#这个井号
+      表示一个或者多个，并且多个之间是以逗号分隔的*/
+    .box {
+
+      width: 200px;
+      height: 200px;
+      background-color: orange;
+    }
+
+    .box:hover {
+      /* 如果想要加多个动画 */
+      transform: translate(50px) skew(10deg, 10deg) scale(1.2);
+
+    }
+  </style>
+</head>
+
+<body>
+  <div class="box"></div>
+</body>
+
+</html>

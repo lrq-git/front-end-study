@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    /* 知识点：transform：对元素进行某些形变包括：旋转、平移、缩放、倾斜
+    注：行内级非替换元素不能形变，表格里面的元素也不可以
+    常见transform函数：平移：translate(x,y)；缩放：scale;旋转rotate;倾斜skew 
+    1.平移，定位也可以改变位移，但是形变改变的位移是在浏览器渲染的时候改变的元素的位置
+    1)一个值：x轴
+    2）两个值就是x,y*/
+    .container {
+      display: inline-block;
+      border: 5px solid red;
+    }
+
+    .container .box {
+      width: 200px;
+      height: 200px;
+      background-color: orange;
+      /* transform: translate(100px); */
+      transform: translate(100px, 100px);
+      /* transform: translate(x,y)
+      transform: translateX(x) */
+      /* transform: translateY(y) */
+
+      /* 当前元素本身会移动，不会影响父元素 */
+    }
+
+    .container2 {
+      display: inline-block;
+      border: 10px solid red;
+    }
+
+    .container2 .box2 {
+      width: 200px;
+      height: 100px;
+      background-color: orange;
+      /* 不同地方的百分比参照物不同
+      这个百分比是相对于自身的：
+      如果设置的是x位移，参考的是宽度 
+      如果设置的是y位移，参考的是高度*/
+      transform: translate(100%, 100%);
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="box"></div>
+  </div>
+  <br> <br> <br> <br> <br> <br> <br> <br>
+  <!-- 让translate设置的是百分比，百分比相对于谁 -->
+  <div class="container2">
+    <div class="box2"></div>
+  </div>
+</body>
+
+</html>

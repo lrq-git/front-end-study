@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .container {
+      position: relative;
+      height: 300px;
+      background-color: red;
+    }
+
+    /* 如果不设置高度只设置宽度，也不设置其他的，也没有内容的话，盒子会撑不起来
+    高度由内容撑起来 */
+
+    .container .box {
+      position: absolute;
+      width: 100px;
+
+      /* height: 100px; */
+      top: 0;
+      bottom: 0;
+      margin: auto 0;
+      background-color: orange;
+    }
+
+    .container2 {
+      display: flex;
+      align-items: center;
+      height: 300px;
+      background-color: red;
+    }
+
+    /* 如果不设置高度只设置宽度，也不设置其他的，也没有内容的话，盒子会撑不起来
+    高度由内容撑起来 */
+
+    .container2 .box2 {
+
+      background-color: orange;
+    }
+
+    .container3 {
+      height: 300px;
+      background-color: red;
+    }
+
+    .container3 .box3 {
+      display: inline-block;
+      height: 100px;
+      background-color: orange;
+
+      /* 第一件事 */
+      position: relative;
+      top: 50%;
+      /* 这里的50%是相对于包含块的50% */
+      /* 第二件事 */
+      transform: translateY(-50%);
+      /* 注意；这里的百分比相对于自身
+      要向上移所以是- */
+    }
+
+    /* 注意：margin-top的百分比是相对于父元素（包含块的宽度的） */
+  </style>
+</head>
+
+<body>
+  <!-- 
+  水平居中：
+  1.行内块级元素：text-align:center
+  2.块级元素：如果有宽度，margin:0,auto
+  3.绝对定位：元素有宽度的情况下，left0,right0,margin0 auto
+  4.flex布局：justify-content:center      
+  -->
+  <!-- 
+  垂直居中：
+  1.绝对定位：
+  元素有高度的情况下，left0,right0,marginauto 0
+  2.flex布局
+  3.transform:top/translate（推荐这种方案）
+  1)让元素向下位移父元素的50%
+  2）元素向上位移自身的50%
+  -->
+  <!-- 
+  垂直居中：
+  1.绝对定位：
+  弊端：
+      1> 必须使用定位（脱离标准流）
+      2> 必须设置高度,如果不设置高度，设置了left0,right0,marginauto 0，则高度是包含块的高度
+  2.flex布局：
+  弊端：
+      1> 当前flex布局里面的所有元素都会垂直居中
+      2>兼容性差一点
+  
+  -->
+  <div class="container">
+    <div class="box">
+    </div>
+  </div>
+  <br> <br> <br> <br> <br>
+  <div class="container2">
+    <div class="box2">flex布局居中
+    </div>
+  </div>
+  <br> <br> <br> <br> <br>
+  <div class="container3">
+    <div class="box3">coderwhy
+    </div>
+  </div>
+</body>
+
+</html>

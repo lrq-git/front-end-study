@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    /* 一个行盒里面的多个行内级元素（文本，行内块，行内元素）如何对齐！！！ */
+    .box {
+      background-color: orange;
+
+    }
+
+    .box img {
+      width: 200px;
+      /* 只设置宽度，高度就会按照原来图片的比例计算出来 */
+    }
+
+    span {
+      display: inline-block;
+      width: 100px;
+      height: 100px;
+      background-color: red;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="box">
+    我是哈哈哈哈哈哈哈哈g
+    <img src="./images/01.png" alt="">
+    <!-- 加了图片此时会发现，图片底部有几像素，这是因为行盒要把所有的内容包裹起来 -->
+    <!-- <span class="small"></span> -->
+    <!-- 会发现如果这里放一个盒子，下面也会有几像素 -->
+  </div>
+</body>
+
+</html>

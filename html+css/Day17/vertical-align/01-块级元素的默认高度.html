@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    /* 当前box块级盒子有没有高度：会有高度
+    为什么：由内容撑起来
+    本质：由内容的行高撑起来（每一行的高度最终合在一起是盒子的高度） 
+    line-height:一行文本的高度*/
+    .box {
+      background-color: orange;
+    }
+
+    span {
+      display: inline-block;
+      width: 100px;
+      height: 100px;
+      background-color: red;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="box">
+    没有破绽的犯罪手法，<span></span>查无凶手的连续杀人案…！一桩桩悬案迫使警方与罪犯不得不携手合作，深入命案现场与凶手博弈对决，为死者伸张正义。双雄联手出击的强强对决，却让这场魔鬼交易暗潮汹涌，即将引发另一波更大的致命危机！
+    <!-- 每一行有隐形的盒子——行盒（inline box),他的作用是将当前行里面所有的内容包裹在一起 -->
+  </div>
+</body>
+
+</html>

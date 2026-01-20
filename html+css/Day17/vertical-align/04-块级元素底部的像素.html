@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    /* 现象：现在没有文本，但是图片下面还是有几个像素
+    因为他会预留几个像素，保证如果里面放了内容也能基线对齐
+    如何解决 */
+    .box {
+      background-color: orange;
+      /* 如何解决：把vertical-align的值设置为top ,注意这个要设置给行盒里面的行内元素，不是设置给父元素*/
+      /* vertical-align: top; */
+    }
+
+    .box img {
+      /* vertical-align: top; */
+      /* vertical-align: middle; */
+      vertical-align: bottom;
+
+
+      /* 第二种解决方案 */
+      /* display: block; */
+    }
+  </style>
+</head>
+
+<body>
+  <div class="box">
+    <img src="./images/01.png" alt="">
+
+  </div>
+</body>
+
+</html>

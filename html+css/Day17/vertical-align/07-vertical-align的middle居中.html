@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    /* 1.vertica-align给谁设置：给行内级元素设置 */
+    .box {
+      background-color: orange;
+      height: 300px;
+      /* 当父盒子有高度时候，就会有让元素垂直居中的情况,vertical-align: middle是不可以 */
+      line-height: 300px
+        /* line-height是一行文本的高度，也就是行盒的高度 
+        此时文本一定居中，但是盒子不居中，因为中线在x的偏上*/
+    }
+
+    .box img {
+      height: 200px;
+
+      /* vertical-align: middle; */
+      /* 在当前的行盒内 ，行内级盒子的中心点，与父盒子基线加上x-height一半的线对齐（也就是和x的中间对齐）*/
+    }
+
+    .box .small {
+      display: inline-block;
+      width: 100px;
+      height: 100px;
+      background-color: red;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- 如果是基线对齐，则此时文本也不会居中 -->
+  <div class="box">
+    我是文本xxxxx
+    <img src="./images/01.png" alt="">
+    <!-- <span class="small"></span> -->
+    <!-- 没有让盒子垂直居中的这个说法，因为父盒子没有高度，
+     文本的居中是可以的，通过line-height -->
+  </div>
+</body>
+
+</html>

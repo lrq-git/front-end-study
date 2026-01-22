@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    /* 1.vertica-align给谁设置：给行内级元素设置 */
+    .box {
+      background-color: orange;
+    }
+
+    .box img {
+      height: 200px;
+      vertical-align: top;
+      /* 如果只给这个设置top,其余的元素还是保持基线对齐
+      top:行内级盒子与Line box 的顶部对齐 */
+    }
+
+    .box .small {
+      display: inline-block;
+      width: 100px;
+      height: 100px;
+      background-color: red;
+      margin-bottom: 20px;
+      /* 注意：当inlin box 有文本的时候，他的基线就不会是在最底部，而是在最后一行文本的基线
+     当它设置了margin-bottom的时候，基线会移在margin-bottom那里   */
+    }
+  </style>
+</head>
+
+<body>
+  <div class="box">
+    我是文本xxxxx
+    <img src="./images/01.png" alt="">
+    <span class="small">xxx</span>
+    xxxxx
+  </div>
+</body>
+
+</html>

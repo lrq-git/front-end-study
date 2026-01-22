@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .box {
+      height: 300px;
+      line-height: 300px;
+      /* 行高就是设置一个行盒的高度，浏览器会自动等分行距，让文本居中，是为了让文本阅读更好看，可以知道阅读方向 */
+      background-color: orange;
+
+    }
+
+    .box .small {
+      display: inline-block;
+      background-color: red;
+      height: 80px;
+      /* 如果这里不设置行高，他会继承父元素的行高 */
+      /* line-height: 200px; */
+      /* 这样会出现文本和盒子分离 */
+
+      line-height: 400px;
+      /* 行高越高，这个文字会越向下 */
+      /* font-size: 40px; */
+      /* 此时这个行内级盒子就没有居中 */
+      /* 如果没有设置文本大小，则这个盒子就是居中的 */
+    }
+  </style>
+</head>
+
+<body>
+  <div class="box">
+    我是文本。xxxxx
+    <!-- 虽然这里父盒子的高度与行盒高度一致，文字应该垂直居中，但是文本需要进行基线对齐与其他行内级元素，因此这个文字也不会居中 -->
+    <span class="small">哈哈哈哈</span>
+  </div>
+</body>
+
+</html>

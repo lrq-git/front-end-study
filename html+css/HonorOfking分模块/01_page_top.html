@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>王者荣耀-top</title>
+  <link rel="stylesheet" href="./CSS/reset.css">
+  <link rel="stylesheet" href="./CSS/common.css">
+  <style>
+    .top {
+      /* background-color: red; */
+      border-bottom: 1px solid #f5f5f5;
+    }
+
+    .top .area {
+      display: flex;
+      justify-content: space-between;
+      /* 为什么会左右区域自动撑满高度，因为align-items默认值是normal */
+      height: 41px;
+      line-height: 41px;
+      /* background-color: orange; */
+    }
+
+    .top .left-area {
+      display: flex;
+      /* background-color: red; */
+    }
+
+    .top .left-area .logo a {
+      display: block;
+      /* 直接设置块级元素，如果行内块级会下面有几像素 ，而且也可以直接把高度撑满*/
+      width: 150px;
+      /* 可以不设置高度因为，line-height会继承 */
+      text-indent: -9999px;
+      /* 隐藏文字，为了搜索引擎看到 */
+      background: url(./img/top-logo.png) no-repeat center center/contain;
+      background: 颜色 图片 位置 / 大小 重复 attachment
+    }
+
+    .top .right-area {
+      display: flex;
+      /* background-color: blue; */
+    }
+
+    .top .right-area .item a {
+      position: relative;
+      display: block;
+      /* 让a元素的高度撑满 */
+      font-size: 14px;
+      color: #464646;
+    }
+
+    .top .right-area .item a.growth {
+
+      padding-left: 30px;
+      /* 因为图标脱标了，不占空间，设置这个可以给图标的空间空出来 */
+    }
+
+    .top .right-area .item .icon-grow {
+      /* 一般情况下，让元素在中间，进行定位的设置 */
+      position: absolute;
+      width: 30px;
+      height: 30px;
+      left: 0;
+      /* 注意这里要设置，图标才会紧靠父元素 */
+      top: 0;
+      bottom: 0;
+      margin: auto 0;
+      background: red;
+    }
+
+    .top .right-area .item a.ranking {
+      margin-left: 20px;
+      padding-right: 30px;
+    }
+
+    .top .right-area .item a.ranking:after {
+      content: "";
+      position: absolute;
+      width: 30px;
+      height: 30px;
+      top: 0;
+      bottom: 0;
+      margin: auto 0;
+      background: red;
+      opacity: 0.2;
+      transform: rotate(90deg);
+    }
+  </style>
+</head>
+
+<body>
+  <div class="top">
+    <div class="top_wrapper area">
+      <div class="left-area">
+        <h2 class="logo">
+          <a href="#">腾讯游戏</a>
+          <!-- 这里的图片一边是设置背景 -->
+        </h2>
+        <div class="recommend">
+          <img src="./img/top-logo.png" alt="" style="width: 230px; height: 40px;">
+          <!-- 只要块级元素里面放了行内级元素，就想着用vertical-align -->
+        </div>
+      </div>
+      <ul class="right-area">
+        <li class="item">
+          <a class="growth" href="">
+            <i class="icon-grow"></i>
+            成长守护平台
+          </a>
+          <!-- 一边伪元素用来添加一些图标 ，也可以加i-->
+        </li>
+        <li class="item">
+          <a class="ranking" href="">腾讯游戏排行榜</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</body>
+
+</html>

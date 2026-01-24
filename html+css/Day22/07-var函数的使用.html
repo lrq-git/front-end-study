@@ -5,16 +5,38 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
-  <!-- CSS 中可以定义属性 -->
+  <!-- CSS 中可以定义属性属性名需要以--开头；属性值可以是CSS 任何有效值 -->
+  <!-- 用var函数可以使用自定义属性 -->
   <style>
+    html {
+      /*定义了一个变量（CSS属性），他的名字就是自定义属性的名字 
+      只有后代元素可以使用 */
+      --main-color: #f3c258;
+      /* 这样子在我改变颜色的时候很方便 */
+    }
 
+    .box {
+      /* color: --main-color; 这样没有效果*/
+      color: var(--main-color);
+    }
+
+    .title {
+      color: var(--main-color);
+
+    }
   </style>
 </head>
 
 <body>
-  <div class="box">
 
+
+
+  <div class="box">
+    我是box
   </div>
+
+
+  <h1 class="title">哈哈哈哈哈</h1>
 </body>
 
 </html>

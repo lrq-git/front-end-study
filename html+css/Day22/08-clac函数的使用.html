@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    /* clac函数支持加减乘除原酸，+-两边必须留空格
+    通常设置元素的尺寸或者位置 */
+    .box {
+      width: 300px;
+      height: 100px;
+      background-color: orange;
+    }
+
+    .item {
+      height: 50px;
+      display: inline-block;
+
+    }
+
+    .item1 {
+      /* width的百分比相相对于包含块（父元素） */
+      /* 对于定位元素来说，绝对定位元素的包含块是邻近的定位元素，不一定是父元素 */
+      /* 注意符号两边必须留空格，否则不生效 */
+      width: calc(100% - 100px);
+      /*   width:300px - 100px;,这个语法是有问题的 */
+      background-color: #f00;
+
+    }
+
+    .item1 {
+      width: 100px;
+      background-color: #0f0;
+
+    }
+  </style>
+</head>
+
+<body>
+  <div class="box">
+    <div class="item item1"></div>
+    <div class="item item2"></div>
+
+    <!-- 如果这样子，两个盒子不会在一行，因为这两个之间有空格 -->
+  </div>
+</body>
+
+</html>

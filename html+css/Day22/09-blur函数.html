@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    /* 应用于输出图片或者元素 */
+    /* blur（radius)  blur函数是做毛玻璃效果（高斯模糊）
+    radius是模糊半径，在box-shadow里面有用过 */
+    img.first {
+      filter: blur(5px);
+      /* 值越大，越模糊 */
+    }
+
+
+
+    .box {
+      /* filter: blur(5px); */
+      position: relative;
+      display: inline-block;
+
+    }
+
+    .cover {
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      background-color: rgba(0, 0, 0, .5);
+      /* 透明效果 */
+      backdrop-filter: blur(10px);
+      /* 模糊效果 */
+      /* bgc和backdrop-filter两个要一起使用
+      为了看到效果，必须使元素或其背景至少部分透明。 */
+    }
+  </style>
+</head>
+
+<body>
+  <!-- filter -->
+  <img src="./assets/02.png" alt="" class="first">
+  <div class="box">
+    <img src="./assets/02.png" alt="">
+    <div class="cover"></div>
+  </div>
+</body>
+
+</html>

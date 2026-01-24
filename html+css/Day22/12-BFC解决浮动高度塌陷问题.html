@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    /* BFC解决不了绝对定位高度塌陷问题，但是可以解决浮动高度塌陷问题 */
+    .container {
+      background-color: orange;
+    }
+
+    .item {
+      width: 400px;
+      height: 200px;
+      box-sizing: border-box;
+      border: 1px solid #000;
+      float: left;
+      background-color: red;
+    }
+
+    /* 加在父元素上面 */
+    /*  .clear-fix::after {
+      伪元素是行内级非替换元素
+      display: block;
+      content: "";
+      clear: both;
+     
+      visibility: hidden;
+      浏览器兼容
+      height: 0;
+      浏览器兼容
+    } */
+  </style>
+</head>
+
+<body>
+  <!-- BFC 的高度是 auto 的情况下，是如下方法计算高度的
+1. 如果只有 inline level ，是行高的顶部和底部的距离
+2. 如果有 block level ，是由最底层的块上边缘和最底层
+块盒子的下边缘之间的距离
+3. 如果有绝对定位元素，将被忽略；
+4. 如果有浮动元素，那么会增加高度以包括这些浮动元
+素的下边缘 -->
+  <div class="container clear-fix">
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+  </div>
+</body>
+
+</html>

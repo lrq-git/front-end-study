@@ -1,0 +1,30 @@
+.main {
+  background: url(../img/main_bg.png) no-repeat center top;
+  /* 水平方向上是center，垂直方向上是top */
+}
+
+.main .link {
+  display: block;
+  width: 1200px;
+  height: 440px;
+  margin: 8px auto 12px;
+}
+
+/* 内容区域 */
+.main .content-section {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30px;
+}
+
+.main .content-section .left-content {
+  width: 872px;
+  height: 1000px;
+  /* background-color: orange; */
+}
+
+.main .content-section .right-content {
+  width: 295px;
+  height: 500px;
+  /* background-color: purple; */
+}

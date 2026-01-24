@@ -1,0 +1,182 @@
+ .header {
+   position: relative;
+   background-color: rgba(0, 0, 0, .8);
+ }
+
+ .header .area {
+   display: flex;
+   justify-content: space-between;
+   height: 84px;
+   /* line-height: 84px; */
+   /* background-color: orange; */
+ }
+
+ .header .area .left-area {
+   display: flex;
+   /* background-color: red; */
+ }
+
+ .header .area .left-area .logo a {
+   position: relative;
+   top: 50%;
+   transform: translate(0, -50%);
+   /* 父元素必须要有高度，由内容撑起来的不算，但是flex布局的延伸算 */
+   display: block;
+   width: 200px;
+   height: 54px;
+   text-indent: -9999px;
+   background-color: red;
+ }
+
+ .header .area .left-area .nav-list {
+   margin-left: 30px;
+   display: flex;
+ }
+
+ .header .area .left-area .nav-list .item {
+   /* 一般这个item都是固定的宽度，或者包裹内容由margin撑起来 */
+   width: 110px;
+   padding-right: 5px;
+   /* background-color: blueviolet; */
+ }
+
+ .header .area .left-area .nav-list .item:hover,
+ .header .area .left-area .nav-list .item.active {
+
+   background-color: blue;
+ }
+
+ .header .area .left-area .nav-list .item:hover a,
+ .header .area .left-area .nav-list .item.active a {
+   color: #e4b653;
+   /* background-color: blue; */
+ }
+
+ .header .area .left-area .nav-list .item:hover .desc,
+ .header .area .left-area .nav-list .item.active .desc {
+   color: #91763f;
+
+ }
+
+ .header .area .left-area .nav-list a {
+   display: block;
+   /* 这里设置block,则盒子就会由行高撑起来,高度不继承，行高继承,会继承子子孙孙*/
+   height: 100%;
+   box-sizing: border-box;
+   padding-top: 20px;
+   /* background-color: blue; */
+   font-size: 18px;
+   color: #c9c9dd;
+   text-align: center;
+ }
+
+ .header .area .left-area .nav-list a .desc {
+   display: block;
+   margin-top: 8px;
+   font-size: 12px;
+   color: #898792;
+ }
+
+ .header .area .left-area .search {
+   margin-left: 10px;
+ }
+
+ .header .area .left-area .search a {
+   position: relative;
+   /* 定位里面这个百分比是父元素的百分比 */
+   top: 50%;
+   transform: translate(0, -50%);
+   /* 向上移动是- */
+   /* line-height: 26px; */
+   display: block;
+   width: 27px;
+   height: 26px;
+   background-color: orchid;
+ }
+
+ .header .right-area {
+   display: flex;
+   align-items: center;
+   /* background-color: green; */
+ }
+
+ .header .right-area img {
+   border-top: 6px solid #d9ad50;
+   border-bottom: 6px solid #d9ad50;
+   border-left: 3.5px solid #d9ad50;
+   border-right: 3.5px solid #d9ad50;
+   border-radius: 50%;
+   /* 让边框的形状变为圆的 */
+ }
+
+ .header .right-area .info {
+   margin-left: 10px;
+ }
+
+ .header .right-area .info a {
+   color: #fff;
+ }
+
+ .header .right-area .info p {
+   font-size: 12px;
+   color: #858792;
+   margin-top: 5px;
+ }
+
+ .header .dropmenu {
+   position: absolute;
+   left: 0;
+   right: 0;
+   top: 84px;
+   /* display: none; */
+   height: 0px;
+   background-color: rgba(0, 0, 0, .7);
+   transition: height 400ms ease;
+   /* 注意：宽度没有的时候，背景颜色没有，但是文本会显示 */
+   overflow: hidden;
+
+ }
+
+ .header:hover .dropmenu {
+   /* display: block; */
+   /* 注意：可以看出来这里的下拉菜单 是慢慢展开的，不是通过none和block来切换实现的*/
+   height: 285px;
+   /* transition: height 1s ease; */
+
+   /* 如果放在这里的话，就只有加上来的时候有动画 */
+
+ }
+
+ .header .dropmenu .inner {
+   display: flex;
+   margin: 0 auto;
+   width: 940px;
+   height: 100%;
+   box-sizing: border-box;
+   padding: 15px 0 30px 50px;
+ }
+
+ .header .dropmenu .list {
+
+   width: 115px;
+   padding-top: 5px;
+   text-align: center;
+
+ }
+
+ .header .dropmenu .list .item {
+   height: 30px;
+   line-height: 30px;
+ }
+
+ .header .dropmenu .list .item a {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   color: #c9c9dd;
+ }
+
+ .header .dropmenu .list .item a:hover {
+   color: #f3c258;
+   text-decoration: underline;
+ }

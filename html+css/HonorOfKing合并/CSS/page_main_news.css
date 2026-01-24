@@ -1,0 +1,165 @@
+.news-section {
+  display: flex;
+  height: 342px;
+  /* background-color: orange; */
+}
+
+.news-section .banner {
+  width: 605px;
+  background-color: #000;
+}
+
+.news-section .banner .image_list {
+  display: flex;
+  width: 604px;
+  overflow: hidden;
+}
+
+.news-section .banner .image_list .item {
+  flex-shrink: 0;
+  width: 100%;
+  /* 防止图片放在flex布局里面被缩小 */
+
+}
+
+.news-section .banner .image_list .item a {
+  display: block;
+}
+
+.news-section .banner .image_list .item a img {
+  width: 100%;
+}
+
+.news-section .banner .title_list {
+  display: flex;
+  height: 44px;
+  line-height: 44px;
+}
+
+.news-section .banner .title_list .item {
+  /* 文字之间的间距是这样撑起来的 */
+  flex: 1;
+  text-align: center;
+}
+
+.news-section .banner .title_list .item a {
+  display: block;
+  font-size: 14px;
+  color: #b1b2be;
+}
+
+.news-section .banner .title_list .item a:hover,
+.news-section .banner .title_list .item.active a {
+  color: #f3c258;
+  background-color: rgba(255, 255, 255, .15);
+}
+
+.news-section .news {
+  flex: 1;
+  overflow: hidden;
+  /* 因为新闻部分的宽度最好不要写死 */
+  padding: 0 17px;
+  /* background-color: purple; */
+}
+
+.news-section .news .title-list {
+  display: flex;
+  height: 48px;
+  border-bottom: 1px solid #000;
+}
+
+.news-section .news .title-list .item {
+  width: 52px;
+}
+
+.news-section .news .title-list .item a {
+  display: block;
+  height: 48px;
+  box-sizing: border-box;
+  /* 这样设置，他的下边框是从下面加上来的 */
+  line-height: 48px;
+  /* 决定文字具体在哪个位置，所有加不加border，不会影响文字的位置 */
+  color: #b8b9c5;
+  text-align: center;
+  transition: border-bottom 150ms linear
+    /* linear:表示均匀的过程 
+       ease-in 进来的时候比较慢 */
+    /* transition:property duration timing-function*/
+}
+
+.news-section .news .title-list .item:not(.more) a:hover,
+.news-section .news .title-list .item.active a {
+  border-bottom: 3px solid #f3c258;
+  color: #f3c258;
+}
+
+.news-section .news .notice {
+  /* 最后不要给固定的宽度，因为他的父元素会动态拉伸 */
+  height: 36px;
+  line-height: 36px;
+  /* 可以让里面的子元素行高也是36px */
+  margin-top: 18px;
+  padding: 0 15px;
+  background-color: #414046;
+}
+
+.news-section .news .notice a {
+  display: block;
+  /* padding-right: 50px; */
+  color: #f3c258;
+  font-size: 18px;
+
+  /* 有溢出他的宽度必须受到限制，padding也会限制 */
+  /* 溢出出现省略号 */
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.news-section .news .news-list {
+  margin-top: 10px;
+}
+
+.news-section .news .news-list .item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 11px;
+}
+
+.news-section .news .news-list .item .desc {
+  flex: 1;
+  color: #b8b9c5;
+  /* 换行的三行代码里面就有了overflow */
+}
+
+.news-section .news .news-list .item .data {
+  padding: 0 8px;
+  color: #999;
+  font-size: 12px;
+}
+
+.news-section .download {
+  width: 236px;
+  background-color: skyblue
+}
+
+.news-section .download a {
+  display: block;
+  /* 真实开发这里的背景用的是精灵图 */
+
+}
+
+.news-section .download a.download-btn {
+  background-color: blue;
+  height: 106px;
+}
+
+.news-section .download a.guard-btn {
+  height: 128px;
+  background-color: blueviolet;
+}
+
+.news-section .download a.experience-btn {
+  height: 108px;
+  background-color: brown;
+}

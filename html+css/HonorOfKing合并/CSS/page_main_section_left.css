@@ -1,0 +1,51 @@
+.main .match-center .match-news {
+  display: flex;
+  height: 260px;
+  margin: 20px 0 15px;
+}
+
+.main .match-center .match-news .news-left {
+  width: 211px;
+  background-color: orange;
+}
+
+.main .match-center .match-news .news-right {
+  flex: 1;
+  overflow: hidden;
+  padding: 0 15px;
+  /* background-color: purple; */
+}
+
+.main .match-center .news-right .title {
+  font-size: 24px;
+  color: #333;
+  padding-right: 80px;
+  /* 因为父元素是flex为1，然后需要的是子元素单行省略效果，所以父元素要设置overflox:hiddeen */
+}
+
+.main .match-center .news-right .subtitle {
+  color: #666;
+  padding-right: 160px;
+}
+
+.main .match-center .news-right .news-list .item {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.main .match-center .news-right .news-list .item .desc {
+  flex: 1;
+  /* 判断空白的部分是否想要成为这个的一部分来选择margin和left */
+  /* margin-left: 5px; */
+  padding-right: 50px;
+}
+
+.main .match-center .news-right .news-list .item .desc:hover {
+  text-decoration: underline;
+}
+
+.main .match-center .news-right .news-list .item .data {
+  font-size: 12px;
+  color: #b8b9c5;
+}

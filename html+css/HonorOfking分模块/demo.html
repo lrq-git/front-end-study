@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    /* 需求：鼠标放在百度一下，下面出现文字 */
+    .box {
+      background-color: orange;
+    }
+
+    .box .other {
+      display: none;
+    }
+
+    /* .box .search:hover+.other {
+      display: block;
+    } */
+    .box .search:hover .other {
+      display: block;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="box">
+    <a href="" class="search">
+      百度一下
+      <!-- 位置二：一般都放在这里 -->
+      <div class="other">
+        122334345445
+      </div>
+    </a>
+    <!-- 位置1 -->
+    <!-- 这里有弊端，如果鼠标放在这行文字上，他会消失 -->
+
+  </div>
+</body>
+
+</html>

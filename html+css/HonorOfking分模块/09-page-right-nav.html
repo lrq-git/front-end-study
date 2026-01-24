@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="./CSS/reset.css">
+  <link rel="stylesheet" href="./CSS/common.css">
+  <style>
+    .right-nav {
+      position: fixed;
+      top: 50%;
+      right: 0;
+      transform: translate(0, -50%);
+      /* margin-top: -240px;
+      这里不要用百分比/相对于最近的块容器的宽度  */
+      width: 254px;
+      height: 494px;
+      background-color: red;
+    }
+
+    .right-nav .right-list {
+      position: relative;
+      left: 60px;
+      /* margin-left: 60px; */
+    }
+
+    .right-nav .right-list .item {
+      width: 117px;
+      height: 38px;
+      background: rebeccapurple;
+    }
+
+    .right-nav .right-list .item a {
+      display: block;
+      height: 100%;
+    }
+
+    .right-nav .right-list .code {
+      text-align: center;
+      /* 注意：这个CSS 属性设置块元素或者单元格框的行内内容的水平对齐。这意味着其效果和 vertical-align 类似，但是是水平方向的。 */
+      height: 116px;
+      background: black;
+    }
+
+    .right-nav .right-list .code img {
+      width: 111px;
+      height: 110px;
+      margin-top: 3px;
+    }
+
+    .right-nav .right-list .item.weibo {
+      background-color: #5c426b;
+    }
+
+    .right-nav .right-list .item.weibo:hover {
+      background-color: hsl(119, 51%, 34%);
+
+    }
+
+    .right-nav .right-list .item.gzh {
+      background-color: hsl(221, 77%, 34%);
+    }
+
+    .right-nav .right-list .item.gzh:hover {
+      background-color: hwb(24 12% 41%);
+
+    }
+  </style>
+</head>
+
+<body>
+  <div class="right-nav">
+
+    <div class="right-dj">
+      <img src="./img/banner_01.png" alt="" style="width: 164px; height: 165px;">
+
+    </div>
+    <div class="right-list">
+      <li class="item code">
+        <img src="./img/entrance01.png" alt="">
+      </li>
+      <li class="item weibo"><a href=""></a></li>
+      <li class="item gzh"><a href=""></a></li>
+      <li class="item weibo"><a href=""></a></li>
+    </div>
+  </div>
+</body>
+
+</html>

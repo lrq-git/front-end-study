@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+
+  <!-- <img src="" alt=""> -->
+
+  <!-- <video src=""></video> -->
+  <!-- 嵌入媒体播放器,用于支持文档的视频播放 -->
+  <!-- 也是行内替换元素 -->
+
+  <!-- <video src="./assets/" width="600px" controls></video> -->
+
+  <!-- 属性:
+   1. src视频播放的URL地址
+   2.width,一般设置width就可以了，高度按照比例
+   3.controls：出现控制条进度条，一般公司会自己开发
+   4.autoplay(在大部分浏览器中，不生效，因为会突然出现声音，用户体验不好，很多浏览器把这个功能禁掉l)
+   5.muted:静音
+   一般加上muted时候autoplay会生效
+   6.preload,预加载（获取视频的元数据比如视频时长）：none\auto\metadata
+  7.poster：当视频还没有播放或者暂停的时候，放置的视频一帧的画面
+   -->
+
+
+  <!-- video支持的视频格式
+   封装格式比如MP4 -->
+  <video src="./assets/fff.mp4" width="600px" controls>
+    <source src="./assets/fff.webm">
+    <p>你的浏览器不支持HTML5 的video元素，请更换浏览器查看</p>
+  </video>
+
+  <!-- 兼容性写法 -->
+</body>
+
+</html>

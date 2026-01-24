@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang=zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="./CSS/reset.css">
+  <link rel="stylesheet" href="./CSS/common.css">
+  <style>
+    .main {
+      /* height: 100px; */
+      background-color: #000;
+    }
+
+    .news-section {
+      display: flex;
+      height: 342px;
+      /* background-color: orange; */
+    }
+
+    .news-section .banner {
+      width: 605px;
+      background-color: #000;
+    }
+
+    .news-section .banner .image_list {
+      display: flex;
+      width: 604px;
+      overflow: hidden;
+    }
+
+    .news-section .banner .image_list .item {
+      flex-shrink: 0;
+      width: 100%;
+      /* 防止图片放在flex布局里面被缩小 */
+
+    }
+
+    .news-section .banner .image_list .item a {
+      display: block;
+    }
+
+    .news-section .banner .image_list .item a img {
+      width: 100%;
+    }
+
+    .news-section .banner .title_list {
+      display: flex;
+      height: 44px;
+      line-height: 44px;
+    }
+
+    .news-section .banner .title_list .item {
+      /* 文字之间的间距是这样撑起来的 */
+      flex: 1;
+      text-align: center;
+    }
+
+    .news-section .banner .title_list .item a {
+      display: block;
+      font-size: 14px;
+      color: #b1b2be;
+    }
+
+    .news-section .banner .title_list .item a:hover,
+    .news-section .banner .title_list .item.active a {
+      color: #f3c258;
+      background-color: rgba(255, 255, 255, .15);
+    }
+
+    .news-section .news {
+      flex: 1;
+      overflow: hidden;
+      /* 因为新闻部分的宽度最好不要写死 */
+      padding: 0 17px;
+      /* background-color: purple; */
+    }
+
+    .news-section .news .title-list {
+      display: flex;
+      height: 48px;
+      border-bottom: 1px solid #000;
+    }
+
+    .news-section .news .title-list .item {
+      width: 52px;
+    }
+
+    .news-section .news .title-list .item a {
+      display: block;
+      height: 48px;
+      box-sizing: border-box;
+      /* 这样设置，他的下边框是从下面加上来的 */
+      line-height: 48px;
+      /* 决定文字具体在哪个位置，所有加不加border，不会影响文字的位置 */
+      color: #b8b9c5;
+      text-align: center;
+      transition: border-bottom 150ms linear
+        /* linear:表示均匀的过程 
+       ease-in 进来的时候比较慢 */
+        /* transition:property duration timing-function*/
+    }
+
+    .news-section .news .title-list .item:not(.more) a:hover,
+    .news-section .news .title-list .item.active a {
+      border-bottom: 3px solid #f3c258;
+      color: #f3c258;
+    }
+
+    .news-section .news .notice {
+      /* 最后不要给固定的宽度，因为他的父元素会动态拉伸 */
+      height: 36px;
+      line-height: 36px;
+      /* 可以让里面的子元素行高也是36px */
+      margin-top: 18px;
+      padding: 0 15px;
+      background-color: #414046;
+    }
+
+    .news-section .news .notice a {
+      display: block;
+      /* padding-right: 50px; */
+      color: #f3c258;
+      font-size: 18px;
+
+      /* 有溢出他的宽度必须受到限制，padding也会限制 */
+      /* 溢出出现省略号 */
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      overflow: hidden;
+    }
+
+    .news-section .news .news-list {
+      margin-top: 10px;
+    }
+
+    .news-section .news .news-list .item {
+      display: flex;
+      align-items: center;
+      margin-bottom: 11px;
+    }
+
+    .news-section .news .news-list .item .desc {
+      flex: 1;
+      color: #b8b9c5;
+      /* 换行的三行代码里面就有了overflow */
+    }
+
+    .news-section .news .news-list .item .data {
+      padding: 0 8px;
+      color: #999;
+      font-size: 12px;
+    }
+
+    .news-section .download {
+      width: 236px;
+      background-color: skyblue
+    }
+
+    .news-section .download a {
+      display: block;
+      /* 真实开发这里的背景用的是精灵图 */
+
+    }
+
+    .news-section .download a.download-btn {
+      background-color: blue;
+      height: 106px;
+    }
+
+    .news-section .download a.guard-btn {
+      height: 128px;
+      background-color: blueviolet;
+    }
+
+    .news-section .download a.experience-btn {
+      height: 108px;
+      background-color: brown;
+    }
+
+    .main .entrance-section {
+      display: flex;
+      justify-content: space-around;
+      margin-top: 20px;
+    }
+
+    .main .entrance-section .item {
+      width: 291px;
+      height: 134px;
+      background-color: orange;
+    }
+
+    .main .entrance-section .item a {
+      display: block;
+      height: 100%;
+      overflow: hidden;
+      /* 图片放大的时候，超出部分隐藏 */
+    }
+
+    .main .entrance-section .item img {
+      width: 100%;
+      height: 100%;
+      transition: transform 400ms ease;
+    }
+
+    .main .entrance-section .item a:hover img {
+      transform: scale(1.1);
+    }
+
+    .main .content-section {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .main .content-section .left-content {
+      width: 872px;
+      height: 1000px;
+      /* background-color: orange; */
+    }
+
+    .main .content-section .right-content {
+      width: 295px;
+      height: 500px;
+      background-color: purple;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="main main_wrapper">
+    <!-- 这里不需要包裹因为，除了中间其他的不需要设置样式 -->
+    <div class="news-section">
+      <div class="banner">
+        <!-- 轮播图就是要放一个列表，然后后面改变transform来进行位移 -->
+        <ul class="image_list">
+          <li class="item ">
+            <a href="">
+              <img src="./img/banner_01.png" alt="" style="width: 604px; height: 298px;">
+            </a>
+          </li>
+          <li class="item">
+            <a href="">
+              <img src="./img/banner_01.png" alt="" style="width: 604px; height: 298px;">
+            </a>
+          </li>
+        </ul>
+        <ul class="title_list">
+          <li class="item active">
+            <a href="">桑启的旅途故事</a>
+          </li>
+          <li class="item">
+            <a href="">桑启的旅途故事</a>
+          </li>
+          <li class="item">
+            <a href="">桑启的旅途故事</a>
+          </li>
+          <li class="item">
+            <a href="">桑启的旅途故事</a>
+          </li>
+          <li class="item">
+            <a href="">桑启的旅途故事</a>
+          </li>
+        </ul>
+      </div>
+      <div class="news">
+        <ul class="title-list">
+          <li class="item">
+            <!-- 一般这种item或者给固定的宽度或者平分也就是flex1 -->
+            <a href="">热门</a>
+          </li>
+          <li class="item active">
+            <a href="">新闻</a>
+          </li>
+          <li class="item">
+            <a href="">公告</a>
+          </li>
+          <li class="item">
+            <a href="">活动</a>
+          </li>
+          <li class="item">
+            <a href="">赛事</a>
+          </li>
+          <li class="item more">
+            <a href="">...</a>
+          </li>
+        </ul>
+        <p class="notice">
+          <a href="#">4月21日全服不停机更新公告hhhhhhhhhhhhhh</a>
+        </p>
+        <ul class="news-list">
+          <li class="item">
+            <!-- <i class="news_type news_type_hot">热门</i> -->
+            <a href="" class="desc nowrap_ellipsis news_type news_type_hot">哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈</a>
+            <span class="data">04/19</span>
+          </li>
+          <li class="item">
+            <a href="" class="desc nowrap_ellipsis">哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈</a>
+            <span class="data">04/19</span>
+          </li>
+          <li class="item">
+            <a href="" class="desc nowrap_ellipsis">哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈</a>
+            <span class="data">04/19</span>
+          </li>
+          <li class="item">
+            <a href="" class="desc nowrap_ellipsis">哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈</a>
+            <span class="data">04/19</span>
+          </li>
+          <li class="item">
+            <a href="" class="desc nowrap_ellipsis">哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈</a>
+            <span class="data">04/19</span>
+          </li>
+          <li class="item">
+            <a href="" class="desc nowrap_ellipsis">哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈</a>
+            <span class="data">04/19</span>
+          </li>
+          <li class="item">
+
+            <a href="" class="desc nowrap_ellipsis news_type news_type_notice">哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈</a>
+            <span class="data">04/19</span>
+          </li>
+        </ul>
+
+      </div>
+      <div class="download">
+        <a href="" class="download-btn">
+        </a>
+        <a href="" class="guard-btn"></a>
+        <a href="" class="experience-btn"></a>
+      </div>
+    </div>
+    <ul class="entrance-section">
+      <li class="item">
+        <a href="">
+          <img src="./img/entrance01.png" alt="" style="width: 291px;height: 134px;">
+        </a>
+      </li>
+      <li class="item">
+        <a href="">
+          <img src="./img/entrance01.png" alt="" style="width: 291px;height: 134px;">
+        </a>
+      </li>
+      <li class="item">
+        <a href="">
+          <img src="./img/entrance01.png" alt="" style="width: 291px;height: 134px;">
+        </a>
+      </li>
+      <li class="item">
+        <a href="">
+          <img src="./img/entrance01.png" alt="" style="width: 291px;height: 134px;">
+        </a>
+      </li>
+    </ul>
+
+    <div class="content-section">
+
+      <div class="left-content">
+        <div class="content-center">
+
+          <div class="section_header">
+            <div class="header_left">
+              <!-- 一般内容中心前面的这个图标有两种方式，第一种是如果图标的右边在精灵图里面是空的，则直接bgi;第二种方式，如果精灵图里面的图标紧挨，就用i,然后绝对定位定在 -->
+              <h3 class="title">内容中心</h3>
+            </div>
+            <div class="header_right">
+              <a href="" class="more">更多</a>
+            </div>
+          </div>
+          <div class="tab_control">
+            <!-- 一般这种线也是两个做法：
+             1.添加border 
+             2.添加div-->
+            <div class="item active">精品栏目</div>
+            <div class="line"></div>
+            <!-- 直接用div做一条线 -->
+            <div class="item">赛事精品</div>
+            <div class="line"></div>
+            <div class="item">英雄攻略</div>
+
+
+          </div>
+          <div class="tab_keyword">
+            <div class="item active">王者</div>
+            <div class="item">王者荣耀呼呼</div>
+            <div class="item">王者荣耀轮</div>
+            <div class="item">往这个</div>
+            <div class="item">王者460</div>
+            <div class="item">王者荣耀带你飞</div>
+            <div class="item">狄仁杰封神榜</div>
+            <div class="item">王者视角</div>
+            <div class="item">王者</div>
+            <div class="item">王者荣耀呼呼</div>
+            <div class="item">王者荣耀轮</div>
+            <div class="item">往这个</div>
+            <div class="item">王者460</div>
+            <div class="item">王者荣耀带你飞</div>
+            <div class="item">狄仁杰封神榜</div>
+            <div class="item">王者视角</div>
+          </div>
+
+        </div>
+        <div class="match-center">
+          <div class="section_header">
+            <div class="header_left">
+              <h3 class="title title_match_icon">赛事中心</h3>
+            </div>
+            <div class="header_right">
+              <a href="" class="more">更多</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="right-content"></div>
+
+    </div>
+    <div class="match-section"></div>
+  </div>
+</body>
+
+</html>

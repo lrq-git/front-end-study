@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <audio src=""></audio>
+
+  <!-- 属性：
+   1. src
+   2.controls
+   3.autoplay
+   4.muted
+   有的浏览器同时设置autoplay和muted也不会自动播放
+   5.preload-->
+
+  <!-- 同样有兼容性写法 -->
+  <audio src="./assets/fff.mp3" controls>
+    <source src="./assets/fff.ogg">
+    <p>你的浏览器不支持HTML5 的audio元素，请更换浏览器查看</p>
+  </audio>
+</body>
+
+</html>

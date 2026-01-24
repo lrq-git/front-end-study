@@ -1,4 +1,10 @@
 /* common.css公共的样式 */
+/* body的公共样式 */
+body {
+  font: 14px / 1.5 "Microsoft YaHei", Tahoma, "simsun", sans-serif;
+  color: #333;
+}
+
 /* wrapper中间包裹的区域 */
 .top_wrapper {
   width: 980px;
@@ -14,4 +20,165 @@
 .main_wrapper {
   width: 1200px;
   margin: 0 auto;
+}
+
+/* 文字不换行显示三行代码 */
+.nowrap_ellipsis {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+/* 新闻类型的图标 */
+.news_type::before {
+  display: inline-block;
+  width: 32px;
+  height: 16px;
+  margin-right: 5px;
+  text-align: center;
+  line-height: 16px;
+  font-size: 12px;
+  border: 1px solid #f00;
+  border-radius: 2px;
+}
+
+.news_type_hot::before {
+  content: "热门";
+  color: #ff3636;
+  border-color: #ff3636;
+}
+
+.news_type_notice::before {
+  content: "公告";
+
+  color: #f4be19;
+  border-color: #f4be19;
+}
+
+.news_type_news::before {
+  content: "新闻";
+
+  color: #1e96ab;
+  border-color: #1e96ab;
+}
+
+.news_type_match {
+  display: inline-block;
+  width: 52px;
+  height: 23px;
+  margin-right: 12px;
+  border-radius: 10px;
+  line-height: 23px;
+  text-align: center;
+  color: #999;
+  font-size: 12px;
+  background-color: #e3e3e3;
+
+}
+
+
+/* section_header */
+.section_header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+/* 
+.section_header .header_left {} */
+
+.section_header .header_left .title {
+  font-size: 22px;
+  color: #323235;
+  padding-left: 30px;
+  background-color: red;
+  /* 开发里用的bgi */
+}
+
+.section_header .header_right {
+  display: flex;
+  align-items: center;
+}
+
+.section_header .header_right .more {
+  display: block;
+  padding-left: 22px;
+  background-color: #f00;
+}
+
+.section_header .header_right .more:hover {
+  color: #f3c258;
+}
+
+.tab_control {
+  display: flex;
+  align-items: center;
+  height: 32px;
+  line-height: 29px;
+  background-color: #f5f5f5;
+}
+
+.tab_control>.item {
+  /* item的高度是line_height撑起来 */
+  /* 平分 */
+  /* flex-grow: 1; */
+  flex: 1;
+  /* 这里flex-grow是1，flex-basis默认是0，但是因为grow是1，则可以拉伸，所以basis限制不了 */
+  color: #999;
+  text-align: center;
+  cursor: pointer;
+  /* 变成小手，因为不是超链接知识切换，所以可以不用a*/
+  border-bottom: 3px solid transparent;
+}
+
+.tab_control>.item.item_wrap {
+  /* flex-grow: 0; */
+
+  flex: 0 auto;
+
+  /* 当basis设置为auto的时候，他的宽度由内容决定 flex-basis 指定了 flex 元素在主轴方向上的初始大小。如果不使用 box-sizing 改变盒模型的话，那么这个属性就决定了 flex 元素的内容盒（content-box）的尺寸。*/
+  padding: 0 27px;
+
+}
+
+
+
+.tab_control>.item:hover,
+.tab_control>.item.active {
+  color: #333;
+  border-bottom-color: #f3c258;
+}
+
+.tab_control>.line {
+  width: 1px;
+  height: 20px;
+  background-color: #e1e1e1;
+}
+
+/* tab_keyword样式 */
+.tab_keyword {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 12px;
+}
+
+.tab_keyword>.item {
+  /* 考虑里面的元素的时候要考虑他的宽度是设置的固定宽度，还是用内容和padding撑起来的 */
+  height: 24px;
+  line-height: 24px;
+  margin: 0 8px 10px 0;
+  padding: 0 15px;
+  color: #333;
+  background-color: #f5f5f5;
+  border: 1px solid #e5e5e5;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.tab_keyword>.item:hover,
+.tab_keyword>.item.active {
+  color: #fff;
+  background-color: #f3c258;
+  border-color: #f3c258;
 }

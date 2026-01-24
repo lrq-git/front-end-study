@@ -30,3 +30,9 @@ li,
 ol {
   list-style: none;
 }
+
+/* 对斜体重置 */
+i,
+em {
+  font-style: normal;
+}

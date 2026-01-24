@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <!-- 全局属性：所有元素都可以设置的属性
+   比如：class,id,title, style
+   data-*-->
+  <!--data- 用于添加自定义数据属性 -->
+  <div class="box" data-name="why" data-age="18" data-height="1.88"></div>
+
+  <!-- 这些自定义数据，想让js获得定义在html的数据 -->
+  <script>
+    const boxE = document.querySelector(".box")
+    console.log(boxE.dataset)
+  </script>
+
+
+  <!-- 真实开发：1.把数据下载到本地 
+   2.通过for循环把数据拿到HTML（wxml)中-->
+
+  <!-- 在小程序里面就是通过data-来传数据的 -->
+</body>
+
+</html>

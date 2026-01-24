@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .box {
+      display: flex;
+      align-items: center;
+      /* 如果没有设置，则他子元素的高度是strench，加了border也不会增加高度，相当于border-box */
+      width: 400px;
+      height: 32px;
+      line-height: 32px;
+      background-color: blue;
+    }
+
+    .item {
+      flex: 1;
+      text-align: center;
+      background-color: red;
+      border-bottom: 5px solid #000;
+    }
+
+    /* 现象：1.默认item高度是包裹的内容
+    2.如果父元素设置了line-height,则item的高度变为32px */
+
+    /* 如果要加align-items: center;,父元素的line-height设置小一点（当子元素要设置border_bottom的时候） */
+  </style>
+</head>
+
+<body>
+  <div class="box">
+    <div class="item">赛事中心</div>
+    <div class="item">赛事中心</div>
+    <div class="item">赛事中心</div>
+
+  </div>
+</body>
+
+</html>

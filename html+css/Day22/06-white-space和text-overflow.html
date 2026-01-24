@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .box {
+      width: 200px;
+      background-color: orange;
+
+      /* white-space默认值是normal ：换行，合并*/
+      /* 1.white-space: normal;
+      按照浏览器默认的合并方式 ，换行符和多个空格都各自会合并为一个空格*/
+      /* 2.nowrap:不换行，合并 */
+      /* white-space: nowrap; */
+      /* 3.pre 不合并（如果文本里面有空白符，换行符，在浏览器中也会体现）， 不换行;*/
+      /* white-space: pre; */
+      /* 4.pre-wrap 不合并，换行 */
+      /* white-space: pre-wrap; */
+      /* 5.pre-line:合并连续空白，但是不合并换行符，换行 */
+      white-space: pre-line;
+
+
+    }
+
+    .box2 {
+      overflow: hidden;
+      /* overflow有hidden auto(内容超出会滚动，相当于scroll) visible */
+      /* 注意：text-overflow生效的前提是overflow的值不是visible，scroll也是无效的 */
+      white-space: nowrap;
+      /* text-overflow: */
+      width: 150px;
+      background-color: red;
+      text-overflow: ellipsis;
+      /* 默认值就是clip,裁剪 */
+    }
+  </style>
+</head>
+
+<body>
+  <!-- white-space用于设置空白处理和换行规则 
+   空格、tab、换行符是空白符-->
+
+
+  <div class="box">
+    我是coderwhy kode why_hahjhjhjh
+    哈哈哈哈哈哈哈哈哈哈 呵呵呵 my name is why
+  </div>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <div class="box2">
+    哈哈哈哈哈哈哈哈哈哈哈哈啊哈哈哈哈哈啊哈哈啊哈哈啊哈哈哈哈哈哈
+  </div>
+
+</body>
+
+</html>

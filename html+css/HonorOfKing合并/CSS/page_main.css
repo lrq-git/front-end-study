@@ -1,3 +1,6 @@
+@charset "UTF-8";
+/* 如果不写的话，也是默认是UTF-8 */
+
 .main {
   background: url(../img/main_bg.png) no-repeat center top;
   /* 水平方向上是center，垂直方向上是top */

@@ -1,0 +1,50 @@
+/* .box {
+  width: 50px * 2;
+  height: 100px;
+  background-color: orange;
+  颜色也可以相加
+} */
+
+// 这里运算基本不用，只有特殊的场景会用
+
+
+
+// 混入
+// 1.基本混入
+.nowrap_ellipsis {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+// 这样有弊端：1.需要写多一个class2.维护的时候不方便，因为这个类是加在html上的
+// 2.混入这个是可以传参的
+.box_border(@borderWidth: 5px, @borderColor: purple) {
+  border: @borderWidth solid @borderColor;
+
+}
+
+.box_size {
+  width: 100px;
+  height: 100px;
+}
+
+// 2.3混入和映射结合使用
+// 弥补：less中不能自定义函数的缺陷
+.box1 {
+  // width: 100px;
+  width: .box_size()[width];
+  background-color: #f00;
+  .nowrap_ellipsis(); // 打包的时候就会加在这里
+  // 在混入没有参数的时候，小括号可以省略，但一般不要省略，因为省略的语法很快就消失了
+  .box_border();
+  // 注意加分号
+}
+
+.box2 {
+  width: 150px;
+  background-color: #0f0;
+  .box_border(10px, orange);
+}
+
+// 真实开发的时候会建立一个混入的less文件

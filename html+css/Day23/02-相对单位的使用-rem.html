@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <style>
+    html {
+      /* 如果不写fs,默认chrome浏览器是fs16px */
+      font-size: 1px;
+    }
+
+    /* 3.相对单位:rem,相对于html的font-size ,*/
+    /*  .container {
+      font-size: 15px;
+
+    } */
+
+    .box {
+      width: 100rem;
+      height: 100rem;
+      font-size: 20rem;
+      /* chrome会限制显示字体的大小不能小于12px,因为交互体验不好 */
+      background-color: orange;
+    }
+
+    /* rem非常方便做适配，以后只需要改变html的font-size */
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+    <div class="box">我是box</div>
+
+  </div>
+</body>
+
+</html>

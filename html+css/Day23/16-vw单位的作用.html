@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <script src="./js/hy_flexible.js"></script>
+
+  <style>
+    /* rem:1.动态设置html的font-size
+    font-size:视口宽度/10 
+    2.换算成rem单位*/
+    /*   html {
+      font-size: 10vw;
+       不用媒体查询，也不用动态监听 
+    } */
+
+    .box {
+      /* width: 2.6667rem; */
+      width: 2.6667 * 10vw;
+      height: 2.6667 * 10vw;
+
+      /* height: 2.6667rem; */
+      background-color: orange;
+    }
+  </style>
+</head>
+<!-- vw不能设置最大的限制，他会随着宽度一直变换 -->
+<!--
+vw 相比于 rem 的优势：
+优势一： 不需要去计算 html 的 font size 大小，也不需要给 html 设置这样一个 font size
+优势二： 不会因为设置 html 的 font size 大小，而必须给 body 再设置一个 font size ，防止继承
+优势三： 因为不依赖 font size 的尺寸，所以不用担心某些原因 html 的 font size 尺寸被篡改，页面尺寸混乱；
+优势四： vw 相比于 rem 更加语义化， 1vw 刚才是 1/100 的 viewport 的大小
+优势五： 可以具备 rem 之前所有的优点； -->
+
+<body>
+  <div class="box"></div>
+
+</body>
+
+</html>

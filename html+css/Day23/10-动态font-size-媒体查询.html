@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    /* 通过媒体查询来设置不同屏幕下的fs
+    缺点：针对不同的尺寸，要写大量的媒体查询；不能动态改变（要根据屏幕变化，实时改变） */
+    @media screen and (min-width:320px) {
+      html {
+        font-size: 20px;
+      }
+    }
+
+    @media screen and (min-width:375px) {
+      html {
+        font-size: 24px;
+      }
+    }
+
+    @media screen and (min-width:414px) {
+      html {
+        font-size: 28px;
+      }
+    }
+
+    @media screen and (min-width:480px) {
+      html {
+        font-size: 32px;
+      }
+    }
+
+    .box {
+      width: 5rem;
+      /* 100/20 */
+      height: 5rem;
+      background-color: orange;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="box"></div>
+</body>
+
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <style>
+    /* 4.相对单位:vw,相对于视口宽度 ,
+    1vw相当于是视口宽度的1%
+    vh相对于视口的高度*/
+    body {
+      margin: 0;
+      padding: 0;
+    }
+
+    .box {
+      width: 10vw;
+      height: 10vh;
+      /* 会随着浏览器缩放而缩放，vw用的多，vh用的少一点 */
+      background-color: orange;
+    }
+
+    /* rem非常方便做适配，以后只需要改变html的font-size */
+  </style>
+</head>
+
+<body>
+  <!-- 相对单位还有百分比，但一般不用，因为不同的属性，百分比相对于不同的东西 -->
+
+  <div class="box">我是box</div>
+
+
+</body>
+
+</html>

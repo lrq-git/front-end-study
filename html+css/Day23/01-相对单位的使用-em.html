@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <style>
+    /*  .box {
+      1.绝对单位 
+      width: 100px;
+      height: 100px;
+      background-color: orange;
+    } */
+    /* 2.相对单位:em,相对于自己的font-size ,*/
+    .container {
+      font-size: 15px;
+      /* fs是继承属性 */
+    }
+
+    .box {
+      /* font-size: 20px; */
+      /* 如果自己不设置fs,会继承父亲的fs */
+
+      /* 如果fs中有em单位，可以理解成相对于父元素，但是更准确的理解依然是相对于自己
+      实际上是先继承，然后css层叠把继承的层叠掉 */
+      font-size: 1em;
+      width: 10em;
+      height: 100px;
+      background-color: orange;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+    <div class="box">我是box</div>
+
+  </div>
+</body>
+
+</html>

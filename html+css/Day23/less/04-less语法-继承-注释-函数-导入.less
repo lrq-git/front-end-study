@@ -1,0 +1,41 @@
+// 1.extend(继承),与混入不一样
+/* .box_border {
+  border: 5px solid #f00;
+}
+
+.box {
+  width: 100px;
+  background-color: orange;
+  &:extend(.box_border);
+} */
+
+// 2.内置函数
+/* .box {
+  color: color(skyblue);
+  width: convert(100px, "in");
+  font-size: ceil(18.4px);
+  background-color: orange;
+} */
+
+// 3.作用域
+
+// 查找一个变量的时候，现在本地查找变量和混合
+@mainColor: #f00;
+
+.box_color {
+  @mainColor: blueviolet;
+
+}
+
+// 
+.box {
+  @mainColor: blue;
+
+  .item {
+    span {
+      @mainColor: yellow;
+      color: @mainColor;
+      .box_color();
+    }
+  }
+}

@@ -1,0 +1,72 @@
+// 1.兼容CSS代码
+/* .box {
+  width: 100px;
+  height: 200px;
+  background-color: orange;
+  font-size: 18px;
+} */
+
+// 2.定义变量
+/*
+
+.box .pel {
+  color: @mainColor;
+  font-size: @normalfontsize;
+}
+
+.box h1 .keyword {
+  color: @mainColor;
+  font-size: @bigfontsize;
+}
+
+.box p .link {
+  color: @mainColor;
+  font-size: @samllFontsize;
+} */
+
+
+// 3.选择器的嵌套
+@mainColor: #f3c258;
+@samllFontsize: 12px;
+@normalfontsize: 14px;
+@bigfontsize: 18px;
+
+.box {
+  p.pel {
+    color: @mainColor;
+    font-size: @bigfontsize;
+  }
+
+  h1 {
+    .keyword {
+      color: @mainColor;
+      font-size: @bigfontsize;
+    }
+  }
+
+  p {
+    .link {
+      color: @mainColor;
+      font-size: @samllFontsize;
+
+      &:hover {
+        color: #00f;
+      }
+    }
+  }
+
+}
+
+.list {
+  .item {
+    font-size: 20px;
+
+    &:hover {
+      color: @mainColor;
+    }
+
+    &:nth-child(1) {
+      color: #00f;
+    }
+  }
+}

@@ -1,0 +1,37 @@
+@import url(./variables.less);
+
+body {
+  font-size: @bigFontSize;
+  background-color: #f5f5f5;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.tags .tag {
+  // 一般由内容撑起来的高度，会比文本字体高一点
+  position: relative;
+  margin-right: .8vw;
+  padding: 0 .8vw;
+  font-size: 3.2vw;
+  color: @mainColor;
+  border: 1px solid @mainColor;
+  border-radius: .5333vw;
+
+  &.ticket {
+    padding-left: 5.3333vw;
+  }
+
+  &.ticket::before {
+    // 伪元素可以用定位来调整它的位置
+    content: "券";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    padding: 0 .5333vw;
+    background-color: @lightBgColor;
+  }
+}

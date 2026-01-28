@@ -1,0 +1,39 @@
+@import url(./variables.less);
+
+.category {
+  display: flex;
+  margin: 5.333vw 0 2.6667vw;
+  padding: 0 3.2vw;
+
+  .item {
+    flex: 1;
+
+    text-align: center;
+    // 可以让行内级元素进行居中，注意文本就是行内级虽然他在块级元素里所以，“行内内容”就是指：直接写在父元素里的文本，或者是行内级标签包裹的内容。只要不是块级元素（如div、p、h1等），都属于行内内容
+
+    .title {
+      font-size: @bigFontSize;
+      color: #666;
+    }
+
+    .subtitle {
+      // 因为要设置背景所以要设置宽高
+      height: 4.2667vw;
+      padding: 0 1.6vw;
+      font-size: @smallFontSize;
+      border-radius: 2.4vw;
+      color: #999;
+    }
+
+    &.active {
+      .title {
+        color: @mainColor;
+      }
+
+      .subtitle {
+        background-color: @mainColor;
+        color: #fff;
+      }
+    }
+  }
+}

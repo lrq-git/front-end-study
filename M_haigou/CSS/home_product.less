@@ -1,0 +1,45 @@
+@import url(./mixins.less);
+
+.product {
+  display: flex;
+  // 默认不换行，而且flex-shrink为1
+  flex-wrap: wrap;
+  justify-content: center;
+
+  .item {
+    width: 46.667vw;
+    margin-top: 1.6vw;
+
+    border-radius: 1.3333vw;
+    overflow: hidden;
+    // 因为里面有图片，怕图片超出
+    background-color: #fff;
+    color: #666;
+
+    &:nth-child(2n) {
+      margin-left: 1.6vw;
+    }
+
+    .album {
+      img {
+        width: 100%;
+        // 这段样式的意思是：选择 .album 元素下的 img 标签，把图片的宽度设置为其父元素（.album）的100%。也就是说，图片会自动拉伸或缩小，始终填满父容器的宽度，不会超出或留白。这样可以让图片自适应父容器的大小，实现响应式布局。
+      }
+    }
+
+    .info {
+      box-sizing: border-box;
+      padding: 2.6667vw;
+
+      .company {
+        background: url(../img/company_01.png) no-repeat left center/4vw 4vw;
+        text-indent: 4.8vw;
+      }
+
+      .desc {
+        .nowrap_two();
+      }
+
+    }
+  }
+}

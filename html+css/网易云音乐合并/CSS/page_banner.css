@@ -1,0 +1,139 @@
+.banner {
+  height: 285px;
+  /* 因为是一个块级元素，会具备宽度 ，auto,继承父元素的宽度
+      如果是块级元素，如果里面没有内容，则没有宽度就不会有显示*/
+  background: url(../images/banner_bg01.png) center center / 6000px;
+  /* background:颜色 图片 位置 / 大小 重复 attachment */
+}
+
+.banner .area {
+  position: relative;
+  height: 285px;
+  background-color: orange;
+}
+
+.banner .area .area-left {
+  position: relative;
+  width: 730px;
+}
+
+/* 图片列表 */
+.banner .area-left .img-list {
+  display: flex;
+  /* 水平排布 */
+  /* 注意一定要加单位 */
+  overflow: hidden;
+}
+
+.banner .area-left .img-list li {
+  flex-shrink: 0;
+  /* 默认为1，会压缩，所以设置为0 */
+  width: 100%;
+}
+
+.banner .area-left .img-list .item {
+  display: block;
+  /* li是块级元素，因此不用设置，他的宽度就会继承父亲 */
+}
+
+.banner .area-left .img-list .item img {
+  width: 100%;
+  height: 285px;
+  /* 解决下面的一点边距 */
+}
+
+/* 点的列表 */
+.banner .area-left .dots-list {
+  position: absolute;
+  bottom: 5px;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  /* 注意因为这个没有宽度,这样设置会让dots-list的宽度是area-left的宽度 */
+  display: flex;
+  /* 因为是area-left 的宽度 */
+  justify-content: center;
+}
+
+.banner .area-left .dots-list li {
+  margin: 0 2px;
+}
+
+.banner .area-left .dots-list .item {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background-color: red;
+  background: url(../images/banner_sprite.png) 3px -343px;
+}
+
+.banner .area-left .dots-list .item.active,
+.banner .area-left .dots-list .item:hover {
+  background-position: -16px -343px;
+}
+
+.banner .area-right {
+  position: absolute;
+  right: -1px;
+  top: 0;
+  bottom: 0;
+  /* 如果这两个都设置，则默认拉伸（top bottom) */
+  width: 254px;
+  height: 285px;
+  /* 注：高度设置为父元素高度一致的方法：
+      1.height直接设置
+      2.top0,bottom0(这种用的多)
+      3,top0,width100% */
+  background: url(../images/download_sprite.png);
+}
+
+.banner .area-right .download {
+  display: block;
+  width: 215px;
+  height: 56px;
+  margin: 186px 0 0 19px;
+  text-indent: -9999px;
+}
+
+.banner .area-right .download:hover {
+  background: url(../images/download_sprite.png);
+  background-position: 0 -290px;
+  /* 必须要在设置一次图片 */
+}
+
+.banner .area-right .desc {
+  margin-top: 10px;
+  text-align: center;
+  font-size: 12px;
+  color: #8d8d8d;
+}
+
+.banner .area .control {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin: auto 0;
+  width: 37px;
+  height: 63px;
+  background-image: url(../images/banner_sprite.png);
+}
+
+.banner .area .left {
+  left: -70px;
+  background-position: 0 -360px;
+}
+
+.banner .area .left:hover {
+  background-position: 0 -430px;
+
+}
+
+.banner .area .right {
+  right: -70px;
+  background-position: 0 -508px;
+
+}
+
+.banner .area .right:hover {
+  background-position: 0 -578px;
+}

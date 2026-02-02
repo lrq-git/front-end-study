@@ -1,0 +1,99 @@
+@import url(./iconfont.css);
+
+.header {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 40px;
+  line-height: 40px;
+  font-size: 12px;
+  padding: 0 15px;
+  background-color: #333;
+
+  .left {
+
+    .item {
+      display: inline-block;
+      padding-right: 4px;
+      padding-left: 4px;
+
+      text-align: center;
+      color: #b0b0b0;
+
+      &:hover {
+        color: #fff;
+      }
+    }
+
+    .line {
+      display: inline-block;
+      color: #424242;
+
+    }
+  }
+
+  .right {
+    .item {
+      display: inline-block;
+      padding-right: 4px;
+      padding-left: 4px;
+      color: #b0b0b0;
+
+      &:hover {
+        color: #fff;
+      }
+    }
+
+    .cart {
+      display: inline-block;
+      width: 120px;
+      height: 40px;
+      margin-left: 15px;
+      color: #b0b0b0;
+      font-size: 12px;
+      text-align: center;
+      background: #424242;
+
+      span {
+        margin-left: 2px;
+      }
+
+      &:hover {
+        color: #ff6700;
+        background-color: #fff;
+      }
+
+
+      .cart-add {
+        position: absolute;
+        top: 40px;
+        right: 15px;
+        width: 300px;
+        height: 0px;
+        line-height: 100px;
+        text-align: center;
+        background-color: #fff;
+        color: #333;
+        transition: height 400ms ease;
+        /* 注意：宽度没有的时候，背景颜色没有，但是文本会显示 */
+        overflow: hidden;
+        border: none;
+        box-shadow: 0 2px 8px 0 rgba(204, 204, 204, 0.5);
+      }
+
+      &:hover>.cart-add {
+        height: 100px;
+
+
+      }
+
+    }
+
+
+    .line {
+      display: inline-block;
+      color: #424242;
+    }
+  }
+}

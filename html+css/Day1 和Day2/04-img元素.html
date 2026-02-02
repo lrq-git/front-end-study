@@ -7,6 +7,9 @@
   <title>Document</title>
   <style>
     .one {
+      /* 1.如果只设置一个宽度，则高度会按照图片自身的宽高比缩放 
+      2.如果设置width=100%,则图片宽度会与块级父元素宽度一致*/
+
       width: 100px;
       height: 100px;
       /* img也是行内替换元素，虽然他的固有尺寸的优先级高，但是浏览器赋予了width和height的权限 */

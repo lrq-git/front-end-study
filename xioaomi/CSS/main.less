@@ -80,6 +80,13 @@
             padding: 20px 0;
             text-align: center;
             margin-bottom: 14px;
+            transition: all 0.3s ease-in;
+
+            &:hover {
+              transform: translateY(-3px);
+              /* 只在下方和两侧有更淡的阴影，上方无阴影 */
+              box-shadow: 0 8px 16px -8px rgba(0, 0, 0, 0.08), 0 1.5px 6px 0 rgba(0, 0, 0, 0.06);
+            }
 
             &:nth-last-child(-n+4) {
               margin-bottom: 0;

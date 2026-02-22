@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<!-- 2.自上而下加载顺序，所以script标签放在body里面的最后才能获取到元素 ，其实放在body和html外都可以，但是他是页面的一部分所以最好放在body元素里的最后-->
+
+<body>
+
+  <!-- 1.如果这段代码放在前面，由于后面的.title元素还没有加载完成，所以获取不到元素
+  <script>
+    var titleEl = document.querySelector('.title');
+    alert(titleEl);
+  </script> -->
+
+  <h1 class="title">我是标题</h1>
+  <p>我是段落，哈哈哈哈</p>
+  <script>
+    var titleEl = document.querySelector('.title');
+    alert(titleEl);
+  </script>
+  <!-- 3.js严格区分大小写，html和css不区分大小写
+   4.script还有其他属性比如type -->
+</body>
+
+</html>

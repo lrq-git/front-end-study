@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+
+
+  <script>
+    // 变量的定义
+    // 第一步 变量的声明（告诉js引擎我要定义一个变量）
+    // 使用var关键字声明变量（variable的缩写）
+    //  告诉变量名字
+    // 第二步 变量的赋值（给变量一个值）
+    // 使用等号=进行赋值
+    // var myName = "张三";
+
+    // 其他写法一：
+    var myName; // 先声明变量
+    myName = "李四"; // 后赋值
+
+    // 其他写法二：同时声明多个变量(开发里面不锐减，阅读性差)
+    var age, gender;
+    age = 18;
+    gender = "男";
+    // 写在一起
+    var height = 180, weight = 75;
+    // 打印变量时候，实际上打印变量中保存的数据（值）
+    // console.log(参数1, 参数2, ...);
+    console.log(height, weight);
+
+    // 命名规则（必须执行）
+    // 1.变量名只能包含字母、数字、下划线（_）、美元符号（$），不能以数字开头
+    // 2.变量名不能是JavaScript的关键字和保留字
+    // 3.变量名区分大小写
+    // 4.变量名建议具有描述性，能体现变量所代表的数据含义
+
+    // 示例
+    var userName = "Alice";
+    var userAge = 25;
+    var isMember = true;
+
+    console.log("姓名：" + userName);
+    console.log("年龄：" + userAge);
+    console.log("是否会员：" + isMember);
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // 变量的注意事项一：如果一个变量未声明就直接使用，会报错
+    var currentYear = age + 2024; // age未声明，使用时会报错
+    console.log(age);
+
+    console.log(name);
+    // 注意，这个name变量实际上是浏览器环境下的一个全局变量，代表当前用户的登录名，所以不声明直接使用不会报错，没有定义的时候，name的值是一个空字符串""
+
+    // 注意事项二：如果一个变量声明了但未赋值，使用时不会报错，值是undefined（这是一个数据类型)
+    var score;
+    console.log(score);
+    // 注意事项三：在js中也可以不适用var在全局声明一个变量（不推荐）
+    // 如果不使用var声明变量，直接赋值一个变量，也可以声明成功，并且这个变量会被加入window对象。这个变量会被自动声明为全局变量
+    city = "北京";
+    console.log(city);
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // 练习一：定义变量保存个人变量
+    var name = "王五";
+    var age = 18;
+    var height = 1.75;
+    var weight = 70;
+    var address = "北京市朝阳区";
+
+    // 修改变量的值（重新赋值）
+    age = 19;
+    weight = 68;
+    address = "上海市浦东新区";
+
+    // 练习二：将一个变量的值，赋值给另一个变量
+    var nickname = "小王";
+    var admin = nickname; // 将nickname的值赋值给admin
+    console.log(admin, nickname)
+
+    // 练习三：定义两个变量保存两个数字，对两个变量中的数字进行交换
+    var num1 = 10;
+    var num2 = 20;
+    console.log("交换前：num1 =", num1, "num2 =", num2);
+    // 方法一：使用第三个变量作为中介
+    var temp = num1;
+    num1 = num2;
+    num2 = temp;
+    console.log("交换后：num1 =", num1, "num2 =", num2);
+    // 方法二：不使用第三个变量进行交换(了解，笔试面试题)
+    num1 = num1 + num2; // num1现在是30
+    num2 = num1 - num2; // num2现在是10
+    num1 = num1 - num2; // num1现在是20
+    console.log("交换后：num1 =", num1, "num2 =", num2)
+    // 练习四：接受用户输入的一个值，并且使用一个变量来保存
+    var userInput = prompt("请输入一个值：");
+    console.log(userInput);
+  </script>
+
+
+
+</body>
+
+</html>

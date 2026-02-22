@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="#">
+  <!-- 外部css是通过link 的href -->
+</head>
+
+<body>
+  <!-- 1.位置一：编写在HTML内部 -->
+  <!-- 点击百度一下，弹出弹窗 -->
+  <!-- <a href="#" onclick="alert('百度一下')">百度一下</a> -->
+  <!-- 点击不跳转，弹出弹窗 -->
+  <!-- <a href="javascript:alert('百度一下')">百度一下</a> -->
+
+
+  <!-- 2.编写位置二：编写在script标签内部 -->
+  <script>
+    alert("这是在script标签内部编写的JavaScript代码");
+  </script>
+
+  <!-- 3.编写位置三：编写在外部JavaScript文件中 -->
+  <a href="#" class="bing">bing一下</a>
+  <script src="./JS/bing.js"></script>
+</body>
+
+</html>

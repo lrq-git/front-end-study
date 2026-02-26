@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+
+    //转换为数字类型的方法：
+    //1.1隐式转换（用的少）
+    //1.1.1在数学运算的过程中，其他数据类型会被隐式转换成数字类型(数学运算符：- * / % )
+    var num1 = "10";
+    var num2 = "20";
+    var result = num1 + num2; // 隐式转换，num1和num2都是字符串，在进行字符串拼接时，JavaScript会将它们隐式转换成数字10和20，然后进行运算，所以result的值是"1020"
+    //运算符是加法的时候，如果其中一个操作数是字符串，另一个操作数会被隐式转换成字符串，然后进行字符串拼接，所以result的值是"1020"
+    console.log(result); // 输出: "1020"，num1和num2被转换成字符串进行拼接
+    var result = num1 * num2;
+    console.log(result); // 输出: 200，num1和num2被隐式转换成数字类型进行乘法运算
+
+    //1.2显式转换（用的多）
+    //1.2.1使用Number()函数进行显式转换 (推荐)
+    var numstr = "123";
+    var result = Number(numstr);
+    console.log(typeof result); // 输出: "number"，result的类型是数字类型
+
+    //其他类型转成数字类型的方法：
+    console.log(Number(undefined)); // 输出: NaN，undefined被转换成数字类型时返回NaN
+    console.log(Number(null)); // 输出: 0，null被转换成数字类型时返回0
+    console.log(Number(true)); // 输出: 1，true被转换成数字类型时返回1
+    console.log(Number(false)); // 输出: 0，false被转换成数字类型时返回0
+    console.log(Number("abc123")); // 输出: NaN，字符串包含非数字字符被转换成数字类型时返回NaN
+    //将字符串转换为数字类型时，去掉收尾空格的纯数字字符串中的数字部分会被转换成数字类型，其他情况都会返回NaN
+    console.log(Number("  123  ")); // 输出: 123，字符串中的数字部分被转换成数字类型
+    console.log(Number("  123abc  ")); // 输出: NaN
+    console.log(Number("")); // 输出: 0，空字符串被转换成数字类型时返回0
+  </script>
+</body>
+
+</html>

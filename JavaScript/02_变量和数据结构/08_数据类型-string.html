@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // 1.string（字符串）是js中的一种基本数据类型，用来表示文本数据，一串文本组成，称之为一个字符串，2.字符串用引号括起来，可以使用单引号、双引号或者反引号（ES6新增）
+    var str1 = '这是一个字符串';
+    var str2 = "这是一个字符串";
+    // 这个用的多
+    var str3 = `这是一个字符串`;
+    var str3 = `这是一个字符串${2 * 3}`; // 这是一个字符串6，反引号定义的字符串会解析其中的表达式
+    // 字符串与别的变量拼接的时候用反引号。``可以在字符串中直接嵌入变量或者表达式，使用${}包裹变量或者表达式，而且这个是es6新增的功能，叫做模板字符串（template string）
+    // 3.字符串本身包含引号时，可以使用不同类型的引号来定义字符串，避免转义字符的使用
+    var str4 = "他说：'这是一个字符串'";
+    // 也可以使用转义字符\来在字符串中包含引号
+    var str5 = '他说：\'这是一个字符串\'';
+    // 转义字符\还可以用来表示一些特殊字符，比如换行符\n、制表符\t,\\本身\"等
+    // 4.字符串本身的方法和属性
+    var str6 = "hello world";
+    console.log(str6.length); // 输出: 11，字符串的长度
+    console.log(str6.toUpperCase()); // 输出: "HELLO WORLD"，将字符串 转换为大写
+    // 5.字符串操作
+    var nickname = "Alice";
+    var info = 'My name is';
+    var message = `${info} ${nickname}`; // 模板字符串拼接,这个用的多
+    var message = info + nickname; // 字符串拼接
+
+  </script>
+</body>
+
+</html>

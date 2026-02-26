@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+
+    var num1 = 123
+    var age = 18
+    var isAdmin = true
+    //1.转换为字符串类型的方法：
+    //1.1隐式转换
+    //1.1.1在字符串拼接的过程中，其他数据类型会被隐式转换成字符串类型(字符串类型+其他类型=字符串类型)
+    //与空字符串拼接（用的多）
+    var numStr = num1 + ""
+    var ageStr = age + ""
+    var isAdminStr = isAdmin + ""
+    console.log(numStr, ageStr, isAdminStr);
+    console.log(typeof numStr, typeof ageStr, typeof isAdminStr);
+    //注：默写函数的执行也会自动将参数转为字符串类型
+    //1.2显式转换
+    //1.2.1使用String()函数将其他数据类型转换成字符串类型
+    var numStr2 = String(num1);
+    var ageStr2 = String(age);
+    var isAdminStr2 = String(isAdmin);
+    console.log(numStr2, ageStr2, isAdminStr2);
+    console.log(typeof numStr2, typeof ageStr2, typeof isAdminStr2);
+  </script>
+</body>
+
+</html>

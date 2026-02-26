@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    //1.转换为布尔类型
+    //1.1隐式转换，放在分支语句中会进行隐式转换
+    //规则：（直观上的空值都是转换为false)在js中，以下值会被转换为false，称为假值（falsy values）：false、0、-0、0n（BigInt的0）、""（空字符串）、null、undefined和NaN。其他所有值都会被转换为true，称为真值（truthy values）
+    if (0) {
+      console.log("这个代码块不会执行，因为0被转换为false");
+    }
+    if ("") {
+      console.log("这个代码块不会执行，因为空字符串被转换为false");
+    }
+    if (null) {
+      console.log("这个代码块不会执行，因为null被转换为false");
+    }
+    if (undefined) {
+      console.log("这个代码块不会执行，因为undefined被转换为false");
+    }
+    if (NaN) {
+      console.log("这个代码块不会执行，因为NaN被转换为false");
+    }
+    if (1) {
+      console.log("这个代码块会执行，因为1被转换为true");
+    }
+    if ("hello") {
+      console.log("这个代码块会执行，因为非空字符串被转换为true");
+    }
+    if ({}) {
+      console.log("这个代码块会执行，因为对象被转换为true");
+    }
+    //1.2显式转换，使用Boolean函数进行显式转换
+    console.log(Boolean(0)); // 输出: false
+
+    //注意事项：
+    console.log(Boolean("")); // 输出: false
+    console.log(Boolean("0")); // 输出: true，非空字符串被转换为true
+
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // 1.变量声明未赋值时，默认值是undefined，表示变量已经声明但尚未赋值
+    var a;//这样尽量不要这样
+    var b = undefined; // 也可以显式地将变量赋值为undefined，但不推荐这样做，因为undefined是一个全局变量，可能被修改
+    // 如果开发后时候的变量没有值可以这样
+    var c = null; // null表示变量没有值，通常用来表示空对象或者空值
+    var d = "";// 空字符串，表示变量是一个空文本
+    var e = 0;// 数字0，表示变量是一个数值类型的0 
+
+
+    console.log(a); // 输出: undefined
+
+    // 如果变量没有声明就直接使用，会报错
+    // console.log(x); // ReferenceError: x is not defined
+  </script>
+</body>
+
+</html>

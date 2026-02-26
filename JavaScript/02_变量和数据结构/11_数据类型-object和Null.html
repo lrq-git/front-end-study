@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    //  1.object（对象）是js中的一种数据类型，用来表示复杂的数据结构，包含多个属性和方法,通常把他称为引用类型或者复杂类型
+    // 注：其他数据类型叫做基本数据类型或者原始数据类型，他们的值只包含单独的内容（数字，字符串，或者其他）
+    var person = {
+      name: "why",
+      height: 1.88,
+      age: 18
+    }
+    // 1)打印对象
+    console.log(person);
+    // 2)访问对象的属性 （两种方式：点语法和方括号语法）
+    console.log(person.name); // 点语法
+    console.log(person["age"]); // 方括号语法
+    // 注
+    var message = 'hello world';
+    console.log(message.length);//包装成一个对象sting
+
+    //2.Null（空值）是js中的一种基本数据类型，表示没有任何值，null是一个特殊的值，表示“无”或者“空”，通常用来表示一个变量应该有一个对象值，但目前没有对象可以赋值给它
+    //2.1其他类型初始化
+    var age = 0
+    var num = 0
+    var message = ""
+    var isMarried = false
+
+    // age、num、message、isMarried----false
+    // 原始类型的初始化值，在转成boolean值的时候都是false
+    if (age) {
+      console.log("分支语句不会执行");
+    }
+    //2.2对象类型的初始化{}
+    var book = {}//对象的初始化值，在转成boolean值的时候是true,因为{}是一个对象，表示这个变量存储了一个对象值，所以在转成boolean值的时候是true
+    //因此初始化对象时，建议不初始化为空对象，而是初始化为null（指向0x00地址）
+    if (book) {
+      console.log("分支语句会执行");
+    }
+    //null存在的意义：对对象进行初始化，当一个变量应该存储一个对象，但目前没有对象可以赋值给它时，可以将这个变量初始化为null，表示这个变量目前没有对象值，但将来可能会有对象值
+    //null用来表示一个对象为空，所以通常在给一个对象进行初始化时，会赋值null
+    var emptyValue = null;// 在转成boolean值的时候是false
+
+
+    //null和undefined的区别：null非常常用，当一个变量准备保存一个对象，但这个对象不确定时，可以先赋值为null,undefined表示一个变量未声明或者未赋值（不会主动使用）
+  </script>
+</body>
+
+</html>

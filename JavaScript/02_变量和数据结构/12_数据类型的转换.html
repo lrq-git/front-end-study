@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    var numstr = "123"
+    var result = numstr
+    console.log(typeof result);
+
+    //将其他数据类型转成数字类型的方法：
+    var isAdmin = true;
+    var num1 = 10 + isAdmin;//隐式转换，在这个表达式中，isAdmin是一个布尔值true，在进行加法运算时，JavaScript会将true隐式转换成数字1，然后进行运算，所以num1的值是11
+    console.log(num1); // 输出: 11，true被转换成数字1参与运算
+
+
+  </script>
+</body>
+
+</html>

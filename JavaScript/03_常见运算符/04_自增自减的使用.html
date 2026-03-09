@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+
+  <script>
+    //1.使用
+    var currentIndex = 5
+    //方法一：
+    // currentIndex = currentIndex +1
+    //方法二：
+    //currentIndex +=1
+    //方法三：自增
+    //currentIndex++
+    //console.log(currentIndex)
+    //注：自增自减只能用在变量上
+    //自增自减的位置：1）如果自增脱离于表达式，没有影响
+    //              2)如果自身在表达式中，++b,b++都有区别（
+    var result = 100 + currentIndex++
+    //在真实开发里不这样写，
+    //先使用变量再增加，结果105（后置形式）
+    var result = 100 + ++currentIndex
+    //先增加再使用变量，结果106（前置形式）
+    console.log(currentIndex)
+    console.log("result1" + result)
+
+  </script>
+
+</body>
+
+</html>

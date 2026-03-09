@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    //if...else if...else语句的使用
+    //案例：根据考试成绩，输出不同的评价
+    var score = prompt("请输入考试成绩：");
+    //prompt函数会弹出一个输入框，用户输入的内容会作为字符串返回，所以需要把它转换为数字
+    score = Number(score);
+    //edge case
+    if (score < 0 || score > 100) {
+      alert("请输入一个有效的成绩（0-100）");
+    }
+
+
+    if (score >= 90) {
+      alert("优秀");
+    } else if (score >= 80) {
+      alert("良好");
+    } else if (score >= 60) {
+      alert("及格");
+    } else {
+      alert("不及格");
+    }
+  </script>
+</body>
+
+</html>

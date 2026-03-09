@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    //for循环在开发中重要的循环语句之一，适用于已知循环次数的情况，如果不知道循环次数，或者循环条件比较复杂，建议使用while循环
+    //for循环的语法：for(初始化表达式；循环条件；循环后操作){循环体}(97%使用)
+    for (var i = 0; i < 5; i++) {
+      console.log(i);
+    }
+    //上面的for循环会输出0,1,2,3,4，i的初始值为0，每次循环结束后i都会自增1，直到i不满足循环条件i<5时，循环结束
+
+    //案例一：打印10次Hello World
+    for (var i = 0; i < 10; i++) {
+      console.log("Hello World", i);
+    }
+    //案例二：计算0-99的数字之和
+    var totalCount = 0;
+    for (var count = 0; count < 100; count++) {
+      totalCount += count;
+    }
+    console.log("0-99的数字之和是：" + totalCount);
+    //案例三：计算0-99的奇数之和
+    var oddTotalCount = 0;
+    for (var count = 0; count < 100; count++) {
+      if (count % 2 !== 0) {
+        oddTotalCount += count;
+      }
+    }
+    console.log("0-99的奇数之和是：" + oddTotalCount);
+
+  </script>
+</body>
+
+</html>

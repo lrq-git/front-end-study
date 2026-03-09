@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    //if分支语句包括if语句、if...else语句、if...else if...else语句
+
+    //案例一：小明考试超过90分，可以去游乐场
+    //1。定义一个变量score，表示小明的考试成绩
+    var score = 95;
+    //2。使用if语句判断score是否大于90，如果条件成立，输出“可以去游乐场”
+    if (score > 90) {
+      console.log("可以去游乐场")
+    }
+    //案例二：苹果单价5元/斤，如果购买数量超过5斤，那么立减8元
+    //1定义一些变量
+    var price = 5;
+    var weight = 6;
+    var totalPrice = price * weight;
+    if (weight > 5) {
+      totalPrice -= 8;
+    }
+    console.log("总价是：" + totalPrice);
+    // console.log("总价是：", totalPrice);
+    //案例三播放列表只有三首歌，要循环播放，如果播放到第三首歌了，就从第一首重新开始播放
+    var currentIndex = 2;
+    currentIndex++;
+    if (currentIndex >= 3) {
+      currentIndex = 0;
+    }
+
+
+  </script>
+</body>
+
+</html>

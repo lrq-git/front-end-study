@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    //逻辑或可以脱离分支语句，单独使用逻辑或
+    //1.现将运算元转成布尔类型
+    //2.如果第一个运算元的布尔值为true，则逻辑或表达式的结果为第一个运算元的原始值（元类型）
+    //3.如果第一个运算元的布尔值为false，则逻辑或表达式的结果为第二个运算元的原始值（元类型）
+    //4.如果所有的操作数都被计算过，则返回最后一个操作数的原始值（元类型）
+    var chineseScore = 90;
+    var englishScore = 80;
+    //chineseScore >= 60 || englishScore >= 60返回的结果是true,||左边的表达式视为一个运算元
+    if (chineseScore >= 60 || englishScore >= 60) {
+      console.log("通过考试");
+    }
+    //开发中一些值是由别的地方传回来的
+    //如果没有值传过来，则是undefined
+    function foo(name) {
+      console.log(name);
+    }
+    foo()
+    //获取第一个有值的结果
+    var info = "abc"
+    var obj = {
+      name: "张三"
+    }
+    var result = info || obj.name || "默认值";
+    console.log(result); 
+  </script>
+</body>
+
+</html>

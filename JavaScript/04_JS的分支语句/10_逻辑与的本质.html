@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    //逻辑与可以脱离分支语句，单独使用逻辑与
+    //1.现将运算元转成布尔类型
+    //2.如果第一个运算元的布尔值为true，则逻辑与表达式的结果为第二个运算元的原始值（元类型）
+    //3.如果第一个运算元的布尔值为false，则逻辑与表达式的结果为第一个运算元的原始值（元类型）
+    //4.如果所有的操作数都被计算过，则返回最后一个操作数的原始值（元类型）
+
+    //常用的场景
+    var obj = {
+      name: "张三",
+      age: 20,
+      friend: {
+        name: "李四",
+        eat: function () {
+          console.log("吃饭");
+        }
+      }
+    }
+    //调用obj.friend.eat()时，如果obj.friend存在，则调用eat方法；如果obj.friend不存在，则返回undefined，不会报错
+    obj && obj.friend && obj.friend.eating && obj.friend.eat()
+    //实际开发一般写一两个就行了，过多的逻辑与会影响代码的可读性
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    //do...while语句的使用：先执行一次循环体，再判断循环条件是否满足，如果满足继续执行循环体，否则退出循环
+    //与while语句的区别：while语句是先判断循环条件是否满足，如果满足才执行循环体，否则直接退出循环，所以do...while语句至少会执行一次循环体，而while语句可能一次都不执行
+
+    var count = 0;
+    do {
+      console.log(count);
+      count++;
+    } while (count < 5);
+    //开发中使用while语句比较多，因为大多数情况下我们需要先判断循环条件是否满足，再决定是否执行循环体，如果使用do...while语句，可能会导致一些不必要的循环体执行，影响性能
+    //练习一：打印10次Hello World
+    var i = 0;
+    do {
+      console.log("Hello World", i);
+      i++;
+    } while (i < 10);
+    //练习二：计算0-99的数字之和
+    var totalCount = 0;
+    var count = 0;
+    do {
+      totalCount += count;
+      count++;
+      //totalCount += count++; //这种写法也可以，但是不太好理解，建议分开写
+    } while (count < 100);
+    console.log("0-99的数字之和是：" + totalCount);
+  </script>
+</body>
+
+</html>

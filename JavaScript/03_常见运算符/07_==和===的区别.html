@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    var foo1 = ""
+    var foo2 = 0
+    //== 运算符，在类型不同的情况下，会将运算元先转成Number的值，在进行比较（隐式转换）
+    //null比较特殊，在null进行比较时，会被当成一个对象和原生类型进行比较
+    console.log(Number(foo1))
+    console.log(Number(foo2))
+    console.log(foo1 == foo2) //true
+    console.log(foo1 === foo2) //false
+
+    console.log(Number(undefined)); // 输出: NaN（空对象），undefined被转换成数字类型时返回NaN
+    console.log(Number(null)); // 输出: 0，null被转换成数字类型时返回0
+
+    //===运算符，在比较时，不会进行类型转换，如果类型不同，直接返回false
+    //在开发中用===运算符进行比较，避免类型转换带来的问题
+    console.log(foo1 === foo2) //false
+  </script>
+</body>
+
+</html>

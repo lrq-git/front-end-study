@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    //循环语句的使用：for循环（用最多，最重要）、while循环、do...while循环
+    /*  循环是重复运行同一代码
+     如果对某一个列表进行循环操作，我们通常也称之为遍历或者迭代。 */
+
+    //while循环的使用：先判断条件是否满足，进行执行代码块。当条件满足时，重复执行某段代码，直到条件不满足为止
+    //案例一：死循环
+    while (true) {
+      console.log("这是一个死循环");
+    }
+    //案例二：打印10次helloworld
+    var i = 0;
+    while (i < 10) {
+      i++;
+      console.log("helloworld", i);
+      //console.log("helloworld" , ++i);
+    }
+    //案例三：打印0-99的数字
+    var j = 0;
+    while (j < 100) {
+      console.log(j);
+      j++;
+    }
+    //案例四：计算0-99的数字之和
+    var totalCount = 0;
+    //注意这个sum的定义位置，不能放在循环内部，否则每次循环都会重新定义sum，导致结果不正确
+    var count = 0;
+    while (count < 100) {
+      totalCount += count;
+      count++;
+    }
+    console.log("0-99的数字之和是：" + totalCount);
+    //案例五：计算0-99的奇数之和
+    //如何判断一个数字是奇数还是偶数
+    var num = 121;
+    if (num % 2 !== 0) {
+      console.log(num + "是奇数");
+    }
+    //首先打印0-99的奇数
+    var count = 0;
+    var oddTotalCount = 0;
+    while (count < 100) {
+      if (count % 2 !== 0) {
+
+        oddTotalCount += count;
+      }
+      count++;
+    }
+    console.log("0-99的奇数之和是：" + oddTotalCount);
+
+    //案例六：计算0-99的偶数之和
+    var count = 0;
+    var evenTotalCount = 0;
+    while (count < 100) {
+      if (count % 2 === 0) {
+        evenTotalCount += count;
+      }
+      count++;
+    }
+    console.log("0-99的偶数之和是：" + evenTotalCount);
+    //算法优化：
+    var count = 0;
+    var evenTotalCount = 0;
+    while (count < 100) {
+      evenTotalCount += count;
+      count += 2;
+    }
+    console.log("0-99的偶数之和是：" + evenTotalCount);
+  </script>
+</body>
+
+</html>

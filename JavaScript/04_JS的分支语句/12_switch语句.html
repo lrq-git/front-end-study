@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    //switch语句的使用:通过判断表达式的结果是否等于case语句的敞亮，来执行相应的分支体，如果没有匹配的case语句，就执行default分支体
+    //switch语句与if语句的区别：Switch只能做值相等判断（而且是===）（严格相等，数据类型必须一致），而if用来做值的范围判断
+
+    //案例：上一首按钮0；播放暂停的按钮1，下一首按钮为2
+    var buttonIndex = 0
+
+    switch (buttonIndex) {
+      case 0:
+        alert("上一首");
+        break;
+      case 1:
+        alert("播放/暂停");
+        //默认情况下是有case穿透的，如果不加break，程序会继续执行下一个case语句，直到遇到break或者switch语句结束
+        break;
+      case 2:
+        alert("下一首");
+        break;
+      default:
+        alert("请输入一个有效的按钮编号（0-2）");
+      //default分支体是可选的，如果没有匹配的case语句，程序会执行default分支体，如果没有default分支体，程序会直接跳出switch语句,可以不加break，因为default分支体是switch语句的最后一个分支体了
+    }
+    //用if来实现同样的功能
+    if (button === 0) {
+      alert("上一首");
+    } else if (button === 1) {
+      alert("播放/暂停");
+    } else if (button === 2) {
+      alert("下一首");
+    } else {
+      alert("请输入一个有效的按钮编号（0-2）");
+    }
+
+
+
+  </script>
+</body>
+
+</html>

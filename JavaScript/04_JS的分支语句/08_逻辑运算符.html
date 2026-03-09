@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    //逻辑运算符：&&（逻辑与）、||（逻辑或）、!（逻辑非）
+    //逻辑与：当且仅当两个操作数都为真时，结果才为真，否则为假
+    console.log(true && true); //true       
+    //逻辑或：当两个操作数中至少有一个为真时，结果就为真，否则为假
+    console.log(true || false); //true
+    //逻辑非：对一个操作数进行取反，如果操作数为真，结果为假；如果操作数为假，结果为真
+    console.log(!true); //false 
+
+    //案例：判断一个人是否可以参加某个活动，条件是年龄在18岁以上，并且身高在160cm以上
+    var age = 20;
+    var height = 170;
+    if (age > 18 && height > 160) {
+      console.log("可以参加活动");
+    } else {
+      console.log("不可以参加活动");
+    }
+
+
+
+  </script>
+</body>
+
+</html>

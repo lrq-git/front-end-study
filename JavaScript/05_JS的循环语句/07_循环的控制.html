@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    //循环的控制:
+    //1.循环的中断：break,循环体不再执行，循环结束
+    //2.循环的跳过：continue，本次循环体不再执行，继续下一次循环
+    //循环遍历数组
+    //需求：遇到3时，循环结束
+    let arr = [1, 2, 3, 4, 5];
+    for (let i = 0; i < arr.length; i++) {
+      console.log(arr[i]);
+      if (arr[i] === 3) {
+        break; //当i等于2时，循环结束
+      }
+
+    }
+  </script>
+</body>
+
+</html>

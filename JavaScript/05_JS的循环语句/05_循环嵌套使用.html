@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    div {
+      color: red;
+    }
+  </style>
+</head>
+
+<body>
+  <script>
+
+    //案例一：输出6*6矩阵的❤
+    for (let i = 0; i < 6; i++) {
+      document.write("<div>");
+      for (let j = 0; j < 6; j++) {
+        document.write('❤');
+      }
+      document.write("</div>");
+      //div独占一行，不需要进行换行操作
+
+    }
+    //案例二：输出6*6的❤，并且每行的❤数量和行数相等
+    for (let x = 0; x < 6; x++) {
+      document.write("<div>");
+      for (let y = 0; y < x + 1; y++) {
+        document.write('❤');
+      }
+      document.write("</div>");
+      //div独占一行，不需要进行换行操作
+
+    }
+
+  </Script>
+</body>
+
+</html>

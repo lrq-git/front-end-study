@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    //递归函数：函数调用自己，如果不设置结束条件，可能会导致无限递归，最终引发栈溢出错误
+    //递归：将一个复杂的任务，转化成可以重复执行的相同任务
+
+    //需求：封装一个函数，函数可以实现x的n次幂
+    /*   function power(x, n) {
+        return x ** n;
+        //这个运算符在ES7中引入，表示x的n次幂，等价于Math.pow(x, n)
+      }
+      console.log(power(2, 3)); // 输出8
+      console.log(Math.pow(2, 5)); // 输出32 */
+
+
+    //自己实现:第一种用for循环
+    function pow2(x, n) {
+      var result = 1
+      for (var i = 0; i < n; i++) {
+        result *= x;
+      }
+      return result;
+    }
+    //第二种用递归:必须要有条件,优点：代码更简洁，逻辑更清晰，缺点：性能较差，可能会导致栈溢出错误
+    function pow3(x, n) {
+      if (n === 1) return x; // 任何数的0次幂都是1，任何数的1次幂都是它本身 
+      return x * pow3(x, n - 1); // x的n次幂等于x乘以x的(n-1)次幂
+
+    }
+    console.log(pow2(2, 3)); // 输出8
+    console.log(pow3(2, 3)); // 输出8
+
+  </script>
+</body>
+
+</html>

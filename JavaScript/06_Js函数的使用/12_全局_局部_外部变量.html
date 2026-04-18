@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    //1.全局变量：在函数外部定义的变量就是全局变量，可以在任何地方访问和修改
+    var message = "Hello, World!"; // 定义一个全局变量
+    function foo() {
+      //访问的是外部变量
+      console.log(message); // 在函数内部访问全局变量，输出"Hello, World!"
+      // 2.局部变量：在函数内部定义的变量就是局部变量，只能在函数内部访问和修改
+      var nickname = "Alice"; // 定义一个局部变量
+      console.log(nickname); // 在函数内部访问局部变量，输出"Alice"
+      function hi() {
+        var message = "Hi, Alice!"; // 定义一个局部变量，和全局变量同名，但作用域不同
+        console.log(message); // 在hi函数内部访问局部变量，输出"Hi, Alice!" 
+      }
+    }
+    //只要是访问的是当前函数外部的变量就是外部变量
+    //变量的访问顺序：局部变量 -> 外部变量 -> 全局变量
+
+  </script>
+</body>
+
+</html>

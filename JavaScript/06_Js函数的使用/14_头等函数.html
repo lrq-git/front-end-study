@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  //JS是一种函数式编程语言，函数在JS中是一等公民（First-Class Citizen），。
+  <script>
+    //函数作为头等公民（First-Class Citizen）是指函数在JavaScript中被视为一种值，可以像其他数据类型一样被赋值给变量、作为参数传递给其他函数、作为函数的返回值等。这使得函数在JavaScript中具有非常强大的功能和灵活性。
+
+    //1.函数可以被赋值给变量(函数表达式)
+    var foo = function () {
+      console.log("Hello, World!"); // 输出"Hello, World!"
+    }
+    foo(); // 调用foo函数，输出"Hello, World!"
+
+
+    //2.函数作为变量来回传递
+    function bar1() {
+      console.log("Hello, JavaScript!"); // 输出"Hello, JavaScript!"
+    }
+    var baz2 = bar1; // 将函数bar1赋值给变量baz
+    baz2(); // 调用baz2函数，输出"Hello, JavaScript!"
+
+
+    //3.函数作为参数传递给其他函数
+    function bar3(fn) {
+      console.log("fn is: ", fn); // 输出"fn is: function () { console.log("Hello, World!"); }"
+    }
+
+    bar3(foo)// 将函数foo作为参数传递给函数bar3，输出"Hello, function () { console.log("Hello, World!"); }!"
+
+    //4.函数作为函数的返回值
+    function bar4() {
+      function hi() {
+        console.log("Hello, JavaScript!"); // 输出"Hello, JavaScript!"
+      }
+      return hi; // 返回函数hi
+    }
+    var fn = bar4("kobe"); // 调用函数bar4，返回函数hi，并将其赋值给变量fn
+    fn(); // 调用fn函数，输出"Hello, JavaScript!"
+
+    //5将函数存储在数据结构中
+    var obj = {
+      name: "Alice",
+      greet: function () {
+        console.log("Hello, " + this.name + "!"); // 输出"Hello, Alice!"
+      }
+    }
+    obj.greet(); // 调用obj的greet方法，输出"Hello, Alice!"
+
+    function bar5() {
+      console.log("Hello, JavaScript!"); // 输出"Hello, JavaScript!"
+    }
+    function bar6() {
+      console.log("Hello, JavaScript!"); // 输出"Hello, JavaScript!"
+    }
+    function bar7() {
+      console.log("Hello, JavaScript!"); // 输出"Hello, JavaScript!"
+    }
+    //事件总线
+    var fns = [bar5, bar6, bar7]; // 将函数bar5、bar6、bar7存储在一个数组中
+    fns[0](); // 调用数组中的第一个函数，输出"Hello, JavaScript!"
+  </script>
+</body>
+
+</html>

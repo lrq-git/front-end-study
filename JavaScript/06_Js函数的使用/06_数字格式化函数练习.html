@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    //封装一个工具函数，对数字进行格式化
+    function formatNumber(count) {
+      var result = 0
+      if (count >= 10_0000_0000) {
+        result = Math.floor(count / 1_0000_0000) + "亿"; // 将数字除以100000000，并保留一位小数，最后加上"亿"字
+      } else if (count >= 10_0000) {
+        result = Math.floor(count / 1_0000) + "万"; // 将数字除以10000，并保留一位小数，最后加上"万"字
+      } else {
+        result = count(); // 如果数字小于10000，直接转换为字符串返回
+      }
+      return result;
+    }
+    console.log(formatNumber(123456789)); // 输出: "1亿"
+    //Math.floor()方法用于向下取整，即返回小于或等于一个给定数字的最大整数。
+  </script>
+</body>
+
+</html>

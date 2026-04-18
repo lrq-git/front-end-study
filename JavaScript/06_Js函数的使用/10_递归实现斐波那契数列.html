@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    //数列：1 1 2 3 5 8 13 21 ...
+    //斐波那契数列：第n项等于前两项之和，第一项和第二项都是1
+    function fibonacci(n) {
+      if (n === 1 || n === 2) return 1; // 斐波那契数列的第一项和第二项都是1
+      return fibonacci(n - 1) + fibonacci(n - 2); // 第n项等于前两项之和
+    }
+    //用for循环实现
+    function fibonacci2(n) {
+      var n1 = 1, n2 = 1, temp;
+      if (n === 1 || n === 2) return 1; // 斐波那契数列的第一项和第二项都是1
+      for (var i = 3; i <= n; i++) {
+        temp = n1 + n2; // 第n项等于前两项之和
+        n1 = n2; // 更新n1为前一项
+        n2 = temp; // 更新n2为当前项
+      }
+      return temp; // 返回第n项
+    }
+    console.log(fibonacci(10)); // 输出55
+    console.log(fibonacci2(10)); // 输出55
+  </script>
+</body>
+
+</html>

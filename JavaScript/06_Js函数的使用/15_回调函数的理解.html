@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    //1函数回调的概念理解
+    //回调函数是指一个函数作为参数传递给另一个函数，并在某个特定事件发生时被调用的函数。回调函数通常用于处理异步操作，例如网络请求、定时器等。当异步操作完成后，回调函数会被调用来处理结果或执行后续操作。
+    function foo(fn) {
+      console.log("foo函数被调用了！"); // 输出"foo函数被调用了！"
+      fn(); // 调用回调函数fn
+    }
+    function bar() {
+      console.log("bar函数被调用了！"); // 输出"bar函数被调用了！"
+    }
+    foo(bar); // 将函数bar作为参数传递给函数foo，输出"foo函数被调用了！"和"bar函数被调用了！"
+
+    //2.函数回调案例
+    function request(url, callback) {
+      console.log("正在请求数据..."); // 输出"正在请求数据..."
+      console.log("请求的URL是: " + url); // 输出"请求的URL是: https://api.example.com/data"
+      // 模拟异步请求，使用setTimeout来模拟网络延迟
+    }
+  </script>
+</body>
+
+</html>

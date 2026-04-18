@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <!-- 注意：函数名与变量名采用小驼峰命名法例如：printInfo、sum、sayHello
+   类名采用大驼峰命名法例如：Person、Car -->
+  <script>
+    // 函数的使用练习
+    // 定义一个函数，接受两个参数，分别是名字和年龄，在函数内部打印出一段话，包含名字和年龄的信息,name,age是形参
+    //1.练习一
+    function printInfo(name, age) {
+      console.log(`My name is ${name}, I'm ${age} years old.`);
+    }
+
+    printInfo("Alice", 25);
+    //2.练习二
+    function sum() {
+      var num1 = 10
+      var num2 = 20
+      var result = num1 + num2
+      console.log("result:", result)
+    }
+    sum()
+    //3.练习三:给某人打招呼
+    function sayHello(name) {
+      console.log(`Hello, ${name}!`);
+    }
+
+    sayHello("Bob");
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    //1.ES5之前，JavaScript没有块级作用域，只有函数作用域和全局作用域（var声明的变量没有块级作用域，let和const声明的变量有块级作用域）
+    function foo() {
+      if (true) {
+        var x = 1; // var声明的变量没有块级作用域，x在整个函数内都可访问
+        let y = 2; // let声明的变量有块级作用域，y只能在if块内访问
+        const z = 3; // const声明的变量有块级作用域，z只能在if块内访问
+      }
+      console.log(x); // 输出1
+      console.log(y); // 报错：y is not defined
+      console.log(z); // 报错：z is not defined
+    }
+
+    {
+      var a = 1; // var声明的变量没有块级作用域，a在整个函数内都可访问
+      let b = 2; // let声明的变量有块级作用域，b只能在这个块内访问
+      const c = 3; // const声明的变量有块级作用域，c只能在这个块内访问
+    }
+    console.log(a); // 输出1
+    console.log(b); // 报错：b is not defined
+    console.log(c); // 报错：c is not defined
+
+    for (var i = 0; i < 3; i++) {
+      console.log(i); // 输出0 1 2
+    }
+    console.log(i); // 输出3
+
+    //2.函数作用域：函数内部定义的变量只能在函数内部访问，函数外部无法访问
+    function foo() {
+      if (true) {
+        var x = 1; // var声明的变量没有块级作用域，x在整个函数内都可访问
+        let y = 2; // let声明的变量有块级作用域，y只能在if块内访问
+        const z = 3; // const声明的变量有块级作用域，z只能在if块内访问
+      }
+      console.log(x); // 输出1
+      console.log(y); // 报错：y is not defined
+      console.log(z); // 报错：z is not defined
+    }
+    //这个就是在函数外部访问函数内部的变量，都会报错
+    console.log(x); // 报错：x is not defined
+    console.log(y); // 报错：y is not defined
+    console.log(z); // 报错：z is not defined
+
+  </script>
+</body>
+
+</html>

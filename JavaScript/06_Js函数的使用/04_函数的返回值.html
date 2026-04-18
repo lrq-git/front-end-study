@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // 注 ：模板字符串可以直接在字符串中使用变量，不需要使用字符串拼接的方式，使用${}来包裹变量，并且能够直接换行
+
+    // 返回值：return语句的作用是结束函数的执行，并且可以返回一个值给调用者，调用者可以接收这个返回值并进行后续的操作
+    var num = prompt("请输入一个数字:")
+
+    /* 1.返回值的注意事项：1）.函数都是有返回值的，如果没有明确的return语句，函数会默认返回undefined
+                       2）写上return关键字,但后面什么内容都没有，那么函数会返回undefined 
+                       3） 如果在函数执行到return关键字时，函数会立即停止执行，退出函数*/
+    function baz() {
+      console.log("这是函数baz的第一行代码");
+      return; // 这里没有返回值，所以函数会返回undefined
+      console.log("这是函数baz的第二行代码"); // 这行代码不会被执行，因为函数在return语句处已经停止执行了
+    }
+    baz()
+
+    //函数具体返回值：
+    function sum(a, b) {
+      var result = a + b; // 计算a和b的和
+      return result; // 返回计算结果
+    }
+
+    var total = sum(10, 20); // 调用函数并接收返回值
+    console.log("total:", total); // 输出total: 30
+
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // 1.练习一：计算矩形面积
+    function getRectangleArea(length, width) {
+      /*  var area = length * width; // 计算面积
+       return area; // 返回计算结果 */
+      return length * width; // 直接返回计算结果
+    }
+
+    // 调用函数并输出结果
+    var area = getRectangleArea(10, 5);
+    console.log("矩形面积:", area);
+    //2.练习二：计算圆的面积
+    function getCircleArea(radius) {
+      return Math.PI * radius * radius; // 使用Math.PI获取圆周率，计算圆的面积
+    }
+
+    var circleArea = getCircleArea(7);
+    console.log("圆的面积:", circleArea);
+
+    //3.练习三：计算1-n的和
+    function getSum(n) {
+      if (n <= 0) {
+        console.log("请输入一个正整数");
+        return;// 如果n不合法，直接返回undefined，结束函数执行
+      }
+      var sum = 0; // 初始化sum变量，用于累加1到n的和
+      for (var i = 1; i <= n; i++) { // 使用for循环从1循环到n
+        sum += i; // 将当前的i值累加到sum中
+      }
+      return sum; // 返回计算结果
+    }
+
+    var sum = getSum(10);
+    console.log("1到10的和:", sum);
+
+  </script>
+</body>
+
+</html>

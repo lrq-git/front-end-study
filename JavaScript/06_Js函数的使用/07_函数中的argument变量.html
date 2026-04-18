@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    //arguments对象是一个类数组对象，包含了函数调用时传入的所有参数
+    function foo(name, age) {
+      console.log(arguments); // 输出arguments对象
+      console.log(arguments[0]); // 输出第一个参数
+      console.log(arguments[1]); // 输出第二个参数
+      console.log(arguments.length); // 输出参数的数量
+      //遍历arguments对象
+      for (var i = 0; i < arguments.length; i++) {
+        console.log(arguments[i]);
+      }
+    }
+    foo('Alice', 30, 'extra argument');
+
+    //argumenth案例
+    //不确定需要输入参数的个数
+    function sum() {
+      var total = 0;
+      for (var i = 0; i < arguments.length; i++) {
+        total += arguments[i];
+      }
+      return total;
+    }
+    console.log(sum(1, 2, 3)); // 输出6
+  </script>
+</body>
+
+</html>

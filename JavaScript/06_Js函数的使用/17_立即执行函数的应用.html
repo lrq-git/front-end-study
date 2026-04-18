@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <button class="btn">按钮1</button>
+  <button class="btn">按钮2</button>
+  <button class="btn">按钮3</button>
+  <button class="btn">按钮4</button>
+
+  <script src="js/xiaoming.js"></script>
+  <script src="js/lilei.js"></script>
+  <script>
+    //立即执行函数与普通代码区别
+    //立即执行函数中定义的变量是有自己的作用域的，不会污染全局作用域
+
+    /*  var message = '普通函数';
+     console.log('普通函数'); */
+
+
+    //立即执行函数，会形成自己的作用域
+
+    //应用场景一：防止全局变量命名的冲突
+    (function bar() {
+      var mesage = '立即执行函数';
+      console.log(message);
+    })();
+
+
+    //应用场景二：
+    //获取一个按钮监听点击
+    //1.拿到html元素
+    var btnEl = document.querySelector('.btn');
+    //2.给每个按钮绑定点击事件
+    btnEl.onclick = function () {
+      console.log('点击了按钮');
+    }
+
+
+    //获取所有的按钮
+    btnEls = document.querySelectorAll('.btn');
+    //给每个按钮绑定点击事件
+    for (var i = 0; i < btnEls.length; i++) {
+      var btn = btnEls[i];
+      btn.onclick = function () {
+        console.log('点击了按钮' + i);
+      }
+    }
+    //注意：上面这个代码会有一个问题，点击每个按钮都会输出4，因为var声明的变量没有块级作用域，i在循环结束后已经变成了4，所以每个按钮的点击事件都会输出4。解决这个问题的方法是使用立即执行函数来创建一个新的作用域，让每个按钮的点击事件都能访问到正确的i值。
+    //原因：程序在执行到for循环时，i的值已经变成了4. 这个立即执行函数要在点击的时候才会执行，此时i的值已经是4了，所以每个按钮的点击事件都会输出4。
+    //出现ES6之后，使用let声明的变量有块级作用域，i在每次循环时都会创建一个新的作用域，所以每个按钮的点击事件都能访问到正确的i值，不需要使用立即执行函数来解决这个问题。
+    //修改：
+    for (var i = 0; i < btnEls.length; i++) {
+      var btn = btnEls[i];
+      (function (m) {
+        btn.onclick = function () {
+          console.log('点击了按钮' + i);
+        }
+      })(i)
+    }
+  </script>
+</body>
+
+</html>

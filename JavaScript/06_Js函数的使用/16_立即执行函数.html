@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // 立刻执行函数:定义完这个函数，会要求这个函数立即被执行
+    //{}代码块/对象类型
+    //() 控制优先级/函数的调用/函数参数
+    //[]数组类型/对象的计算属性
+    /* (function bar() {
+      console.log('这是一个立刻执行函数');
+    })() */
+
+    //立即执行函数的参数和返回值
+    var result = (function (name) {
+      console.log('这是一个立刻执行函数', name);
+      return name;
+    })('John')
+    console.log(result);
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+<script>
+  var obj = {
+    name: 'coderwhy',
+    age: 18,
+   "my friend": "kobe",
+    "eating something": function () {
+      console.log('这是一个方法');
+    }
+  }
+  
+  console.log(obj.name); //点语法
+  console.log(obj['age']); //方括号语法
+  console.log(obj["my friend"]); //方括号语法
+  obj["eating something"](); //方括号语法
+
+  //也可以定义一个变量
+  var eatkey = "eating something";
+  obj[eatkey](); //方括号语法
+  //点语法不能使用变量来访问对象中的属性或者方法
+  //obj.eatkey(); //点语法,这样是错的
+</script>
+</body>
+
+</html>

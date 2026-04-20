@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    var obj = {
+      name: 'coderwhy',
+      age: 18,
+      sayHello: function () {
+        console.log('hello');
+      }
+    }
+
+    //对对象进行遍历
+    //普通for循环：不能直接对对象进行遍历，因为对象没有length属性，也没有索引
+    var objkeys = Object.keys(obj); //Object.keys()方法可以获取对象中所有属性的键，返回一个数组
+    console.log(objkeys);
+    for (var i = 0; i < objkeys.length; i++) {
+      var key = objkeys[i];
+      var value = obj[key];
+      console.log(`key:${key}, value:${value}`);
+    }
+
+    //for in循环：可以直接对对象进行遍历，for in循环会遍历对象中所有可枚举的属性（包括原型链上的属性），所以在使用for in循环时，最好使用hasOwnProperty()方法来判断属性是否是对象自身的属性
+    for (var key in obj) {
+      var value = obj[key];
+      console.log(`key:${key}, value:${value}`);
+
+    }
+    //for of循环：不能直接对对象进行遍历，因为对象没有迭代器接口，但是可以通过Object.entries()方法将对象转换为一个数组，然后再使用for of循环进行遍历
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    //for循环:问题创建的对象相同
+    for (var i = 0; i < 5; i++) {
+      var obj = {
+        name: 'coderwhy',
+        age: 18,
+        running: function () {
+          console.log('running');
+        }
+      }
+    }
+    //函数:创建的是不同的对象
+    //工厂函数:创建一个函数，函数中创建一个对象，并且将对象返回——>一种设计模式
+    //对象的类型都是Object
+    function createStudent(name, age) {
+      var obj = {
+        name: name,
+        age: age,
+        running: function () {
+          console.log('running');
+        }
+      }
+      return obj;
+    }
+    var student1 = createStudent('why', 18);
+    var student2 = createStudent('kobe', 40);
+    var student3 = createStudent('lilei', 28);
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    //终极方法：代码出问题产生bug,debug找出bug
+    function foo(name) {
+      console.log(name);
+    }
+
+    function bar() {
+      console.log("bar函数被执行了")
+      foo('hello');
+    }
+    debugger; //这个标志符是在这里设置断点，调试代码
+    bar();
+
+    //setTimeout（fn, duration）:浏览器内部会在duration时间后执行callback函数，duration时间到达时，callback函数会被放入消息队列中，等待主线程空闲时执行。（主动调用传入的匿名函数，这也叫做回调，因为是浏览器主动调用的）
+    setTimeout(function () {
+      console.log('匿名函数1秒后执行');
+    }, 1000);
+    for (var i = 0; i < 10; i++) {
+      console.log(i);
+    }
+  </script>
+</body>
+
+</html>

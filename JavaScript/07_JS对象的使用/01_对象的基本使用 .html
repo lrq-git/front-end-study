@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    //函数与方法
+    //函数：在JS里面如果通过function默认定义一个结构，称之为函数
+    //方法：在JS里面如果通过function定义在对象里面的函数，称之为方法
+
+    //函数
+    function foo() {
+      console.log('这是一个函数');
+    }
+    //对象
+
+    /* key:字符串类型，但是在定义对象的属性名时，大部分可以省略引号，如果属性名不符合标识符的规则，就需要加上引号
+      value:可以是任意的数据类型（可以是基本数据类型，函数类型，对象类型 */
+    var obj = {
+      name: 'coderwhy',
+      age: 18,
+      "my friend": {
+        name: 'kobe',
+        age: 40
+      },
+      sayHello: function () {
+        console.log('这是一个方法');
+      }
+    }
+  </script>
+
+</body>
+
+</html>

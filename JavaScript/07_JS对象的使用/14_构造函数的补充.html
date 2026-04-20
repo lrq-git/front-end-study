@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    //创建一系列的对象
+    //构造函数的名称使用大驼峰命名法，普通函数使用小驼峰命名法
+    function Student(name, age) {
+      this.name = name;
+      this.age = age;
+      this.running = function () {
+        console.log('running');
+      }
+    }
+    var student1 = new Student('why', 18);
+    console.log(student1); //Student {name: "why", age: 18, running: ƒ}\
+    //类型不是object，而是Student，Student是构造函数的名称
+    //平时常见普通的对象
+    var obj = {}//new Object()，对象的类型是Object
+  </script>
+</body>
+
+</html>

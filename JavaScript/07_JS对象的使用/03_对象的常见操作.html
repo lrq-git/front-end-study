@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    //定义对象
+    var obj = {
+      name: 'coderwhy',
+      age: 18,
+      sayHello: function () {
+        console.log('hello');
+      }
+    }
+    //1.1.访问对象的属性
+    console.log(obj.name); //点语法
+    console.log(obj['age']); //方括号语法
+    //1.2.访问对象的方法
+    obj.sayHello(); //点语法  
+    obj['sayHello'](); //方括号语法
+
+    //2.修改对象的属性
+    obj.name = 'kobe'; //点语法
+    obj['age'] = 40; //方括号语法
+    obj.sayHello = function () {
+      console.log('hi');
+    } //点语法
+    obj['sayHello'] = function () {
+      console.log('hi');
+    } //方括号语法
+
+    //3.添加对象中的属性
+    obj.height = 1.88
+    obj.studying = function () {
+      console.log('学习');
+    }
+    console.log(obj)
+    //4.删除对象中的属性:delete操作符可以删除对象中的属性，删除后该属性就不存在了，访问该属性会返回undefined
+    delete obj.height;
+    delete obj['studying'];
+    console.log(obj);
+  </script>
+</body>
+
+</html>

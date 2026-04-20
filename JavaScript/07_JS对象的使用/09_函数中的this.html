@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    //函数中是有一个this的变量，this变量在大多数下会指向一个对象
+    //arguments保存的是函数调用时传入的实参列表，是一个类数组对象
+    //情况一：如果普通函数被默认调用，南无this指向的是window
+    function foo(name, age) {
+      console.log(this); //window,函数中的this默认指向window对象  
+      console.log(arguments); //{0: "why", 1: 18, length: 2}，arguments保存的是函数调用时传入的实参列表，是一个类数组对象
+      console.log(name); //why,函数的形参会接收实参的值
+      console.log(age); //18,函数的形参会接收实参的值
+    }
+    foo('why', 18);
+
+    //情况二：如果函数作为对象的方法调用，this指向的是调用该方法的对象
+    var obj = {
+      name: 'why',
+      age: 18,
+      foo: function () {
+        console.log(this); //obj,函数作为对象的方法调用，this指向的是调用该方法的对象
+      }
+    }
+    obj.foo();//obj,函数作为对象的方法调用，this指向的是调用该方法的对象
+    var fn = obj.foo;
+    fn(); //window,函数作为普通函数调用，this指向的是window对象
+
+    //考验
+    function foo() {
+      console.log(this); //window,函数中的this默认指向window对象
+    }
+    var obj = {
+      name: 'why',
+      age: 18,
+      foo: foo
+    }
+    obj.foo(); //obj,函数作为对象的方法调用，this指向的是调用该方法的对象
+  </script>
+</body>
+
+</html>

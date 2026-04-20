@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    //浏览器中存在全局对象window，window对象中有一个属性叫做document，document对象中有一个属性叫做body，body对象中有一个属性叫做script
+    //作用一：查找变量时，最终会找到window对象上，如果在window对象上没有找到该变量，那么就会报错
+    //作用二：将一些浏览器全局提供给我们的变量函数对象，放在windows对象上，方便我们使用
+    //作用三：使用var声明的变量会被添加到window对象上，使用function声明的函数会被添加到window对象上
+    console.log(window); //window,浏览器中存在全局对象window
+    //全局作用域
+    var message = 'hello';
+
+    function foo() {
+      alert('foo');
+      //自己作用域
+      console.log(window.console === console);
+      console.log(window.message);
+    }
+
+    foo();
+    //创建一个对象
+    var obj = new Object();
+    console.log(window.Object === Object);
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    /*  1.foo 和（）之间没有空格
+     2.多参数，后面加上空格
+     3.（） 与{}之间加上空格 */
+    function foo(m, n) {
+      return m + n;
+    }
+
+    //for 和 if与（）之间加上空格
+    if (true) {
+      console.log('这是一个if语句');
+    }
+
+    //操作符两边加上空格
+
+    for (var i = 0; i < 3; i++) {
+      console.log(i);
+    }
+
+    //传入实参时，实参之间加上空格
+    foo(1, 2);
+
+    //不同逻辑之间的代码块中间空一行
+    //模板字符串可以换行
+    var name = 'John';
+    var message = `Hello, ${name}!
+    Welcome to JavaScript.`;
+    console.log(message);
+
+    //else与{在同一行
+    if (true) {
+      console.log('这是一个if语句');
+    } else {
+      console.log('这是一个else语句');
+    }
+  </script>
+</body>
+
+</html>

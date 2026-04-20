@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    //函数和对象非常灵活
+    //JS中的this可以放在对象中使用，也可以放在函数中使用，this的值是由函数调用的方式决定的
+    //1.想知道函数是谁执行的法1：
+    /* var info = {
+      name: 'coderwhy',
+      age: 18,
+      running: function (name) {
+        console.log('running');
+      },
+      eating: function (name) {
+        console.log('eating');
+      },
+      studying: function (name) {
+        console.log('studying');
+      }
+    }
+    info.running(info.name); //running,调用对象的方法，方法中的this指向调用该方法的对象
+    info.eating(info.name); //eating,调用对象的方法，方法中的this指向调用该方法的对象
+    info.studying(info.name); //studying,调用对象的方法，方法中的this指向调用该方法的对象 */
+    //法2：
+    var info = {
+      name: 'coderwhy',
+      age: 18,
+      running: function () {
+        console.log('running', info.name);
+      },
+      eating: function () {
+        console.log('eating', info.name);
+      },
+      studying: function () {
+        console.log('studying', info.name);
+      }
+    }
+    info.running(); //running,调用对象的方法，方法中的this指向调用该方法的对象
+    info.eating(); //eating,调用对象的方法，方法中的this指向调用该方法的对象
+    info.studying();
+
+    //法3：this
+    var info = {
+      name: 'coderwhy',
+      age: 18,
+      running: function () {
+        console.log('running', this.name);
+      },
+      eating: function () {
+        console.log('eating', this.name);
+      },
+      studying: function () {
+        console.log('studying', this.name);
+      }
+    }
+  </script>
+</body>
+
+</html>

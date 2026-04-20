@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    //js已经默认提供了更加符合我们需求的创建对象的方式了：构造函数和类
+    //构造函数：创建一个函数，函数中使用this创建属性和方法，并且不需要返回值，使用new关键字调用该函数就可以创建一个对象了
+    function Student(name, age) {
+      this.name = name;
+      this.age = age;
+      this.running = function () {
+        console.log('running');
+      }
+    }
+    //使用new关键字调用构造函数就可以创建一个对象了,并且会返回一个对象
+    //如果一个函数被new操作符调用1.创建空对象2.构造函数内部的this指向创建的对象3.执行构造函数内部的代码4.返回创建的对象
+    var student1 = new Student('why', 18);
+    var student2 = new Student('kobe', 40);
+    var student3 = new Student('lilei', 28);
+    //类就是构造函数的语法糖，类和构造函数的本质是一样的，类只是构造函数的一种更加优雅的写法
+    class Student {
+      constructor(name, age) {
+        this.name = name;
+        this.age = age;
+      }
+      running() {
+        console.log('running');
+      }
+    }
+    var student1 = new Student('why', 18);
+    var student2 = new Student('kobe', 40);
+    var student3 = new Student('lilei', 28);
+
+    //JS是支持多范式的编程语言，面向对象编程只是JS的一种编程范式，JS还支持函数式编程、命令式编程等多种编程范式，我们可以根据自己的需求选择合适的编程范式来开发我们的应用程序
+  </script>
+</body>
+
+</html>

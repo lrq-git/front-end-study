@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    //定义原始类型的变量
+    var message = 'hello';
+    var age = 20;
+    var isActive = true;
+    //定义对象类型的变量
+    var obj = {}//堆内存
+    var foo = function () { }//堆内存
+    function bar() { }//堆内存
+    var arr = []//堆内存
+    //函数也是对象，函数也是一种数据类型，函数也是一个对象
+
+    //引申别的知识：
+    var info = {}
+    info.name = 'coderwhy';
+    function foo() {
+      console.log('foo');
+    }
+    foo.age = 18;
+    console.log(foo.age);
+
+    function Dog(name, age) {
+      this.name = name;
+      this.age = age;
+    }
+    //构造函数上添加函数，成为类方法
+    Dog.running = function () {
+      console.log('running');
+    }
+    Dog.running(); //running,构造函数上添加函数，成为类方法
+  </script>
+</body>
+
+</html>

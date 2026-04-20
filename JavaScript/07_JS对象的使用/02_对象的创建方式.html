@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    //1.对象字面量,属性之间用逗号分隔，最后一个属性后面不能有逗号
+    var obj1 = {
+      name: 'coderwhy',
+      age: 18,
+      sayHello: function () {
+        console.log('hello');
+      }
+    }
+    //2.构造函数new Object()
+    var obj2 = new Object();
+    obj2.name = 'coderwhy';
+    obj2.age = 18;
+    obj2.sayHello = function () {
+      console.log('hello');
+    }
+    //3.new 其他类
+    function Person(name, age) {
+      this.name = name;
+      this.age = age;
+      this.sayHello = function () {
+        console.log('hello');
+      }
+    }
+    var obj3 = new Person('coderwhy', 18);
+  </script>
+</body>
+
+</html>

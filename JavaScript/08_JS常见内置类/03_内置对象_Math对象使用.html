@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    //Number既是函数也是对象，typeof优先返回函数function,(他是构造函数，类，也是对象)
+    console.log(typeof Number)//function
+    var num = new Number()//是一个构造函数，自己也是一个对象
+
+    //Math不是构造函数，只是一个对象
+    console.log(typeof Math)
+
+    //Math对象的属性
+    var num = 3.55
+    console.log(Math.floor(num))//3(向上取整)
+    console.log(Math.ceil(num))//4（向下取整）
+    console.log(Math.round(num))//4（四舍五入）
+
+
+    //另外的方法
+    // random[0,1)随机数
+    console.log(Math.random())
+    //需求生成【5,50）随机整数
+    var randomNum = Math.floor(Math.random() * 45) + 5
+    //小算法生成[a,b)随机整数
+    // var randomNum = Math.floor(Math.random() * (b-a)) + a
+
+    //Math.pow(x,y)
+
+
+
+  </script>
+</body>
+
+</html>

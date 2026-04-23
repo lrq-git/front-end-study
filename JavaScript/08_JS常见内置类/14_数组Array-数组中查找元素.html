@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+
+  <script>
+    // 1.查找：indexOf/LastIndexOf
+    // find:查找元素
+    var name = ["qqq", "ddd", "ooo"]
+
+    // includes
+    console.log(name.includes("qqq"))
+
+    // findIndex: 查找元素的索引
+    var findIndex = name.findIndex(function (item, index, arr) {
+      return item === "ddd"
+    })
+    // 以后学了箭头函数：
+    var findIndex = name.findIndex(item => item === "bbb")
+
+  </script>
+</body>
+
+</html>

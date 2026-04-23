@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <!-- DOM；将文档里面的元素抽象成JS里面的对象模型（可修改的） ，然后通过对象模型，可以对各种元素进行操作-->
+  <!--网页如何被渲染出来：
+    1.浏览器从服务器中下载网页，然后进行解析展示  -->
+  <div class="box">
+    <h2>我是标题</h2>
+    <p>我是内容，hhhhh</p>
+  </div>
+
+  <!-- ul>li{$}*5 这个是Emmet语法-->
+  <ul>
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+    <li>4</li>
+    <li>5</li>
+  </ul>
+
+  <input type="text">
+  <button>搜索</button>
+
+  <!-- 当用户在搜索框输入手机：
+    1.前端会把手机这个关键字传给服务器
+    2.服务器会把有关手机的数据返回，数据是以列表的形式，里面是对象
+    3.浏览器在渲染网页的时候，每渲染一个元素都会给这个元素创建出对应的jS对象  都叫文档对象模型（类） -->
+
+
+  <script>
+    /* 1.前面的JS的基础语法是ECMAscript
+       2.还要学习浏览器提供给开发者DOM，BOM相关的API才能对页面，浏览器进行操作 
+       3.API：application programming interface 应用程序编程接口  
+       4.window全局对象提供jS语法部分object\array\DAte等，还有BOM和DOM部分 
+       5.DOM：Document objext model 文档对象模型（我们的html文件，网页里面展示的），将所有的内容表示为可以修改的对象
+       6.BOM:browser object model 浏览器对象模型，浏览器提供的用于document之外的所有内容的其他对象*/
+    var boxEl = document.body.children[0]
+    // 拿到了body的第一个子元素
+    console.log(boxEl)
+    boxEl.style.color = "red"
+  </script>
+</body>
+
+</html>

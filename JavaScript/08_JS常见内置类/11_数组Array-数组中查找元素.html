@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <!-- indexOf
+      手动for循环 
+      数组的find方法-->
+  <script>
+    // 1.数组中存放的是原始类型
+    var name = ["qqq", "ddd", "ooo"]
+
+    /*  1.1 indexOf(searchString, fromIndex)
+       这个函数返回的是index:
+           情况一：搜索到，返回字符串所在索引的位置
+           情况二：没有搜索到，返回-1  */
+    console.log(name.indexOf("ddd"))
+
+    // 2.数组中存放的是对象类型
+    var student = [
+      { id: 100, name: "why", age: 18 },
+      { id: 101, name: "why1", age: 18 },
+      { id: 102, name: "why2", age: 18 },
+      { id: 103, name: "why3", age: 18 }
+    ]
+
+    // 需求查找学号101的学生信息
+    // 2.1 自己写一个for循环
+    var stu = null
+    for (var i = 0; i < student.length; i++) {
+      if (student[i].id === 101) {
+        stu = student[i]
+        break
+      }
+    }
+    if (stu) {
+      console.log("找到了")
+    } else {
+      console.log("没找到")
+    }
+
+    /* 注意：对象如果没有初始值的话，就设置为NUll,不能设置为空对象
+    在转换布尔类型中，空对象，空数组，空函数为True，空字符串为False */
+
+    // 2.2 find方法：高阶函数
+    var stu2 = student.find(function (item) {
+      if (item.id === 101) return true
+    })
+    /* 这个find函数会将数组中的每一个item都调用一遍function函数 */
+    /* 高阶函数：function foo(fn) {
+    },以另一个函数作为参数传给一个函数 */
+  </script>
+</body>
+
+</html>

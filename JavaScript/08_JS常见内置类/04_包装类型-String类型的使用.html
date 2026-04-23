@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    //开发中经常要对字符串进行各种操作，String是一个构造函数（类），包装类型
+    var message = "hello world"
+    //常见属性
+
+    //1.长度
+    console.log(message.length)
+
+    //2.访问字符串某个位置的字符
+    //clg简单打console.log
+    console.log(message[4])
+    console.log(message.charAt[4])
+    console.log(message[20])//undefinded
+    console.log(message.charAt[20])//空字符串
+
+    //3.字符串遍历
+    // 普通for遍历
+    for (var i = 0; i < message.length; i++) {
+      console.log(message[i])
+    }
+
+    //for of遍历（这个要求是迭代的）
+    //目前可迭代为：数组和字符串
+    //对象不支持for of
+    //string对象内部是将字符串变成一个可迭代的对象
+    for (var char of message) {
+      console.log(char)
+    }
+
+
+  </script>
+</body>
+
+</html>

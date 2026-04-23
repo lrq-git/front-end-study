@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+
+  <script>
+    var date = new Date()
+
+    console.log(date)
+    // 两种标准
+    console.log(date.toDateString())
+    console.log(date.toISOString())
+
+    // 1.获取信息
+    var year = date.getFullYear()
+    var month = date.getMonth() + 1
+    // month的值是0-11
+    var day = date.getDate()
+    var hour = date.getHours()
+    var minute = date.getMinutes()
+    var second = date.getSeconds()
+    console.log(year, month, day, hour, minute, second)
+    console.log(`${year}/${month}/${day} ${hour}: ${minute}: ${second}`)
+    // 有弊端：1.如果数字的一位数，没有显示前面的0,2.需要自己改格式
+
+    var weekday = date.getDay()
+
+    // 2.业务可以给data设置时间用set
+    date.setFullYear(2033)
+    // 自动校验:如果没有32号他会自动校正为正确日期
+    date.setDate(32)
+    console.log(date)
+
+    // 在开发中一般都自己拼接
+  </script>
+</body>
+
+</html>

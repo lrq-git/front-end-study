@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    var name = ["qqq", "ddd", "ooo"]
+
+    // 1.获取数组的常数length(数组的属性length)
+    console.log(name.length)
+
+    //  注：length属性是可写的（可以扩容以及清空数组）
+    name.length = 10
+    console.log(name)
+    name.length = 0
+    console.log(name)
+
+    // 2.数组的遍历
+    // 2.1 for循环遍历
+    for (var i = 0; i < name.length; i++) {
+      console.log(name[i])
+    }
+
+    // 2.2 for in 循环遍历（如果要拿到索引）
+    for (var index in name) {
+      console.log(index, name[index])
+    }
+
+    // 2.3 for of (遍历拿到的是数组的内容)
+    for (var item of name) {
+      console.log(item)
+    }
+  </script>
+</body>
+
+</html>

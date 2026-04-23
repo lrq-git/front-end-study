@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <!-- 注意：变量名和函数名是小驼峰，类名是大驼峰 -->
+  <script>
+    //类和构造函数是什么关系？
+    /* 在 ES6（现代 JS）之前，我们没有 class 关键字，只能用 function 来模拟类。
+    现在的 class 其实就是构造函数的“语法糖”。它们本质上是一回事，只是 class 写起来更整洁，更像图纸。 */
+    //Number构造函数->window.Number
+    console.log(window)
+    //类属性
+    console.log(Number.MAX_VALUE)
+    console.log(Number.MIN_VALUE)
+    console.log(Number.MIN_SAFE_INTEGER)
+    console.log(Number.MAX_SAFE_INTEGER)
+
+    //对象（实例）的方法：（这个方法要用在类的实例里面也就是对象）Instance
+    //1.teString(base),以base进制转换成字符串型
+    var num = 1000
+    console.log(num.toString(), typeof num.toString())
+    console.log(num.toString(2), typeof num.toString())
+    console.log(num.toString(8), typeof num.toString())
+    console.log(num.toString(16), typeof num.toString())
+
+    console.log(123..toString(2))
+
+    //2.格式化数字，保留位数并且四舍五入(常见),最后得到是字符串类型
+    var pi = 3.141508
+    console.log(pi.toFixed(3))
+
+    //类的方法：（常见）
+    //把字符串转换成数字类型并且可以转换为数字类型中的小数和整数(这个转的时候不会四舍五入，直接截掉)
+    var num1 = "123.521"
+    console.log(Number(num1))
+    console.log(Number.parseFloat(num1))
+    console.log(Number.parseInt(num1))
+    console.log(Number(num1).toFixed(0))
+
+    //注意window对象中也有parseInt和parseFloat这两个方法的
+    console.log(parseInt(num1))
+    console.log(parseFloat(num1))
+
+
+
+
+
+
+
+
+
+  </script>
+</body>
+
+</html>

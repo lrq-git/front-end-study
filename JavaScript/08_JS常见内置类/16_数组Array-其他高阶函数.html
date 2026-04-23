@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+
+  <script>
+    var nums = [20, 4, 10, 15, 100, 88]
+    // 遍历数组三种方式，再新增一个
+    // forEach
+    nums.forEach(function (item) {
+      console.log(item, this)
+    })
+    // 注意这里的this会是window,因为是浏览器调用的
+
+    // 可以传入this的参数
+    nums.forEach(function (item) {
+      console.log(item, this)
+    }, { name: "why" })
+    //{ name: "why"}这个是thisargums
+
+    //  2.filter函数：过滤
+
+    // 2.1for循环实现
+    var newNums = []
+    for (var item of nums) {
+      if (item % 2 === 0) {
+        newNums.push(item)
+      }
+    }
+    // 2.2filter方法
+    var newNums = nums.filter(function (item) {
+      return item % 2 == 0
+    })
+    console.log(newNums)
+
+    // 3.map映射，例如把所有数字的item全部平方或者固定算法，成为另外一个数组
+    nums.map(function (item) {
+      return item * itme
+    })
+
+    // 4.reduce累加
+    nums.reduce(function (preValue, item) {
+      return preValue + item
+    }, 0)
+
+    // reduce练习
+    var product = [
+      { name: "鼠标", price: 88, count: 3 },
+      { name: "键盘", price: 88, count: 3 },
+      { name: "耳机", price: 88, count: 4 }
+
+    ]
+    var totalPrice = prodeuct.reduce(function (preValue, item) {
+      return prevalue + item.price * item.count
+    }, 0)
+
+    // 综合练习
+    var nums = [11, 20, 30, 44, 55, 66]
+    // 需求：过滤所有的偶数，映射所有偶数的平方，并且计算他们的和
+    var total = nums.filter(function (item) {
+      return item % 2 === 0
+    }).map(function (item) {
+      return item * item
+    }).reduce(function (preValue, item) {
+      return prevalue + item
+    }, 0)
+  </script>
+</body>
+
+</html>

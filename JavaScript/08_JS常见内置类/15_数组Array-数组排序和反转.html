@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+
+  <script>
+    var nums = [20, 4, 10, 15, 100, 88]
+    // sort排序:会改变原数组
+    nums.sort(function (item1, item2) {
+      // item1和item2进行比较
+      // 返回是正数则交换位置，所以谁小谁在前
+      return item1 - item2//这样是升序
+      // 也可以通过  return item2 -item1 进行反转
+    })
+    console.log(nums)
+    // 反转
+    console.log(nums.reverse())
+
+    // 复杂类型排序
+    var student = [
+      { id: 100, name: "why", age: 18 },
+      { id: 101, name: "why1", age: 18 },
+      { id: 102, name: "why2", age: 18 },
+      { id: 103, name: "why3", age: 18 }
+    ]
+    student.sort(function (item1, item2) {
+      return item1.age - item2.age
+    })
+    console.log(student)
+  </script>
+</body>
+
+</html>

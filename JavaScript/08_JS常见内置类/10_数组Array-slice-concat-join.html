@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    var name = ["qqq", "ddd", "ooo"]
+
+    // 1.slice(start, end)切割数组（不会修改原数组）
+    // splice有区别：splice会修改原有的数组
+    // start 从什么位置开始，end结束位置，不包含end本身
+    var newName = name.slice(2, 4)
+    console.log(newName)
+
+    // 2.concat方法：将多个数组拼接在一起
+    var name1 = ["qqq", "www"]
+    var name2 = ["ggqq", "whww"]
+    var name3 = ["qghqq", "wgww"]
+
+    // name1.push(name2),这样不仅会修改原来的数组，也会形成二维数组
+
+    /* 新增语法可以这样进行：
+     var newNames = []
+     newNames.push(...name1)
+  */
+    var newNames2 = name1.concat(name2, name3)
+
+    // 3.join方法，把数组转成字符串的形式
+    console.log(name.join(""))
+
+  </script>
+</body>
+
+</html>

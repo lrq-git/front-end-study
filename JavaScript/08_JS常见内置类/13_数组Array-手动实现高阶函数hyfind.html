@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+
+  <script>
+    // 1.原始类型的查找
+    var name = ["qqq", "ddd", "ooo"]
+
+    // 原生find方法:(他与foreach方法不同的是，这个关心回调函数里的return,foreach方法中数组里所有的元素都会遍历完这个回调函数
+    // 而find方法里面，如果没有return，默认返回的结果是undefined（return undefined），如果有return，则返回的是是韩式返回true 的那个数组内容
+    var findName = name.find(function (item, index, arr) {
+      console.log(item, index, arr)
+      return item === "ddd"
+    })
+    console.log(findName)
+
+    // 2.数组中对象类型的查找
+    var student = [
+      { id: 100, name: "why", age: 18 },
+      { id: 101, name: "why1", age: 18 },
+      { id: 102, name: "why2", age: 18 },
+      { id: 103, name: "why3", age: 18 }
+    ]
+    var findStu = student.find(function (item) {
+      return item.id === 101
+    })
+    console.log(findStu)
+
+    // 3.自己实现Hyfind
+    Array.prototype.hyFind = function (fn) {
+      for (var i = 0; i < this.length; i++) {
+        var isFlag = fn(this[i], i, this)
+        if (isFlag) {
+          return this[i]
+          // 如果没有return则是undefided
+        }
+      }
+
+    }
+    var findStu = student.hyFind(function (item, index, arr) {
+      console.log(item)
+      return item.id === 101
+    })
+    console.log(findStu)
+  </script>
+</body>
+
+</html>

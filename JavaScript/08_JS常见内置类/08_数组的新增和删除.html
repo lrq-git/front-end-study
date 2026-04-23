@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // 对于某一个结构的操作：增删改查（数据库）
+    var names = ["why", "lrq", "kkk"]
+    // 1.在尾部添加和删除元素 
+    // push添加
+    names.push("www", "aaa")
+    console.log(names)
+
+    //pop删除
+    names.pop()
+    var a = names.pop()
+    //可以接受到删除的元素
+    //删除最后一个元素
+    console.log(names)
+
+    //2.在数组的头部添加和删除元素
+    // unshift
+    names.unshift("kka")
+    //shift
+    names.shift()//删除头部一个元素
+
+    // 3.在中间某个位置添加删除替换元素（任意位置）
+
+    // 3.1删除元素
+    // 参数一：start:从什么位置开始操作元素
+    // 参数二：deleteCount ,删除元素的个数
+    var list = ["asd", "dfg", "ddd", "jjj"]
+    name.splice(1, 2)
+
+    // 3.2新增元素
+    // deleteCount 0,后面可以添加新的元素(0或者负数都表示不删除)
+    name.splice(1, 0, "hhh", "ooo")
+
+    // 3.3替换元素
+    name.splice(1, 2, "qqq", "lll")
+
+
+
+
+  </script>
+</body>
+
+</html>

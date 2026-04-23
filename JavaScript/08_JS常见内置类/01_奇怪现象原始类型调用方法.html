@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // JS的原始类型并非对象类型,所以从理论上没有办法获取对象与属性.none.和undefined没有对应的对象包装类
+    //但JS为了使其可以用，对其封装了对应的包装类型，当属性或者方法使用完成后，这个包装类型就会被扔掉
+    var name = "hello"
+    var height = 1.888
+    //在调用原始类的属性或者方法时，内部操作 name = new String(name)
+    console.log(name.length)
+    console.log(name.split(""))
+    console.log(height.tofixed(2))
+    //也可以自己创建一个包装类的对象
+    var name2 = new String("why")
+    console.log(typeof name)//string
+    console.log(typeof name2)//object
+    //注意typeof只能告诉你是一个对象，不能告诉你是哪种对象
+
+  </script>
+</body>
+
+</html>

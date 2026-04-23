@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <!-- 回调函数：在 JavaScript 中，函数可以像变量一样作为参数传递给另一个函数。当你把函数 A 作为参数传给函数 B，并让函数 B 在某个时刻去执行 A 时，A 就是回调函数 callback-->
+  <script>
+
+    var name = ["qqq", "ddd", "ooo"]
+
+    // forEach函数：可以帮我遍历数组
+    name.forEach(function (item, index, name) {
+      console.log("-----", item, idex, name)
+    });
+    // 这个函数item,index顺序不能变
+    //自己手动写类似forEach函数：版本一：
+    function hyForEach(fn) {
+      for (var i = 0; i < name.length; i++) {
+        fn(name[i], i, name)
+      }
+    }
+    hyForEach(function (item, index, name) {
+      console.log("-----", item, index, name)
+    })
+
+    //自己手动写类似forEach函数：版本二：
+    function hyForEach(fn, arr) {
+      for (var i = 0; i < arr.length; i++) {
+        fn(arr[i], i, arr)
+      }
+    }
+    hyForEach(function (item, index, name) {
+      console.log("-----", item, index, name)
+    }, name);
+
+
+    hyForEach(function (item, index, name) {
+      console.log("-----", item, index, name)
+    }, [2, 3, 5, 6])
+
+    // 版本三：
+    name.hyForEach = function (fn) {
+      for (var i = 0; i < this.length; i++) {
+        fn(this[i], i, this)
+      }
+    }
+    name.hyforEach(function (item, index, name) {
+      console.log("-----", item, idex, name)
+    });
+
+    // 版本四（了解）
+    Array.prototype.hyforEach = function (fn) {
+      for (var i = 0; i < this.length; i++) {
+        fn(this[i], i, this)
+      }
+    }
+    name.hyforEach(function (item, index, name) {
+      console.log("-----", item, idex, name)
+    });
+
+  </script>
+</body>
+
+</html>

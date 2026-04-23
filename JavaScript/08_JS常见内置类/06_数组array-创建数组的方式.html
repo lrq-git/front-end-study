@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // 数组是有序的集合
+    // 1.数组的创建方式一(通过字面量)
+    var names = ["why", "hshsh", "msjdsjd"]
+    var prosduct1 = { name: "苹果", price: 12 }
+    var products = [
+      { name: "苹果", price: 12 },
+      { name: "鼠标", price: 100 },
+      { name: "键盘", price: 333 },
+      { name: "西瓜", price: 12 }
+    ]
+    // 2.数组的创建方式二
+    // 数组也是一个对象，他有构造函数 Array(),类Array
+    console.log(window.Array)
+    var arr1 = new Array()
+    var arr2 = new Array("abc", "bhc", "jjh")
+    console.log(arr1, arr2)
+
+    // 如果传入了一个数字，他会默认当成我们要创建一个对应长度的数组
+    var arr3 = new Array(5)//[empty*5]
+    // 3.通过索引访问元素，JS不支持-1访问最后一个元素
+    console.log(names[0])//第一个元素
+
+
+  </script>
+</body>
+
+</html>

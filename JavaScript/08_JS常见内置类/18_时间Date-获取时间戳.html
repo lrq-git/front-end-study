@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    /*   Unix 时间戳
+  JavaScript 中的时间戳是指：自 1970 年 1 月 1 日 00:00:00 UTC（协调世界时）起至当前时间所经过的毫秒数 */
+    var date = new Date(2376364764)
+    console.log(date)
+
+    // Date对象，转成时间戳
+    var date = new Date()
+    var date2 = new Date("2023-3-03")
+
+    // 方法一：当前时间的时间戳
+    var timestemp1 = Date.now()//这个是类方法
+    console.log(timestemp1)
+
+    // 方法二和方法三将一个Date对象转成时间戳
+    var timestemp2 = date.getTime()
+    var timestemp3 = date.valueof()
+
+    // 方法四：把Date转换为数字类型
+    console.log(+date)
+
+    // 时间戳作用：1）有时候会根据时间戳记录用户点击按钮创建用户的时间
+    // 2）计算操作花费的时间
+    var startTime = Date.now()
+    for (var i = 0; i < 1000; i++) {
+      console.log(i)
+    }
+    var endTime = Date.now()
+    console.log("执行消耗的时间", endTime - startTime)
+
+    // 封装一个简单的函数
+    function testPerformance(fn) {
+      var startTime = Date.now()
+      fn()
+      var endTime = Date.now()
+    }
+
+    // 将字符串时间转成时间戳
+    var timeString = "2033/03/23"
+    // var timeString = "2033-03-23"或者"2033.03.23"这两种格式也认识
+    // 方式一
+    var date = new Date(timeString)
+    var timestamp = date.getTime()
+    // 方式二:这个方法要求字符串符合标准，如果不符合则不能被解析，会被返回NaN
+    var timestamp = Date.parse(timeString)
+  </script>
+
+</body>
+
+</html>

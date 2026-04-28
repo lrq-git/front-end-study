@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <!-- 我是注释 -->
+  我是文本
+  <div class="box">哈哈哈哈哈</div>
+  <ul>
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+    <li>4</li>
+    <li>5</li>
+  </ul>
+
+  <script>
+    /* 获取所有节点的导航，包括注释和文本
+        获取所有元素（element)的导航，div/ul/li */
+
+
+    // doucument对象也有对应的类
+    // var htmlEl = document.documentElement
+    // var bodyEl = document.body
+    // var headEl = document.head
+    // var doctype = document.doctype
+
+
+    // 1.获取节点的导航
+    var bodyEl = document.body
+    // 1.1获取body的所有子节点(注意：空行也是文本)
+    console.log(bodyEl.childNodes)
+    // 1.2获取body的第一个子节点(注意：空行也是文本)
+    var bodyElFristChild = bodyEl.firstChild
+    console.log(bodyEl.firstChild)
+    // 1.3获取body的注释
+    var bodyElCommenrChild = bodyEl.firstChild.nextSibling
+    // 1.4获取body的父节点
+
+  </script>
+</body>
+
+</html>

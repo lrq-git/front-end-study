@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    [v-cloak] {
+      display: none;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- 浏览器解析的原则是先将html元素解析出来，后面解析到script才会下载js文件，然后进行重新修改html里面的改变 -->
+  <div id="app">
+    <h2 v-cloak>{{message}}</h2>
+
+    <!-- 为了防止下面还没加载出来，先弹出了{{}}的写法，可以用v-cloak,先加上斗篷，后面JS渲染出来后，在取消，这个需要和css一起用(不会看到mustache的语法) -->
+  </div>
+  <script src="../lib/vue.js"></script>
+  <script>
+    // 1.创建app
+    const app = Vue.createApp({
+      data: function () {
+        return {
+          message: "hello world"
+        }
+      },
+    })
+    //2.挂载app
+    app.mount("#app")
+
+
+    // 延时函数setTimeout
+  </script>
+</body>
+
+</html>

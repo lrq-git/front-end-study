@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    img {
+      width: 200px;
+      height: 200px;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- 开发中如何选择：
+   1.如果需要频繁显示和隐藏，那么用v-show,不用操作dom树(操作dom需要回流和重绘，性能低)
+   2.不会频繁的切换，用v-if -->
+  <div id="app">
+    <div>
+      <button @click="toggle">切换</button>
+      <!-- toggle开关 -->
+    </div>
+    <!-- v-if和v-show的区别 -->
+    <!-- v-show不能和v-else一起用，也不能和template一起用（因为template根本不存在这个元素） -->
+    <!-- v-if条件为false的时候，其对应的原生压根不会被渲染到Dom里面 -->
+    <!-- v-show是本质上通过修改display：none和block来进行设置的，dom树里面还是有元素的 -->
+    <div v-show="isShowCode">
+      <img
+        src="https://tse1-mm.cn.bing.net/th/id/OIP-C.vy9vbK_uzBwa8dT9goIyCwHaHa?w=163&h=180&c=7&r=0&o=5&dpr=2&pid=1.7"
+        alt="">
+    </div>
+    <div v-if="isShowCode">
+      <img
+        src="https://tse1-mm.cn.bing.net/th/id/OIP-C.vy9vbK_uzBwa8dT9goIyCwHaHa?w=163&h=180&c=7&r=0&o=5&dpr=2&pid=1.7"
+        alt="">
+    </div>
+  </div>
+  <script src="../lib/vue.js"></script>
+  <script>
+    // 1.创建app
+    const app = Vue.createApp({
+      data() {
+        return {
+          isShowCode: true
+        }
+      },
+      methods: {
+        toggle() {
+          this.isShowCode = !this.isShowCode
+        }
+      }
+    })
+    //2.挂载app
+    app.mount("#app")
+  </script>
+</body>
+
+</html>

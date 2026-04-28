@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div id="app">
+    <h2>当前计数：{{counter}}</h2>
+    <button @click="increment">+1</button>
+
+    <script src="./lib/vue.js"></script>
+    <script>
+      const app = Vue.createApp({
+
+        data: function () {
+          return {
+            counter: 0
+          }
+        },
+        // methods: option api
+        // methods属性是一个对象，通常会在这个对象里面定义很多方法，这些方法背绑定在模版中
+        methods: {
+          increment: function () {
+            this.counter++
+            // 函数里面的this取决于谁调用的函数
+          },
+          // ES6写法
+          /* increment() {
+          }, */
+          /* 这样的写法不行（不能写箭头函数） 
+          increment: () => {
+            console.log(this) */
+          // 因为没有自己的this因此要找上一层作用域，因为都是对象中，而对象不构成一个作用域所以他的作用域是全局
+
+          // 箭头函数在底层机制上与普通函数最大的区别是：它没有自己的 this
+        }
+      })
+      app.mount("#app")
+      /* const add = function(a, b) {
+          return a + b;
+          };
+          转成箭头函数
+          const add = (a, b) => {
+  return a + b;
+}; */
+    </script>
+</body>
+
+</html>

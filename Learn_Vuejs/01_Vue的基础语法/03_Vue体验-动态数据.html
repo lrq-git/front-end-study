@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div id="app"></div>
+  <script src="./lib/vue.js"></script>
+  <script>
+    const app = Vue.createApp({
+      // 插值语法：{{}}，将对应属性的值插入
+      template: `<h2>{{message}}</h2>`,
+      // 动态数据存放在data这个属性里面
+      // 作用：vue向服务器请求数据，然后存放在data里面，再动态把这些数据插入到模板里面
+      data: function () {
+        return {
+          title: "你好",
+          message: "再见"
+        }
+      }
+    })
+    app.mount("#app")
+  </script>
+</body>
+
+</html>

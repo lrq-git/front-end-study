@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <!-- 前面的指令，主要是将值插入到模版内容中，除此之外，某些属性也需要我们动态绑定 -->
+
+  <!-- 开发中有哪些属性需要动态绑定：1.图片的src,2.网站链接href3.动态绑定类，样式 -->
+
+  <!-- 全局属性：class title style id-->
+  <div id="app">
+    <div>
+      <button @click="switchImage">改变图片</button>
+    </div>
+    <!-- 1.绑定img的src属性 -->
+    <!-- 语法糖(就是语法对应的简写): v-bind -> : -->
+    <img v-bind:src="showImgUrl" alt="">
+
+
+    <!-- 2.绑定a的href属性 -->
+    <a v-bind:href="href">Gemini一下</a>
+    <a :href="href">Gemini一下</a>
+  </div>
+  <script src="../lib/vue.js"></script>
+  <script>
+    // 1.创建app
+    const app = Vue.createApp({
+      data: function () {
+        return {
+          imgUrl1: "https://p5.music.126.net/obj/wonDlsKUwrLClGjCm8Kx/79777594206/4f3b/0ceb/4045/528e395ef395a1136f2b66f23c3a4b37.jpg?imageView&quality=89",
+          imgUrl2: "https://p5.music.126.net/obj/wonDlsKUwrLClGjCm8Kx/79781530843/cbb3/ef72/faa8/ada054eddc9f86e9ade8af1b85ca66ab.jpg?imageView&quality=89",
+
+          showImgUrl: "https://p5.music.126.net/obj/wonDlsKUwrLClGjCm8Kx/79777594206/4f3b/0ceb/4045/528e395ef395a1136f2b66f23c3a4b37.jpg?imageView&quality=89",
+
+          href: "https://gemini.google.com/app"
+        }
+      },
+      methods: {
+        switchImage: function () {
+          this.showImgUrl = this.showImgUrl === this.imgUrl1 ? this.imgUrl2 : this.imgUrl1
+        }
+      }
+    })
+    //2.挂载app
+    app.mount("#app")
+  </script>
+</body>
+
+</html>

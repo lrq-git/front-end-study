@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div id="app">
+    <!-- css的属性名称可以是驼峰也可以是-连接 -->
+    <h2 style="color:red; font-size:  30px;">ahahahah</h2>
+
+    <!-- 1.动态绑定style，在后面跟上对象类型（重要） -->
+    <h2 v-bind:style="{color: fontColor, fontSize: fontSzize + 'px' }"></h2>
+    <!-- 2.动态绑定属性，这个属性是一个对象 -->
+    <h2 v-bind:style="objStyle"></h2>
+
+    <!-- style的数组语法（开发里很少用） -->
+    <h2 v-bind:style="[objStyle, {backgroundColor: 'purple'}]">呵呵呵呵</h2>
+
+  </div>
+  <script src="../lib/vue.js"></script>
+  <script>
+    // 1.创建app
+    const app = Vue.createApp({
+      data: function () {
+        return {
+          fontColor: "blue",
+          fontSize: 30,
+          objStyle: {
+            fontSize: '50px',
+            color: "green"
+          }
+        }
+      },
+    })
+    //2.挂载app
+    app.mount("#app")
+  </script>
+</body>
+
+</html>

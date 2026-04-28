@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    img {
+      width: 200px;
+      height: 200px;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="app">
+    <div>
+      <button @click="toggle">切换</button>
+      <!-- toggle开关 -->
+    </div>
+
+    <template v-if="isShowCode">
+      <img
+        src="https://tse1-mm.cn.bing.net/th/id/OIP-C.vy9vbK_uzBwa8dT9goIyCwHaHa?w=163&h=180&c=7&r=0&o=5&dpr=2&pid=1.7"
+        alt="">
+    </template>
+  </div>
+  <script src="../lib/vue.js"></script>
+  <script>
+    // 1.创建app
+    const app = Vue.createApp({
+      data() {
+        return {
+          isShowCode: true
+        }
+      },
+      methods: {
+        toggle() {
+          this.isShowCode = !this.isShowCode
+        }
+      }
+    })
+    //2.挂载app
+    app.mount("#app")
+  </script>
+</body>
+
+</html>

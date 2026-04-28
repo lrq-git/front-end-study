@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+
+  <h2>hahahaha</h2>
+  <p>我是内容，呵呵呵呵</p>
+
+  <div id="app"></div>
+  <!-- CDN地址 -->
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  <!-- 缺点：Vue的框架在CDN服务器上需要网络请求的过程 -->
+  <script>
+    // 使用Vue
+    // creatApp这个函数会返回一个新的对象
+    const app = Vue.createApp({
+      template: `<h2>hello world</h2><span>呵呵呵</span>`,
+    })
+    // 挂载
+    app.mount("#app")
+    // 会放在id为app的元素内部（将template里面的元素渲染出来然后挂载在app的元素里面
+  </script>
+  <!-- 知识点补充：1.const：常量，声明时必须赋值，且后续绝对不能重新赋值，const 锁死的是变量指向的内存地址。
+                  如果你用 const 声明了一个基本类型（数字、字符串），那是绝对改不了的。
+                  但如果你用 const 声明了一个对象或数组，你可以修改它们里面的内容！
+                  特性,var (旧),let (新),const (新)
+                  作用域,函数 / 全局,块级 {},块级 {}
+                  变量提升,允许 (值为 undefined),不允许 (报错),不允许 (报错)
+                  重复声明,允许,不允许,不允许
+                  重新赋值,允许,允许,不允许 
+                  2.id 的全称是 Identifier（标识符）。在一个 HTML 页面中，同一个 id 只能出现一次。
+                    class 的意思是类名。它可以被多个标签共用，而且一个标签可以同时拥有多个 class
+                    name —— 快递收件人（专门和服务器沟通）
+            name 属性主要用在表单元素（如 <input>、<select>、<textarea>）中。
+            生活类比：你寄快递时填的“收件人姓名”。当你把表单提交给后台服务器（如 Python Django 或 Node.js 后端）时，后台不认识 id 也不认识  class，它只认 name。
+            主要用途：
+            提交表单数据：比如 <input type="text" name="username" value="Gemini">，提交时，后台会收到一个键值对：username=Gemini。-->
+</body>
+
+</html>

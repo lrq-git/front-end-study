@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .box {
+      width: 100px;
+      height: 100px;
+      background-color: orange;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="app">
+    <div class=box @click="divClick">
+      <button @click.stop="btnClick">按钮</button>
+      <!-- 加了修饰符，会内部对事件进行特殊处理 -->
+      <!-- 当浏览器在按钮上产生一个事件以后，本质上会冒泡，div也会产生一个事件 -->
+    </div>
+
+  </div>
+  <script src="../lib/vue.js"></script>
+  <script>
+    // 1.创建app
+    const app = Vue.createApp({
+      data: function () {
+        return {
+          message: "hello world"
+        }
+      },
+      methods: {
+        btnClick(event) {
+          // event.stopPropagation()
+          console.log("btnclick")
+
+        },
+        divClick() {
+          console.log("divClick")
+        }
+      }
+    })
+    //2.挂载app
+    app.mount("#app")
+  </script>
+</body>
+
+</html>

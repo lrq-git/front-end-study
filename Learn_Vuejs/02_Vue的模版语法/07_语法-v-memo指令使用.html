@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <!-- v-memo可以用来做性能优化 -->
+  <div id="app">
+    <!-- 我现在的需求：这一块东西只有name发生改变时候，才会重新渲染 -->
+    <div v-memo="[name]">
+      <h2>姓名：{{name}}</h2>
+      <h2>年龄：{{age}}</h2>
+      <h2>身高：{{height}}</h2>
+    </div>
+    <button @clicK="updateInfo">改变信息</button>
+  </div>
+  <script src="../lib/vue.js"></script>
+  <script>
+    // 1.创建app
+    const app = Vue.createApp({
+      data: function () {
+        return {
+          name: "why",
+          age: 12,
+          height: 1.33
+        }
+      },
+      methods: {
+        updateInfo: function () {
+          this.name = "kobe"
+        }
+      }
+    })
+    //2.挂载app
+    app.mount("#app")
+
+
+    // 延时函数setTimeout
+  </script>
+</body>
+
+</html>

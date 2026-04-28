@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div id="app">
+    <ul>
+      <li v-for="item in names">{{item}}</li>
+    </ul>
+    <button @click="changeArray">修改数组</button>
+  </div>
+  <script src="../lib/vue.js"></script>
+  <script>
+    // 1.创建app
+    const app = Vue.createApp({
+      data() {
+        return {
+          names: ["abd", "bgc", "kjg"]
+        }
+      },
+      methods: {
+        changeArray() {
+          // 1.直接将数组修改为一个新数组
+          // this.names = ["hhh", "kkk"]
+
+          // 2.通过一些数组的方法，修改数组中的元素(修改原数组)
+          // this.names.push("why")
+          // this.names.pop()
+          // this.names.splice(2, 1, "jjj")
+          // this.names.sort()
+          // this.names.reverse()
+
+          // 3.不修改原数组的方法是不能侦听的(watch)
+          // this.names.map(item => item + "hha")
+          /* 这个箭头函数转成函数为function (item) {
+  return item + "hha";
+} */
+          // 这样子是会创建一个新数组，原来的数组不会发生改变
+          const newNames = this.names.map(item => item + "hha")
+          this.names = newNames
+        }
+      }
+    })
+    //2.挂载app
+    app.mount("#app")
+  </script>
+</body>
+
+</html>

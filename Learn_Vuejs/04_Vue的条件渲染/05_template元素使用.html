@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div id="app">
+    <!-- template元素可以当做不可见的包裹元素，最终template不会被渲染，类似小程序里的block -->
+    <template v-if="Object.keys(info).length">
+      <!-- Object.keys(info)会把对象的键返回为一个数组 -->
+      <h2>个人信息</h2>
+      <ul>
+        <li>姓名：{{info.name}}</li>
+        <li>姓名：{{info.age}}</li>
+      </ul>
+    </template>
+
+    <!-- v-else -->
+    <template v-else>
+      <h2>没有输入</h2>
+      <p>请输入个人信息</p>
+    </template>
+
+  </div>
+  <script src="../lib/vue.js"></script>
+  <script>
+    // 1.创建app
+    const app = Vue.createApp({
+      data() {
+        return {
+          info: { name: "why", age: 18 }
+        }
+      },
+    })
+    //2.挂载app
+    app.mount("#app")
+  </script>
+</body>
+
+</html>

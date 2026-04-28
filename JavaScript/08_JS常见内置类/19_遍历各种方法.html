@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // 遍历数组
+    // 1.for...of (ES6 推荐)：最优雅的遍历方式，直接拿到数组里的值。可以配合 break 和 continue 中断循环。
+    const arr = ['a', 'b', 'c'];
+    for (const item of arr) {
+      console.log(item); // 输出: a, b, c
+    }
+    // 2.forEach()
+    arr.forEach((item, index) => {
+      console.log(index, item);
+    });
+    // 3.for in
+    for (var index in name) {
+      console.log(index, name[index])
+    }
+    // 4.经典for循环
+
+    // 遍历对象
+    // 1.for  in
+    for (const key in obj) {
+      console.log(key, obj[key]); // obj[key] 拿到值
+    }
+    // 
+    const obj = { name: "张三", age: 18 };
+
+    // 2.遍历所有的 键 和 值 (最常用)Object.entries(), Object.keys(), Object.values() (现代极力推荐)：将对象转化为数组，然后用数组的方法去遍历。
+    for (const [key, value] of Object.entries(obj)) {
+      console.log(`${key}: ${value}`); // name: 张三, age: 18
+    }
+  </script>
+</body>
+
+</html>

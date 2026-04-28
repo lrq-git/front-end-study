@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div id="app"></div>
+  <script src="./lib/vue.js"></script>
+  <script>
+    const app = Vue.createApp({
+      // 插值语法：{{}}，将对应属性的值插入
+      template: `
+      <h2>电影列表</h2>
+      <ul>
+        <li>{{movies[0]}}</li>
+        <li>{{movies[1]}}</li>
+        <li>{{movies[2]}}</li>
+        <li>{{movies[3]}}</li>
+        <li v-for="item in movies">{{item}}</li>
+      </ul>
+      `,
+      // 动态数据存放在data这个属性里面
+      // 作用：vue向服务器请求数据，然后存放在data里面，再动态把这些数据插入到模板里面
+      data: function () {
+        return {
+          message: "再见",
+          // 真实开发里面拿到的是列表数据
+          movies: ["大话西游", "星际穿越", "盗梦空间", "hhh"]
+        }
+      }
+      // data(){},在对象里定义方法，你可以直接把 : function 删掉：
+    })
+    app.mount("#app")
+  </script>
+</body>
+
+</html>

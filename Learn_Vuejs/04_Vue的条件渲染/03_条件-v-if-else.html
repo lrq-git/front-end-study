@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div id="app">
+    <!-- v-if="条件"，如果达到条件才会渲染 -->
+    <!-- 注意：空对象的布尔类型是true -->
+    <div class="info" v-if="Object.keys(info).length">
+      <!-- Object.keys(info)会把对象的键返回为一个数组 -->
+      <h2>个人信息</h2>
+      <ul>
+        <li>姓名：{{info.name}}</li>
+        <li>姓名：{{info.age}}</li>
+      </ul>
+    </div>
+
+    <!-- v-else -->
+    <div v-else>
+      <h2>没有输入</h2>
+      <p>请输入个人信息</p>
+    </div>
+
+  </div>
+  <script src="../lib/vue.js"></script>
+  <script>
+    // 1.创建app
+    const app = Vue.createApp({
+      data() {
+        return {
+          info: { name: "why", age: 18 }
+        }
+      },
+    })
+    //2.挂载app
+    app.mount("#app")
+  </script>
+</body>
+
+</html>

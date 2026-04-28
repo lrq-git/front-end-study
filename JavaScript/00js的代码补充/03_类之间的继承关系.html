@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // ES6代码
+    class Person {
+      constructor(name, age) {
+        this.name = name
+        this.age = age
+      }
+      running() { }
+      eating() { }
+    }
+    class Student extends Person {
+      studying() {
+
+      }
+    }
+    // 继承可以继承原来父类里面的所有属性和方法
+
+    class SmallStudent extends Student {
+      dwzry() {
+
+      }
+    }
+    class BigStudent extends Student {
+      xwjf() {
+
+      }
+    }
+    class Teacher extends Person {
+
+    }
+
+
+    var stu = new Student("why", 18)
+    stu.running()
+
+
+    // 继承好处：1.增加代码复用2.继承是多态的前提
+
+    // Date/Array/String/Object/
+  </script>
+</body>
+
+</html>

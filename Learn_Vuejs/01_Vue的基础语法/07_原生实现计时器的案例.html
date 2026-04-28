@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <!-- 声明式编程：what to do ，由框架完成how的过程 -->
+  <!-- 命令式编程 -->
+  <h2>当前计数：<span class="counter"></span></h2>
+  <button class="add">+1</button>
+  <button class="sub">-1</button>
+
+  <script>
+    // document.querySelector()抓住选中的选择器中的第一个const allBoxes = document.querySelectorAll(".box");
+    // 它会返回一个类似数组的东西（NodeList），里面装着所有找到的元素
+
+    // 1.获取dom
+    const h2El = document.querySelector("h2")
+    const counterEl = document.querySelector(".counter")
+    const addBtnEl = document.querySelector(".add")
+    const subBtnEl = document.querySelector(".sub")
+
+    // 2.定义一个变量记录数据
+    let counter = 100
+    counterEl.textContent = counter
+
+    // 2.监听按钮的点击
+    addBtnEl.onclick = function () {
+      counter++
+      counterEl.textContent = counter
+    }
+    subBtnEl.onclick = function () {
+      counter--
+      counterEl.textContent = counter
+    }
+
+    // MVC模型：view，controller， view，MVVM模型：Model-View-ViewModel
+  </script>
+</body>
+
+</html>

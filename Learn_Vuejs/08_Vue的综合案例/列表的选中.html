@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .active {
+      color: red;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="app">
+    <!-- <h2 :class="{titel: false}"></h2> -->
+    <!-- 动态决定clss属性（css属性）是否添加 -->
+
+    <!-- 对active的class进行动态绑定 -->
+    <!-- 需求一：将索引值为1 的li添加上active -->
+    <!-- 需求二： 用一个变量（属性）记录当前点击的位置 -->
+    <!-- 此时的index是每个li都有各自的index,然后要将点击的index记录在常量里面 -->
+    <ul>
+      <li :class="{active: index === currentIndex}" @click="liClick(index)" v-for="(item, index) in movies">
+        {{item}}
+      </li>
+    </ul>
+  </div>
+  <script src="../lib/vue.js"></script>
+  <script>
+    // 1.创建app
+    const app = Vue.createApp({
+      data() {
+        return {
+          // 这里的数据都用：，而不用=
+          movies: ["星际穿越", "穿越时空", "动画片"],
+          currentIndex: -1
+
+        }
+      },
+      methods: {
+        liClick(index) {
+          this.currentIndex = index
+        }
+      }
+    })
+    //2.挂载app
+    app.mount("#app")
+  </script>
+</body>
+
+</html>

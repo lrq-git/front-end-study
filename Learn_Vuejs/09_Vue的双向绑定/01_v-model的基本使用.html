@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div id="app">
+    <!-- 1.手动实现双向绑定 -->
+    <!-- <input type="text" :vlaue="message" @input="inputChange"> -->
+    <!-- value:设置的是输入框的设置值，表单的需求是要把输入到表单的内容也同步在message上 -->
+    <!-- 2.v-model实现双向绑定 -->
+    <!-- <input type="text" v-modle="message"> -->
+
+    <!-- 3.登录功能 -->
+    <label for="account">
+      <!-- label的功能是点击label里面的东西鼠标就会跳在框里 -->
+      账号：<input type="text" id="account" v-model="account">
+    </label>
+    <label for="password">
+      <!-- label的功能是点击label里面的东西鼠标就会跳在框里 -->
+      密码：<input type="password" id="password" v-model="password">
+    </label>
+    <button @click="loginClick">登录</button>
+    <h2>{{message}}</h2>
+  </div>
+  <script src="../lib/vue.js"></script>
+  <script>
+    // 1.创建app
+    const app = Vue.createApp({
+      data() {
+        return {
+          message: "hello world",
+          account: "",
+          password: ""
+        }
+      },
+      methods: {
+        inputChange(event) {
+          this.message = event.target.value
+          // event.target：用： 揪出“真正”触发事件的那个 HTML 元素。场景： 比如你点击了一个图标，通过它可以拿到这个图标的 DOM 节点，进而获取它上面的自定义属性（data-id 等）
+        },
+        loginClick() {
+          const account = this.account
+          const password = this.password
+
+          // 通过url发送网络请求
+          console.log(account, password)
+        }
+      }
+    })
+    //2.挂载app
+    app.mount("#app")
+  </script>
+</body>
+
+</html>

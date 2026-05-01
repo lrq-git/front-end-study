@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div id="app">
+    <!-- select的单选 -->
+    <label for="city">选择城市：</label>
+    <!-- v-model是写在select里面 -->
+    <select v-model="fruit">
+      <!-- value 是真正提交给后台的数据，标签中间的汉字是给用户看的 -->
+      <option value="bj">北京</option>
+      <option value="sh">上海</option>
+      <!-- selected 属性会让这个选项默认被选中 -->
+      <!-- <option value="gz" selected>广州</option> -->
+      <option value="gz">广州</option>
+    </select>
+    <h2>{{fruit}}</h2>
+    <hr>
+    <hr>
+    <!-- select的多选 -->
+    <label for="city">选择城市：</label>
+    <!--  multiple让下拉框为多选 -->
+    <select multiple size="3" v-model="fruits">
+      <!-- value 是真正提交给后台的数据，标签中间的汉字是给用户看的 -->
+      <option value="bj">北京</option>
+      <option value="sh">上海</option>
+      <!-- selected 属性会让这个选项默认被选中 -->
+      <!-- <option value="gz" selected>广州</option> -->
+      <option value="gz">广州</option>
+    </select>
+    <h2>{{fruits}}</h2>
+  </div>
+  <script src="../lib/vue.js"></script>
+  <script>
+    // 1.创建app
+    const app = Vue.createApp({
+      data() {
+        return {
+          fruit: "",
+          fruits: []
+        }
+      },
+    })
+    //2.挂载app
+    app.mount("#app")
+  </script>
+</body>
+
+</html>

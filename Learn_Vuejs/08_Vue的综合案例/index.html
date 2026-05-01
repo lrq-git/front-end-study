@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    table {
+      border-collapse: collapse;
+      /* text-align: center; */
+      /* 只对内部有效： text-align 必须设置在块级元素（比如 <div>, <p>）上。它的作用是让这个盒子内部的文字、图片（<img>）、甚至是行内块元素（inline-block）居中。它绝对不能让这个盒子本身在页面上居中 (会继承）*/
+    }
+
+    thead {
+      background-color: #f5f5f5;
+    }
+
+    th,
+    td {
+      border: 1px solid #aaa;
+      padding: 8px 16px;
+    }
+
+    .active {
+      background-color: skyblue;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- 注意的知识点：
+   1.由于表格必须保持完美的网格对齐，如果你给其中某一个 <td> 加了很大的 padding：这个单元格本身的尺寸会变大。为了对齐，它所在的整整一行（<tr>）的高度都会被强制拉高。同样，它所在的整整一列的宽度都会被强制拉宽。 -->
+  <div id="app">
+    <!-- 1.搭建界面内容 -->
+    <template v-if="books.length">
+      <table>
+        <thead>
+          <tr>
+            <th></th>
+            <th>书籍名称</th>
+            <th>出版日期</th>
+            <th>价格</th>
+            <th>购买数量</th>
+            <th>操作</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- 只要元素用到了v-for，就要养成习惯设置一个key属性，并且key属性需要动态绑定 -->
+          <tr :class="{active: index === currentIndex}" @click="trClick(index)" v-for="(item, index) in books"
+            :key="item.id">
+            <td>{{ index+1 }}</td>
+            <td>{{ item.name }}</td>
+            <td>{{ item.date }}</td>
+            <td>{{ formatPrice(item.price) }}</td>
+            <td>
+              <!-- 在Vue里面所有交互要知道交互的到底是那一条数据，因此前面v-for里面的item, index是非常关键的 -->
+              <!-- 由于减的按钮不能无限减，因此，如果小于等于1的时候，通过动态改变属性disabled来禁用按钮.disabled="true"则按钮就被禁用 -->
+              <button v-bind:disabled="item.count <=1" @click="decrement(index, item)">-</button>
+              {{ item.count }}
+              <button @click="increment(index, item)">+</button>
+            </td>
+            <td>
+              <!-- @是v-on的语法糖 -->
+              <button @click="removeIndex(index, item)">移除</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <!-- 在模版里面对数据进行侦听是深度侦听的，意思是当数据的一个属性改变了，也会重新渲染 -->
+      <!-- 包含响应式数据的复杂逻辑，都应该使用计算属性computed (有缓存)-->
+      <h2>总价：{{ formatPrice(totalPrice) }}</h2>
+    </template>
+
+    <!-- 如果要达到一种需求:达到什么条件下才出现可以用v-if -->
+    <!-- v-if="条件"，如果达到条件才会渲染 -->
+    <template v-else>
+      <h1>购物车为空，请添加喜欢的书籍</h1>
+    </template>
+  </div>
+  <script src="../lib/vue.js"></script>
+  <script src="./data/data.js"></script>
+  <!-- 这样引入相当于books变量是全局的变量 -->
+  <script>
+    // 1.创建app
+    const app = Vue.createApp({
+      data() {
+        return {
+          books: books,
+          currentIndex: -1
+        }
+      },
+      // 计算属性：computed(计算属性会基于依赖关系进行缓存，当数据不发生变化时，计算属性是不需要重新计算的；当依赖的数据发生变化时，就会自动变重新计算)
+      computed: {
+        totalPrice() {
+          // 1.直接遍历books
+          let price = 0
+          for (const item of this.books) {
+            price += item.price * item.count
+          }
+          return price
+
+          // 2.reduce:“把一个数组里的多个值，通过某种自定义的逻辑，最终‘浓缩/累加’成一个单一的值。”(高阶函数)（自己决定是否用）
+          /*  return this.books.reduce((preValue, item) => {
+             return preValue + item.price * item.count
+           }, 0) */
+          // 当回调函数里面return只有一句话时候，可以省略return
+        }
+      },
+      // 如果前面模版里面有用到一些通用的逻辑可以抽取成一个方法，放在methods里面(后面还有一个方法：注册一个全局的过滤器，所有的组件都可以用)
+      methods: {
+        formatPrice(price) {
+          return "¥" + price
+        },
+        decrement(index, item) {
+          // 1.this.books[index].count--
+          // 2
+          item.count--
+        },
+        increment(index, item) {
+          // 1.this.books[index].count++
+          // 2
+          item.count++
+        },
+        removeIndex(index, item) {
+          // splice方法：原数组.splice(下刀位置, 删掉几个, 塞入的新东西1, 塞入的新东西2...)。如果删掉几个元素的参数不写就是全部删掉，如果只想要插入就写0
+          this.books.splice(index, 1)
+        },
+        trClick(index) {
+          this.currentIndex = index
+        }
+      }
+    })
+    //2.挂载app
+    app.mount("#app")
+  </script>
+</body>
+
+</html>

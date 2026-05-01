@@ -8,10 +8,17 @@
 </head>
 
 <body>
+  <!--1.Vnode是什么：virtual node,虚拟节点，无论是元素还是组件，他们在Vue中表示出来的都是一个个VNode,Vnode本质上是一个JS对象 
+      2.虚拟DOM，多个vnode构成的树就是虚拟DOM树
+      3。为什么要虚拟DOM? 1):有利于跨平台（桌面端，移动端）2）diff算法（让diff算法，性能更高） -->
   <div id="app">
-   <ul>
-    <li v-for="item in letters">{{item}}</li>
-   </ul>
+    <!-- app里面的东西是template(模版) ->然后会解析为Vnode(js的对象)， ->解析为真实的DOM元素 -->
+    <button @click="insertF">插入F</button>
+    <ul>
+      <!-- key要求是唯一，通常把id设置为key,因为服务器会给不同的id(给的属性有id) -->
+      <li v-for="item in letters" :key="item">{{item}}</li>
+      <!-- key属性主要用在Vue的虚拟DOM算法，在新旧nodes对比辨识VNodes -->
+    </ul>
 
 
   </div>
@@ -19,11 +26,17 @@
   <script>
     // 1.创建app
     const app = Vue.createApp({
+      // data: option api
       data() {
         return {
           letters: ["a", "b", "c", "d"]
         }
       },
+      methods: {
+        insertF() {
+          this.letters.splice(2, 0, "f")
+        }
+      }
     })
     //2.挂载app
     app.mount("#app")

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div id="app">
+
+    <h2>{{info.name}}</h2>
+    <button @click="changeInfo">改变信息</button>
+    <!-- 在模版里面对数据进行侦听是深度侦听的，意思是当数据的一个属性改变了，也会重新渲染 -->
+  </div>
+  <script src="../lib/vue.js"></script>
+  <script>
+    // 1.创建app
+    const app = Vue.createApp({
+      data() {
+        return {
+          info: { name: "why", age: 18 }
+        }
+      },
+      methods: {
+        changeMessage() {
+          // 1.创建了一个新的对象，幅值给info
+          // this.info = {name: "kobe"}
+
+          // 2.直接修改源对象的某一个属性
+          this.info.name = "kobe"
+        }
+      },
+      watch: {
+        // 默认的watch监听不会进行深度监听的
+        /* info(newValue, oldValue) {
+          console.log("侦听到改变", newValue, oldValue)
+        }
+      } */
+        //  进行深度监听
+        info: {
+          handler(newValue, oldValue) {
+            console.log("侦听到改变", newValue, oldValue)
+            // 此时的newValue 和oldVlaue的值一样，因为用的是同一个对象info,
+          },
+          // 监听器选项
+          // 进行深度监听的属性
+          deep: true,
+          // 有时候需要第一次渲染直接执行一次监听器(实际上以后要发生网络请求要用到)
+          immediate: true
+        }
+      }
+    })
+    //2.挂载app
+    app.mount("#app")
+  </script>
+</body>
+
+</html>

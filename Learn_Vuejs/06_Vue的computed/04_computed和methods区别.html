@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+
+  <!-- 计算属性和methods的差异： -->
+  <div id="app">
+    <!-- 1.methods(计算几次函数执行几次) -->
+    <h2>{{getFullname()}}</h2>
+    <h2>{{getFullname()}}</h2>
+    <h2>{{getFullname()}}</h2>
+    <!-- 2.计算属性：computed(计算属性会基于依赖关系进行缓存，当数据不发生变化时，计算属性是不需要重新计算的；当依赖的数据发生变化时，就会自动变重新计算) ，缓存-->
+    <h2>{{fullname}}</h2>
+    <!-- 修改name值 -->
+    <button @click="changeLastName">修改LastName</button>
+  </div>
+  <script src="../lib/vue.js"></script>
+  <script>
+    // 1.创建app
+    const app = Vue.createApp({
+      data() {
+        return {
+          // 1.姓名：
+          firstName: "kobe",
+          lastName: "bryant",
+
+        }
+      },
+      methods: {
+        // 这个里面的方法不止是监听事件，还可以直接处理data然后在模版里面使用
+        getFullname() {
+          return this.firstName + " " + this.lastName
+        },
+        changeLastName() {
+          this.lastName = "why"
+        }
+      },
+      computed: {
+        // 计算属性默认对应的是一个函数
+        fullname() {
+          return this.firstName + " " + this.lastName
+        }
+      },
+
+    })
+    //2.挂载app
+    app.mount("#app")
+  </script>
+</body>
+
+</html>

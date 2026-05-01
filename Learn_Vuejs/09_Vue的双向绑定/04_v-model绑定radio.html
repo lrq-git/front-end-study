@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div id="app">
+    <!-- radio:单选框（设置同一个name就可以会互斥） -->
+    <div class="gender">
+      <label for="male">
+        <!-- 注意：如果v-model绑定的是同一个值，他就会互斥，所以name可以不写 -->
+        <input type="radio" id="male" name="gender" v-model="gender">男
+      </label>
+      <label for="female">
+        <input type="radio" id="female" name="gender" v-model="gender">女
+      </label>
+      <h2>{{gender}}</h2>
+    </div>
+  </div>
+  <script src="../lib/vue.js"></script>
+  <script>
+    // 1.创建app
+    const app = Vue.createApp({
+      data() {
+        return {
+          gender: "female"
+          // 如果默认写的是female,他会判断与哪个单选框的value值一样就选中哪个
+        }
+      },
+    })
+    //2.挂载app
+    app.mount("#app")
+  </script>
+</body>
+
+</html>

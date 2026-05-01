@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+
+  <!-- 计算属性和methods的差异： -->
+  <div id="app">
+    <!-- 1.methods(计算几次函数执行几次) -->
+    <h2>{{getFullname()}}</h2>
+    <h2>{{getFullname()}}</h2>
+    <h2>{{getFullname()}}</h2>
+    <!-- 2.计算属性：computed(计算属性会基于依赖关系进行缓存，当数据不发生变化时，计算属性是不需要重新计算的；当依赖的数据发生变化时，就会自动变重新计算) -->
+    <h2>{{fullname}}</h2>
+    <!-- 修改name值 -->
+    <button @click="changeLastName">修改LastName</button>
+  </div>
+  <script src="../lib/vue.js"></script>
+  <script>
+    // 1.创建app
+    const app = Vue.createApp({
+      data() {
+        return {
+          // 1.姓名：
+          firstName: "kobe",
+          lastName: "bryant",
+
+        }
+      },
+      computed: {
+        // 这样的写法是一个语法糖写法
+        /* fullname() {
+          return this.firstName + " " + this.lastName
+        } */
+
+        // 完整的写法(但在开发中不用)
+        fullname: {
+          get: function () {
+            return this.firstName + " " + this.lastName
+          },
+          // set一般不用
+          set: function (value) {
+            const names = value.split(" ")
+            this.firstname = name[0]
+            this.lastname = name[1]
+          }
+        }
+      },
+      methods: {
+        setFullname() {
+          this.fullname = "kobe bryant"
+        }
+      }
+
+    })
+    //2.挂载app
+    app.mount("#app")
+    /* Vue 2 的底层魔法： 当我们把 data 写进 Vue 时，Vue 2 会在底层使用 Object.defineProperty() 方法，把你写的所有数据全部转换成带有 get 和 set 的形式。
+
+当你在模板里使用 {{ counter }} 渲染页面时，触发了 get，Vue 就把这个组件记在“依赖清单”上（这叫依赖收集）。
+
+当你执行 this.counter++ 时，触发了 set，Vue 就会立刻通知“依赖清单”上的组件：“数据变了，赶紧重新渲染页面！”（这叫派发更新）。
+
+Vue 3 的进化：
+Vue 3 使用了更先进的 ES6 Proxy（代理）。Proxy 的本质其实就是一个超级加强版的 get 和 set，它不仅能拦截已有属性的读写，还能拦截数组的 push、删除属性等复杂操作，这也是为什么 Vue 3 性能更好且没有 Vue 2 那些关于数组和对象新增属性不更新的怪异 Bug。
+
+总结：
+不要把 get 和 set 看作是单纯存储数据的地方。它们本质上是伪装成属性的函数，是拦截数据操作、进行逻辑处理的绝佳卡口。 */
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <!-- 对于包含响应式数据的复杂逻辑，都应该使用计算属性 -->
+  <!-- 开发中有些复杂的数据是不能直接来调用的。需要进行处理 -->
+  <!-- 弊端：有(),很别扭-->
+  <div id="app">
+    <!-- 1.拼接名字（使用mustache) -->
+    <h2>{{getFullname()}}</h2>
+
+    <!-- 2.显示分数等级 -->
+    <h2>{{getScoreLevel()}}</h2>
+
+    <!-- 3.反转单词显示文本 -->
+    <h2>{{reverseMessage()}}</h2>
+    <!-- split是分割然后会转成数组 -->
+
+  </div>
+  <script src="../lib/vue.js"></script>
+  <script>
+    // 1.创建app
+    const app = Vue.createApp({
+      data() {
+        return {
+          // 1.姓名：
+          firstName: "kobe",
+          lastName: "bryant",
+
+          // 2.分数：及格/不及格
+          score: 70,
+
+          // 3.一串文本：对文本的单词进行反转显示
+          message: "my name is why"
+        }
+      },
+      methods: {
+        // 这个里面的方法不止是监听事件，还可以直接处理data然后在模版里面使用
+        getFullname() {
+          return this.firstName + " " + this.lastName
+        },
+        getScoreLevel() {
+          return this.score >= 60 ? "及格" : "不及格"
+        },
+        reverseMessage() {
+          return this.message.split(" ").reverse().join(" ")
+        }
+      }
+    })
+    //2.挂载app
+    app.mount("#app")
+  </script>
+</body>
+
+</html>

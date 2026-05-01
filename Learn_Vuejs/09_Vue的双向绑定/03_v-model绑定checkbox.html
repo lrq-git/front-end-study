@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div id="app">
+    <!-- 1.checkbox单选框：绑定到属性的值是一个布尔类型，单选框不需要value -->
+    <label for="agree">
+      <!-- label 的for和id要一样 -->
+      <input type="checkbox" id="agree" v-model="isAgree"> 同意协议
+    </label>
+
+    <!-- 2.checkbox复选框：绑定到属性的值是一个数组 -->
+    <!-- 注意：多选框当中必须明确绑定一个value值，当选中时候，会自动将value值添加到属性里面(也就是将value值添加在hobbies数组中) -->
+    <div class="hobbies">
+      <h2>请选择你的爱好：</h2>
+      <label for="sing">
+        <input type="checkbox" id="sing" v-model="hobbies" value="sing">唱
+      </label>
+      <label for="jump">
+        <input type="checkbox" id="jump" v-model="hobbies" value="jump">跳
+      </label>
+      <label for="rap">
+        <input type="checkbox" id="rap" v-model="hobbies" value="rap">rap
+      </label>
+      <label for="basketball">
+        <input type="checkbox" id="basketball" v-model="hobbies" value="basketball">篮球
+      </label>
+    </div>
+
+    <h2>{{hobbies}}</h2>
+  </div>
+  <script src="../lib/vue.js"></script>
+  <script>
+    // 1.创建app
+    const app = Vue.createApp({
+      data() {
+        return {
+          isAgree: false,
+          // isAgree: "abc",初始是这样，选中以后传回来的属性是还是布尔类型
+          hobbies: []
+        }
+      },
+    })
+    //2.挂载app
+    app.mount("#app")
+  </script>
+</body>
+
+</html>

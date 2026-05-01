@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <!-- 对于包含响应式数据的复杂逻辑，都应该使用计算属性 (data里面的数据需要经过变换以后展示到页面上)-->
+  <!-- 计算属性和methods的差异： -->
+  <div id="app">
+    <!-- 1.拼接名字（使用mustache) -->
+    <h2>{{fullname}}</h2>
+
+    <!-- 2.显示分数等级 -->
+    <h2>{{scoreLevel}}</h2>
+
+    <!-- 3.反转单词显示文本 -->
+    <h2>{{reverrseMessage}}</h2>
+
+
+  </div>
+  <script src="../lib/vue.js"></script>
+  <script>
+    // 1.创建app
+    const app = Vue.createApp({
+      data() {
+        return {
+          // 1.姓名：
+          firstName: "kobe",
+          lastName: "bryant",
+
+          // 2.分数：及格/不及格
+          score: 70,
+
+          // 3.一串文本：对文本的单词进行反转显示
+          message: "my name is why"
+        }
+      },
+      computed: {
+        // 计算属性默认对应的是一个函数
+        fullname() {
+          return this.firstName + " " + this.lastName
+        },
+        scoreLevel() {
+          return this.score >= 60 ? "及格" : "不及格"
+        },
+        reverrseMessage() {
+          return this.message.split(" ").reverse().join(" ")
+        }
+      }
+
+
+    })
+    //2.挂载app
+    app.mount("#app")
+  </script>
+</body>
+
+</html>

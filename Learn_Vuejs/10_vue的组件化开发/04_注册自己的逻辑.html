@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .product {
+      background-color: orange;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="app">
+    <home-nav></home-nav>
+    <!-- 组件名称：1）使用短横线分隔符，例如：product-item 
+                  2）使用大驼峰， 例如HomeNav-->
+    <!-- <HomeNav></HomeNav> -->
+    <home-nav></home-nav>
+    <!-- 这样不行，因为html元素里面不区分大写和小写 -->
+    <product-item></product-item>
+    <product-item></product-item>
+    <product-item></product-item>
+
+  </div>
+
+  <template class="nav">
+    <h2>我是应用的程序</h2>
+  </template>
+
+  <!-- 组件里面也有自己的逻辑 -->
+  <template id="product">
+    <div class="product">
+      <h2> {{title}} </h2>
+      <div>商品图片</div>
+      <div>商品价格：<span>¥{{price}}</span></div>
+      <p>商品描述信息，9.9秒杀</p>
+      <button @click="favarItem">收藏</button>
+    </div>
+  </template>
+  <script src="../lib/vue.js"></script>
+  <script>
+    // 1.创建app
+    const app = Vue.createApp({
+      data() {
+        return {
+          message: "hello world"
+        }
+      },
+    })
+
+    // 2.注册全局组件
+    // product-item全局组件
+    app.component("product-item", {
+      template: `#product`,
+      data() {
+        return {
+          title: "我是商品item",
+          price: 9.9
+        }
+      },
+      methods: {
+        favarItem() {
+          console.log("收藏了当前的item")
+        }
+      }
+    })
+
+    app.component("home-nav", {
+      template: "#nav"
+    })
+
+    app.component("HomeNav", {
+      template: "#nav"
+    })
+    //2.挂载app
+    app.mount("#app")
+  </script>
+</body>
+
+</html>

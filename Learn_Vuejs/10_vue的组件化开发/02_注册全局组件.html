@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .product {
+      background-color: orange;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="app">
+
+    <!-- 1.内容一 -->
+
+
+
+    <!-- 使用product-item组件 -->
+    <product-item></product-item>
+    <product-item></product-item>
+
+
+
+  </div>
+  <script src="../lib/vue.js"></script>
+  <script>
+
+    // 1.组件：APP组件（根组件）
+    const App = {}
+
+    // 2.对象就是组件，创建组件需要注册以后才能使用
+    const productItem = {
+      template:
+        // 注：这里要用反单引号
+        `<div class= "product">
+        <h2> 我是商品 </h2>
+      <div>商品图片</div>
+      <div>商品价格：<span>¥9.9</span></div>
+      <p>商品描述信息，9.9秒杀</p>
+      </div >
+      `
+    }
+    // 注册全局组件或者局部组件
+
+    // 3.创建app
+    const app = Vue.createApp(App)
+
+    // 4.注册一个全局组件
+    //  app.component的第一个参数是组件名称
+    app.component("product-item", productItem)
+
+    /*  app.component("product-item", {
+       template:
+         // 注：这里要用反单引号
+         `<div class= "product">
+         <h2> 我是商品 </h2>
+       <div>商品图片</div>
+       <div>商品价格：<span>¥9.9</span></div>
+       <p>商品描述信息，9.9秒杀</p>
+       </div >
+       `
+     }) 也可以这样写*/
+
+
+    //挂载app
+    app.mount("#app")
+  </script>
+</body>
+
+</html>

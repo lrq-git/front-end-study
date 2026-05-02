@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .product {
+      background-color: orange;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- 目前存在的问题：1.所有组件的逻辑和模版都是写在一个html文件中
+                      2.当前一个组件中，逻辑和模版是分离开的 -->
+
+
+  <!-- 开发中用的最多的是局部组件 -->
+  <div id="app">
+    <home-nav></home-nav>
+    <h2>{{message}}</h2>
+    <product-item></product-item>
+  </div>
+
+  <template id="product">
+    <div class="product">
+      <h2> {{title}} </h2>
+      <div>商品图片</div>
+      <div>商品价格：<span>¥{{price}}</span></div>
+      <p>商品描述信息，9.9秒杀</p>
+      <button @click="favarItem">收藏</button>
+    </div>
+  </template>
+
+  <template id="nav">
+    <!-- 此时这里不可以用局部组件 -->
+    <h1>我是home-nav的组件</h1>
+  </template>
+  <script src="../lib/vue.js"></script>
+  <script>
+    // 抽取出来
+    const ProductItem = {
+      template: "#product",
+      data() {
+        return {
+          tetle: "我是title",
+          price: 9.9
+        }
+      }
+    }
+    // 1.创建app
+    // 1.1组件打算在哪里被使用
+    const app = Vue.createApp({
+      data() {
+        return {
+          message: "hello world"
+        }
+      },
+      methods: {},
+      computed: {},
+      watch: {},
+      components: {
+        // 局部组件都放在这里
+        ProductItem,
+        HomeNav: {
+          template: "#nav",
+          components: {
+            ProductItem
+          }
+
+        }
+      }
+    })
+
+    // 
+
+    //2.挂载app
+    app.mount("#app")
+  </script>
+</body>
+
+</html>

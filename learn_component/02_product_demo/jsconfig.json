@@ -1,12 +1,16 @@
 {
   "compilerOptions": {
-    "target": "es5",
+    "target": "esnext",
+    // 最终打包为什么的代码
     "module": "esnext",
-    "baseUrl": "./",
-    "moduleResolution": "node",
+    // 模块化规范
+    "moduleResolution": "bundler",
     "paths": {
       "@/*": [
-        "src/*"
+        "./src/*"
+      ],
+      "utils/*": [
+        "./src/utils/*"
       ]
     },
     "lib": [
